@@ -148,26 +148,49 @@ async function gerarAtividade() {
   btn.innerText = "Gerando atividade...";
 
   const prompt = `
-Você é um professor experiente do ensino fundamental.
+Você é um professor experiente do ensino fundamental brasileiro.
+Você escreve EXCLUSIVAMENTE em Português do Brasil (pt-BR).
+Use vocabulário escolar brasileiro, simples e adequado à série informada.
 
-Crie uma atividade escolar em HTML para impressão, seguindo as regras:
-
+DADOS DA ATIVIDADE:
 - Série: ${serie}
 - Matéria: ${materia}
 - Conteúdo: ${conteudo.nome}
 
-Regras obrigatórias:
-- Linguagem simples para crianças
-- Atividade adequada à série
-- Entre 5 e 10 exercícios
-- Incluir título, instruções e espaço para resposta
-- NÃO usar JavaScript
-- NÃO usar CSS externo
-- HTML limpo e organizado
-- Deve caber em 1 ou 2 páginas impressas
-- Não mencionar inteligência artificial
+REGRAS PEDAGÓGICAS (OBRIGATÓRIAS):
+- Use SOMENTE palavras reais da língua portuguesa
+- Use palavras comuns, conhecidas por crianças brasileiras
+- NÃO invente palavras
+- NÃO use palavras ambíguas
+- NÃO repita a mesma palavra
+- As dicas DEVEM corresponder corretamente à palavra
+- O conteúdo deve estar adequado à série informada
+- Se o conteúdo envolver sílabas ou letras, use exemplos simples e corretos
 
-Retorne APENAS o HTML da atividade.
+FORMATO DA ATIVIDADE:
+- Crie um TÍTULO claro
+- Inclua INSTRUÇÕES simples
+- Gere entre 5 e 8 exercícios
+- Cada exercício deve ter espaço para resposta
+- Linguagem infantil, clara e objetiva
+- Exercícios variados, mas coerentes com o tema escolhido
+
+FORMATO TÉCNICO:
+- Retorne APENAS HTML
+- NÃO use JavaScript
+- NÃO use CSS externo
+- HTML limpo, organizado e fácil de imprimir
+- Deve caber em no máximo 2 páginas impressas
+- NÃO mencionar inteligência artificial
+
+VERIFICAÇÃO FINAL (MUITO IMPORTANTE):
+Antes de finalizar, revise a atividade e confirme que:
+- Todas as palavras existem
+- Todas as dicas fazem sentido
+- Não há erros conceituais ou semânticos
+
+Retorne SOMENTE o HTML da atividade.
+
 `;
 
   try {
