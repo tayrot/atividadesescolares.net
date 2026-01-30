@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        
+        .header-escola {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; margin-bottom: 10px; }
+        h2 { text-align: center; font-size: 14px; color: #666; margin-bottom: 30px; font-weight: normal; }
+        
+        .atividade { margin-bottom: 35px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 20px; display: block; background: #fce4ec; padding: 10px; border-left: 5px solid #d81b60; }
+
+        /* Grid de Autoditado */
+        .grid-autoditado {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        .item-autoditado {
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .icone { font-size: 45px; margin-bottom: 10px; display: block; }
+        .linha-escrita {
+            width: 100%;
+            border-bottom: 2px solid #333;
+            height: 25px;
+            margin-top: 10px;
+        }
+
+        /* Área de Recorte */
+        .area-recorte {
+            margin-top: 50px;
+            border: 2px dashed #999;
+            padding: 20px;
+            background: #fafafa;
+        }
+        .tesoura { position: absolute; margin-top: -35px; font-size: 20px; }
+
+        .palavras-recorte {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .box-palavra {
+            border: 1px solid #000;
+            padding: 5px 15px;
+            background: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-escola">
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>TURMA:</strong> 1º ANO</div>
+    </div>
+
+    <h1>Autoditado Ilustrado</h1>
+    <h2>ESCREVA O NOME DAS FIGURAS OU RECORTE AS PALAVRAS NO FINAL DA PÁGINA</h2>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. IDENTIFIQUE CADA DESENHO E ESCREVA O NOME:</span>
+        <div class="grid-autoditado">
+            <div class="item-autoditado">
+                <span class="icone">⚽</span>
+                <div class="linha-escrita"></div>
+            </div>
+            <div class="item-autoditado">
+                <span class="icone">🍦</span>
+                <div class="linha-escrita"></div>
+            </div>
+            <div class="item-autoditado">
+                <span class="icone">🦒</span>
+                <div class="linha-escrita"></div>
+            </div>
+            <div class="item-autoditado">
+                <span class="icone">🚁</span>
+                <div class="linha-escrita"></div>
+            </div>
+            <div class="item-autoditado">
+                <span class="icone">🔋</span>
+                <div class="linha-escrita"></div>
+            </div>
+            <div class="item-autoditado">
+                <span class="icone">🌙</span>
+                <div class="linha-escrita"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="area-recorte">
+        <div class="tesoura">✂️ ------------------------------------------------------------------</div>
+        <p style="margin-bottom: 15px; font-size: 12px; font-weight: bold;">BANCO DE PALAVRAS PARA RECORTAR E COLAR:</p>
+        <div class="palavras-recorte">
+            <div class="box-palavra">GIRAFA</div>
+            <div class="box-palavra">BOLA</div>
+            <div class="box-palavra">LUA</div>
+            <div class="box-palavra">SORVETE</div>
+            <div class="box-palavra">PILHA</div>
+            <div class="box-palavra">HELICÓPTERO</div>
+        </div>
+    </div>
+
+    <div class="footer-site">
+        Desenvolvido para atividadesescolares.net
+    </div>
+
+</body>
+</html>
