@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f3e5f5; padding: 10px; border-left: 5px solid #9c27b0; }
+        
+        /* Estilo da cobrinha/caminho de números */
+        .caminho-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .circulo-numero {
+            width: 55px;
+            height: 55px;
+            border: 2px solid #9c27b0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            background: #fff;
+        }
+        .numero-fixo { background: #f3e5f5; border-color: #7b1fa2; }
+        
+        .grid-sequencia {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 5px;
+            margin-top: 20px;
+        }
+        .quadrado-num {
+            border: 1px solid #333;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-escola">
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>O Caminho dos Números</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. AJUDE O COELHINHO A CHEGAR NA CENOURA COMPLETANDO A SEQUÊNCIA:</span>
+        <div class="caminho-container">
+            <div class="circulo-numero numero-fixo">1</div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero numero-fixo">3</div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero numero-fixo">6</div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero numero-fixo">8</div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero numero-fixo">10</div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero numero-fixo">12</div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero numero-fixo">15</div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero numero-fixo">18</div>
+            <div class="circulo-numero"></div>
+            <div class="circulo-numero numero-fixo">20</div>
+        </div>
+    </div>
+
+    <div class="atividade" style="margin-top: 30px;">
+        <span class="titulo-atv">2. PINTE O NÚMERO QUE REPRESENTA UMA DEZENA:</span>
+        <div style="display: flex; justify-content: center; gap: 40px; font-size: 40px; font-weight: bold; padding: 10px;">
+            <span>5</span>
+            <span>10</span>
+            <span>15</span>
+        </div>
+    </div>
+
+    <div class="atividade" style="margin-top: 20px;">
+        <span class="titulo-atv">3. DESAFIO: CONTINUE A SEQUÊNCIA DE 2 EM 2:</span>
+        <div style="display: flex; justify-content: center; gap: 10px; font-size: 24px;">
+            <strong>2 — 4 — 6 — ( ___ ) — ( ___ ) — ( ___ )</strong>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

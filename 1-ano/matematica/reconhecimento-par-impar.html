@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e1f5fe; padding: 10px; border-left: 5px solid #0288d1; }
+        
+        .grid-par-impar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .box-atv {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .elementos { font-size: 30px; letter-spacing: 5px; margin-bottom: 10px; display: block; }
+        .opcoes { display: flex; justify-content: center; gap: 10px; font-size: 14px; }
+        .check { width: 15px; height: 15px; border: 1px solid #333; display: inline-block; vertical-align: middle; }
+
+        .explicao { background: #fff9c4; padding: 10px; border-radius: 5px; font-size: 14px; margin-bottom: 20px; border: 1px dashed #fbc02d; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Pares ou Ímpares</h1>
+
+    <div class="explicao">
+        <strong>DICA:</strong> CIRCULE OS ELEMENTOS DE 2 EM 2. <br>
+        SE SOBRAR 1 SOZINHO, O NÚMERO É <strong>ÍMPAR</strong>. SE NÃO SOBRAR, É <strong>PAR</strong>!
+    </div>
+
+    <div class="grid-par-impar">
+        <div class="box-atv">
+            <span class="elementos">🍎 🍎</span>
+            <strong>NÚMERO 2</strong>
+            <div class="opcoes">
+                <span><div class="check"></div> PAR</span>
+                <span><div class="check"></div> ÍMPAR</span>
+            </div>
+        </div>
+
+        <div class="box-atv">
+            <span class="elementos">🍎 🍎 🍎</span>
+            <strong>NÚMERO 3</strong>
+            <div class="opcoes">
+                <span><div class="check"></div> PAR</span>
+                <span><div class="check"></div> ÍMPAR</span>
+            </div>
+        </div>
+
+        <div class="box-atv">
+            <span class="elementos">🍎 🍎 🍎 🍎 🍎</span>
+            <strong>NÚMERO 5</strong>
+            <div class="opcoes">
+                <span><div class="check"></div> PAR</span>
+                <span><div class="check"></div> ÍMPAR</span>
+            </div>
+        </div>
+
+        <div class="box-atv">
+            <span class="elementos">🍎 🍎 🍎 🍎</span>
+            <strong>NÚMERO 4</strong>
+            <div class="opcoes">
+                <span><div class="check"></div> PAR</span>
+                <span><div class="check"></div> ÍMPAR</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="atividade" style="margin-top: 30px;">
+        <span class="titulo-atv">2. PINTE OS NÚMEROS:</span>
+        <p>AZUL para <strong>PARES</strong> e VERMELHO para <strong>ÍMPARES</strong></p>
+        <div style="display: flex; justify-content: space-around; font-size: 40px; font-weight: bold;">
+            <span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span> <span>6</span>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

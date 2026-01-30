@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e1f5fe; padding: 10px; border-left: 5px solid #03a9f4; }
+        
+        .formas-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .forma-item { text-align: center; font-weight: bold; font-size: 14px; }
+        .shape { 
+            display: block; 
+            margin: 0 auto 10px; 
+            border: 2px solid #333; 
+            background: #fff;
+        }
+        .circulo { width: 50px; height: 50px; border-radius: 50%; }
+        .quadrado { width: 50px; height: 50px; }
+        .triangulo { 
+            width: 0; height: 0; 
+            border-left: 25px solid transparent; 
+            border-right: 25px solid transparent; 
+            border-bottom: 50px solid #333; 
+            border-top: 0;
+            background: transparent;
+        }
+        .retangulo { width: 70px; height: 40px; }
+
+        .desenho-com-formas {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Formas Geométricas</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. CONHEÇA AS FORMAS:</span>
+        <div class="formas-container">
+            <div class="forma-item"><div class="shape circulo"></div>CÍRCULO</div>
+            <div class="forma-item"><div class="shape quadrado"></div>QUADRADO</div>
+            <div class="forma-item"><div class="shape triangulo"></div>TRIÂNGULO</div>
+            <div class="forma-item"><div class="shape retangulo"></div>RETÂNGULO</div>
+        </div>
+
+        <span class="titulo-atv">2. PINTE O DESENHO SEGUINDO A LEGENDA:</span>
+        <div style="margin-bottom: 20px; font-weight: bold; text-align: center;">
+            <span style="color: red;">CÍRCULO = VERMELHO</span> | 
+            <span style="color: blue;">QUADRADO = AZUL</span> | 
+            <span style="color: green;">TRIÂNGULO = VERDE</span>
+        </div>
+
+        
+
+        <div class="desenho-com-formas">
+            <p>QUANTOS CÍRCULOS VOCÊ VIU? ________</p>
+            <p>QUANTOS QUADRADOS VOCÊ VIU? ________</p>
+            <p>QUANTOS TRIÂNGULOS VOCÊ VIU? ________</p>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

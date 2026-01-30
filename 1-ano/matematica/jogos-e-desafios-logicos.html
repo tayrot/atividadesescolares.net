@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogos e Desafios Lógicos - Atividades Escolares</title>
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; margin: 0; padding: 0; }
+        .folha-a4 { width: 210mm; padding: 15mm; margin: auto; box-sizing: border-box; }
+        
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; border-radius: 5px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; color: #1565c0; margin: 0; }
+        
+        .titulo-atv { 
+            font-weight: bold; 
+            margin-bottom: 15px; 
+            display: block; 
+            background: #e3f2fd; 
+            padding: 10px; 
+            border-left: 5px solid #1565c0; 
+        }
+
+        .desafio-container {
+            border: 2px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo para o Desafio das Cores/Posições */
+        .grade-logica {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .celula {
+            width: 80px; height: 80px;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        /* Estilo para Comparação */
+        .balanca-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .footer { text-align: center; font-size: 11px; margin-top: 40px; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <strong>NOME:</strong> ___________________________________________________<br><br>
+            <strong>DATA:</strong> ____/____/_______ &nbsp;&nbsp;&nbsp; <strong>DESAFIO MATEMÁTICO</strong>
+        </div>
+
+        <h1>Detetives dos Números</h1>
+
+        <div class="atividade">
+            <span class="titulo-atv">1. DESAFIO DE ORGANIZAR: COMPLETE A GRADE SEM REPETIR!</span>
+            <p>Cada linha e cada coluna deve ter um ☀️, uma 🌙 e uma ⭐.</p>
+            
+            
+
+            <div class="grade-logica">
+                <div class="celula">☀️</div><div class="celula">🌙</div><div class="celula">⭐</div>
+                <div class="celula">⭐</div><div class="celula">☀️</div><div class="celula"></div> <div class="celula">🌙</div><div class="celula"></div><div class="celula"></div> </div>
+
+            <span class="titulo-atv">2. DESAFIO DE CONTAR E COMPARAR:</span>
+            <div class="desafio-container">
+                <p>No estacionamento da escola há:</p>
+                <div style="font-size: 24px; text-align: center;">🚗 🚗 🚗 🚗 🚗 🚗 (6 Carros)</div>
+                <div style="font-size: 24px; text-align: center;">🏍️ 🏍️ 🏍️ 🏍️ (4 Motos)</div>
+                
+                <div style="margin-top: 20px; font-size: 18px;">
+                    A) Quantos veículos existem ao todo? <span style="border-bottom: 1px solid #000; width: 50px; display: inline-block;"></span><br><br>
+                    B) Há MAIS carros ou MAIS motos? ____________________<br><br>
+                    C) Quantos carros há a mais que as motos? <span style="border-bottom: 1px solid #000; width: 50px; display: inline-block;"></span>
+                </div>
+            </div>
+
+            <span class="titulo-atv">3. QUEM SOU EU? (LOGICA DE ADIVINHAÇÃO)</span>
+            <div style="background: #fff9c4; padding: 15px; border-radius: 10px; font-size: 18px; border: 1px dashed #fbc02d;">
+                "SOU UM NÚMERO MAIOR QUE 5 E MENOR QUE 7. QUEM SOU EU?" <br><br>
+                RESPOSTA: ___________________
+            </div>
+        </div>
+
+        <div class="footer">atividadesescolares.net - Raciocínio, Organização e Comparação</div>
+    </div>
+
+</body>
+</html>

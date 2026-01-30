@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; margin-bottom: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e0f2f1; padding: 10px; border-left: 5px solid #009688; }
+        
+        .comparacao-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            padding: 30px;
+            border: 1px solid #eee;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .item-box { text-align: center; }
+        .p-pequeno { font-size: 30px; }
+        .p-medio { font-size: 60px; }
+        .p-grande { font-size: 100px; }
+
+        .questoes-texto { font-size: 18px; margin-top: 10px; }
+        .checkbox-custom { width: 20px; height: 20px; border: 1px solid #000; display: inline-block; margin-right: 10px; vertical-align: middle; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-escola">
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Grandezas e Medidas</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. OBSERVE OS PEIXINHOS ABAIXO:</span>
+        <div class="comparacao-container">
+            <div class="item-box"><span class="p-medio">🐟</span><br><strong>( A )</strong></div>
+            <div class="item-box"><span class="p-grande">🐟</span><br><strong>( B )</strong></div>
+            <div class="item-box"><span class="p-pequeno">🐟</span><br><strong>( C )</strong></div>
+        </div>
+        
+        <div class="questoes-texto">
+            <p><div class="checkbox-custom"></div> Qual é o peixinho <strong>MAIOR</strong>? (A) (B) (C)</p>
+            <p><div class="checkbox-custom"></div> Qual é o peixinho <strong>MENOR</strong>? (A) (B) (C)</p>
+        </div>
+    </div>
+
+    <div class="atividade" style="margin-top: 30px;">
+        <span class="titulo-atv">2. PINTE A ÁRVORE MAIS ALTA E CIRCULE A MAIS BAIXA:</span>
+        <div style="display: flex; justify-content: space-around; align-items: flex-end; padding: 20px;">
+            <span style="font-size: 40px;">🌳</span>
+            <span style="font-size: 90px;">🌳</span>
+            <span style="font-size: 60px;">🌳</span>
+        </div>
+    </div>
+
+    <div class="atividade" style="margin-top: 20px;">
+        <span class="titulo-atv">3. DESENHE UMA BOLA MENOR QUE ESTA:</span>
+        <div style="display: flex; align-items: center; gap: 50px; padding: 20px;">
+            <span style="font-size: 60px;">⚽</span>
+            <div style="width: 150px; height: 100px; border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center; color: #999;">
+                Desenhe aqui
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

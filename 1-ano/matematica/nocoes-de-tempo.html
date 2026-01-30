@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #fffde7; padding: 10px; border-left: 5px solid #fbc02d; }
+        
+        .periodos-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .periodo-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            width: 30%;
+        }
+        .periodo-box span { font-size: 40px; }
+
+        .calendario-simples {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .calendario-simples td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .hoje { background-color: #eee; font-weight: bold; }
+
+        .lista-meses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .mes-item { border: 1px solid #ccc; padding: 5px; text-align: center; font-size: 12px; border-radius: 5px; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>O Tempo Passa</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. EM QUE PERÍODO DO DIA VOCÊ ESTUDA? MARQUE UM X:</span>
+        <div class="periodos-container">
+            <div class="periodo-box">
+                <span>☀️</span><br>
+                <strong>MANHÃ</strong><br>
+                <div style="width:20px; height:20px; border:1px solid #000; margin: 10px auto;"></div>
+            </div>
+            <div class="periodo-box">
+                <span>🌤️</span><br>
+                <strong>TARDE</strong><br>
+                <div style="width:20px; height:20px; border:1px solid #000; margin: 10px auto;"></div>
+            </div>
+            <div class="periodo-box">
+                <span>🌙</span><br>
+                <strong>NOITE</strong><br>
+                <div style="width:20px; height:20px; border:1px solid #000; margin: 10px auto;"></div>
+            </div>
+        </div>
+
+        <span class="titulo-atv">2. OS DIAS DA SEMANA:</span>
+        <p>A SEMANA TEM 7 DIAS. COMPLETE O QUE VEM ANTES E DEPOIS:</p>
+        <div style="font-size: 18px; text-align: center; background: #f5f5f5; padding: 20px; border-radius: 10px;">
+            _______ — <strong>TERÇA-FEIRA</strong> — _______<br><br>
+            _______ — <strong>SÁBADO</strong> — _______
+        </div>
+
+        <span class="titulo-atv" style="margin-top:30px;">3. OS MESES DO ANO:</span>
+        <p>PINTE O MÊS DO SEU ANIVERSÁRIO:</p>
+        <div class="lista-meses">
+            <div class="mes-item">JANEIRO</div>
+            <div class="mes-item">FEVEREIRO</div>
+            <div class="mes-item">MARÇO</div>
+            <div class="mes-item">ABRIL</div>
+            <div class="mes-item">MAIO</div>
+            <div class="mes-item">JUNHO</div>
+            <div class="mes-item">JULHO</div>
+            <div class="mes-item">AGOSTO</div>
+            <div class="mes-item">SETEMBRO</div>
+            <div class="mes-item">OUTUBRO</div>
+            <div class="mes-item">NOVEMBRO</div>
+            <div class="mes-item">DEZEMBRO</div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

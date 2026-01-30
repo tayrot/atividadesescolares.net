@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 20px; display: block; background: #f1f8e9; padding: 10px; border-left: 5px solid #8bc34a; }
+        
+        .quadro-elementos {
+            border: 2px dashed #8bc34a;
+            padding: 20px;
+            text-align: center;
+            font-size: 30px;
+            letter-spacing: 15px;
+            margin-bottom: 30px;
+        }
+
+        .grafico-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 40px;
+            height: 250px;
+            margin-top: 20px;
+            border-bottom: 3px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .coluna {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 2px;
+        }
+
+        .bloco {
+            width: 50px;
+            height: 30px;
+            border: 1px solid #999;
+            background: #fff;
+        }
+
+        .legenda {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 24px;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-escola">
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Contagem e Gráfico</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. CONTE QUANTOS ANIMAIS HÁ NO QUADRO ABAIXO:</span>
+        <div class="quadro-elementos">
+            🐶 🐱 🐶 🐭 🐱<br>
+            🐭 🐶 🐱 🐶 🐶<br>
+            🐱 🐭 🐶 🐱 🐱
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">2. PINTE UM QUADRADINHO PARA CADA ANIMAL ENCONTRADO:</span>
+        <div style="display: flex; justify-content: center; gap: 40px;">
+            <div>
+                <div class="grafico-container">
+                    <div class="coluna">
+                        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+                        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+                    </div>
+                </div>
+                <div class="legenda">🐶</div>
+            </div>
+
+            <div>
+                <div class="grafico-container">
+                    <div class="coluna">
+                        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+                        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+                    </div>
+                </div>
+                <div class="legenda">🐱</div>
+            </div>
+
+            <div>
+                <div class="grafico-container">
+                    <div class="coluna">
+                        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+                        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+                    </div>
+                </div>
+                <div class="legenda">🐭</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

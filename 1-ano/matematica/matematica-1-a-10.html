@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        
+        .header-escola {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        .header-escola div { margin-bottom: 10px; border-bottom: 1px solid #eee; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        h2 { text-align: center; font-size: 16px; color: #555; margin-bottom: 30px; font-weight: normal; }
+        
+        .atividade { margin-bottom: 35px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #fff3e0; padding: 8px; border-left: 5px solid #ff9800; }
+
+        /* Estilo para contagem de objetos */
+        .contagem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            text-align: center;
+        }
+        .box-contagem {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .objetos { font-size: 24px; margin-bottom: 10px; letter-spacing: 5px; }
+        .input-numero {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ff9800;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Estilo para somas simples */
+        .soma-container {
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .quadrado-resultado {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #000;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 1º ANO</span>
+        </div>
+    </div>
+
+    <h1>Atividade de Matemática: Números e Quantidades</h1>
+    <h2>APRENDENDO A CONTAR E SOMAR</h2>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. CONTE OS OBJETOS E ESCREVA O NÚMERO NO QUADRADINHO:</span>
+        <div class="contagem-grid">
+            <div class="box-contagem">
+                <div class="objetos">🍎🍎🍎</div>
+                <div class="input-numero"></div>
+            </div>
+            <div class="box-contagem">
+                <div class="objetos">🌟🌟🌟🌟🌟</div>
+                <div class="input-numero"></div>
+            </div>
+            <div class="box-contagem">
+                <div class="objetos">🚗🚗</div>
+                <div class="input-numero"></div>
+            </div>
+            <div class="box-contagem">
+                <div class="objetos">🎈🎈🎈🎈</div>
+                <div class="input-numero"></div>
+            </div>
+            <div class="box-contagem">
+                <div class="objetos">🐶</div>
+                <div class="input-numero"></div>
+            </div>
+            <div class="box-contagem">
+                <div class="objetos">🐱🐱🐱🐱🐱🐱</div>
+                <div class="input-numero"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">2. RESOLVA AS SOMAS ILUSTRADAS:</span>
+        
+        <div class="soma-container">
+            <span>🍎🍎</span> + <span>🍎</span> = <div class="quadrado-resultado"></div>
+        </div>
+
+        <div class="soma-container">
+            <span>⭐⭐⭐</span> + <span>⭐⭐</span> = <div class="quadrado-resultado"></div>
+        </div>
+
+        <div class="soma-container">
+            <span>🐟</span> + <span>🐟</span> = <div class="quadrado-resultado"></div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">3. DESENHE A QUANTIDADE PEDIDA:</span>
+        <div style="display: flex; justify-content: space-around; margin-top: 15px;">
+            <div style="text-align: center;">
+                <strong>4 BOLAS</strong>
+                <div style="width: 150px; height: 100px; border: 1px solid #ccc; margin-top: 5px;"></div>
+            </div>
+            <div style="text-align: center;">
+                <strong>6 CORAÇÕES</strong>
+                <div style="width: 150px; height: 100px; border: 1px solid #ccc; margin-top: 5px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-site">
+        Conteúdo de Matemática: atividadesescolares.net
+    </div>
+
+</body>
+</html>

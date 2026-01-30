@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Simetria Simples - Atividades Escolares</title>
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; margin: 0; padding: 0; }
+        .folha-a4 { width: 210mm; padding: 15mm; margin: auto; box-sizing: border-box; }
+        
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; border-radius: 5px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin: 0 0 10px 0; }
+        
+        .instrucao { 
+            background: #fdf2f8; 
+            padding: 15px; 
+            border-left: 5px solid #ec4899; 
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .grid-simetria {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card-desenho {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Representação do Eixo de Simetria */
+        .eixo-simetria {
+            height: 150px;
+            width: 150px;
+            margin: 0 auto;
+            border-right: 2px dashed #ec4899; /* O eixo */
+            position: relative;
+        }
+
+        .metade-desenhada {
+            position: absolute;
+            right: 0;
+            top: 10%;
+            font-size: 80px;
+            width: 50%;
+            overflow: hidden;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .label-eixo {
+            font-size: 10px;
+            color: #ec4899;
+            text-transform: uppercase;
+        }
+
+        .footer { text-align: center; font-size: 11px; margin-top: 40px; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <strong>ALUNO(A):</strong> ___________________________________________________<br><br>
+            <strong>DATA:</strong> ____/____/_______ &nbsp;&nbsp;&nbsp; <strong>MATEMÁTICA</strong>
+        </div>
+
+        <h1>Brincando com Simetria</h1>
+
+        <div class="instrucao">
+            O EIXO DE SIMETRIA FUNCIONA COMO UM ESPELHO. <br>
+            DESENHE A OUTRA METADE DAS FIGURAS EXATAMENTE IGUAL!
+        </div>
+
+        
+
+        <div class="grid-simetria">
+            <div class="card-desenho">
+                <div class="eixo-simetria">
+                    <div class="metade-desenhada">🦋</div>
+                </div>
+                <p>BORBOLETA</p>
+            </div>
+
+            <div class="card-desenho">
+                <div class="eixo-simetria">
+                    <div class="metade-desenhada">❤️</div>
+                </div>
+                <p>CORAÇÃO</p>
+            </div>
+
+            <div class="card-desenho">
+                <div class="eixo-simetria">
+                    <div class="metade-desenhada">🙂</div>
+                </div>
+                <p>ROSTO ALEGRE</p>
+            </div>
+
+            <div class="card-desenho">
+                <div class="eixo-simetria">
+                    <div class="metade-desenhada">🌳</div>
+                </div>
+                <p>ÁRVORE</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; border: 1px solid #eee;">
+            <strong>PERGUNTA:</strong> <br>
+            SE VOCÊ DOBRAR A FOLHA NO RISCO TRACEJADO, AS DUAS METADES FICAM IGUAIS? <br>
+            ( ) SIM &nbsp;&nbsp;&nbsp; ( ) NÃO
+        </div>
+
+        <div class="footer">atividadesescolares.net - Noções de Geometria e Simetria</div>
+    </div>
+
+</body>
+</html>

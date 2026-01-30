@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 20px; display: block; background: #e1f5fe; padding: 10px; border-left: 5px solid #03a9f4; }
+        
+        .quadro-formas {
+            border: 2px dashed #03a9f4;
+            padding: 30px;
+            text-align: center;
+            font-size: 45px;
+            letter-spacing: 25px;
+            line-height: 2;
+            margin-bottom: 30px;
+            background: #fff;
+        }
+
+        .tabela-contagem {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .tabela-contagem td {
+            border: 1px solid #ccc;
+            padding: 15px;
+            font-size: 18px;
+        }
+        .shape-mini { font-size: 24px; vertical-align: middle; margin-right: 10px; }
+        .linha-resposta { display: inline-block; width: 100px; border-bottom: 1px solid #000; height: 20px; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-escola">
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>TURMA:</strong> 1º ANO</div>
+    </div>
+
+    <h1>Desafio das Formas</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. OBSERVE O QUADRO ABAIXO COM ATENÇÃO:</span>
+        <div class="quadro-formas">
+            ▲ ● ■ ▲ ●<br>
+            ■ ▲ ■ ● ▲<br>
+            ● ■ ▲ ● ■
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">2. AGORA, CONTE QUANTAS VEZES CADA FORMA APARECE:</span>
+        <table class="tabela-contagem">
+            <tr>
+                <td><span class="shape-mini">●</span> CÍRCULOS:</td>
+                <td>QUANTIDADE: <span class="linha-resposta"></span></td>
+            </tr>
+            <tr>
+                <td><span class="shape-mini">▲</span> TRIÂNGULOS:</td>
+                <td>QUANTIDADE: <span class="linha-resposta"></span></td>
+            </tr>
+            <tr>
+                <td><span class="shape-mini">■</span> QUADRADOS:</td>
+                <td>QUANTIDADE: <span class="linha-resposta"></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="atividade" style="margin-top: 30px;">
+        <span class="titulo-atv">3. PINTE O TRIÂNGULO DE MAIOR TAMANHO:</span>
+        <div style="display: flex; justify-content: space-around; align-items: flex-end; padding: 20px;">
+            <span style="font-size: 30px;">▲</span>
+            <span style="font-size: 80px;">▲</span>
+            <span style="font-size: 50px;">▲</span>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

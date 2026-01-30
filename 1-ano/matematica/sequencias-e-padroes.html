@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequências e Padrões - Atividades Escolares</title>
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; margin: 0; padding: 0; }
+        .folha-a4 { width: 210mm; padding: 15mm; margin: auto; box-sizing: border-box; }
+        
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; border-radius: 5px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; color: #6a1b9a; margin: 0 0 10px 0; }
+        
+        .titulo-atv { 
+            font-weight: bold; 
+            margin-bottom: 15px; 
+            display: block; 
+            background: #f3e5f5; 
+            padding: 10px; 
+            border-left: 5px solid #6a1b9a; 
+        }
+
+        .sequencia-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 35px;
+            padding: 10px;
+        }
+
+        .item-seq {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border-radius: 5px;
+        }
+
+        .vazio { border: 2px dashed #999; background: #fff; }
+
+        .footer { text-align: center; font-size: 11px; margin-top: 40px; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <strong>ALUNO(A):</strong> ___________________________________________________<br><br>
+            <strong>DATA:</strong> ____/____/_______ &nbsp;&nbsp;&nbsp; <strong>MATEMÁTICA</strong>
+        </div>
+
+        <h1>Descobrindo Padrões</h1>
+
+        <div class="atividade">
+            <span class="titulo-atv">1. CONTINUE A SEQUÊNCIA DAS FORMAS:</span>
+            <div class="sequencia-row">
+                <div class="item-seq">⬛</div>
+                <div class="item-seq">⚪</div>
+                <div class="item-seq">⬛</div>
+                <div class="item-seq">⚪</div>
+                <div class="item-seq vazio"></div>
+                <div class="item-seq vazio"></div>
+            </div>
+
+            <span class="titulo-atv">2. QUAL É O PRÓXIMO ANIMAL?</span>
+            <div class="sequencia-row">
+                <div class="item-seq">🐱</div>
+                <div class="item-seq">🐶</div>
+                <div class="item-seq">🐶</div>
+                <div class="item-seq">🐱</div>
+                <div class="item-seq">🐶</div>
+                <div class="item-seq vazio"></div>
+            </div>
+
+            <span class="titulo-atv">3. SEQUÊNCIA DE CORES (PINTE OS CÍRCULOS):</span>
+            <div class="sequencia-row">
+                <div class="item-seq" style="border: 5px solid red; border-radius: 50%;"></div>
+                <div class="item-seq" style="border: 5px solid blue; border-radius: 50%;"></div>
+                <div class="item-seq" style="border: 5px solid red; border-radius: 50%;"></div>
+                <div class="item-seq" style="border: 5px solid blue; border-radius: 50%;"></div>
+                <div class="item-seq" style="border-radius: 50%;">?</div>
+                <div class="item-seq" style="border-radius: 50%;">?</div>
+            </div>
+
+            <span class="titulo-atv">4. DESAFIO NUMÉRICO (PULANDO DE 2 EM 2):</span>
+            <div class="sequencia-row" style="font-weight: bold; font-size: 24px;">
+                <span>2</span> &nbsp;—&nbsp; <span>4</span> &nbsp;—&nbsp; <span>6</span> &nbsp;—&nbsp; 
+                <span style="border-bottom: 2px solid #000; width: 40px; display: inline-block; text-align: center;"></span> &nbsp;—&nbsp; 
+                <span style="border-bottom: 2px solid #000; width: 40px; display: inline-block; text-align: center;"></span>
+            </div>
+        </div>
+
+        <div class="footer">atividadesescolares.net - Lógica e Sequenciamento</div>
+    </div>
+
+</body>
+</html>
