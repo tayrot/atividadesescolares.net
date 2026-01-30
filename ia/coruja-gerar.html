@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Coruja IA – Gerar Atividade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .resumo {
+      background: #eef3f7;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .resumo strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .acoes {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    button {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: #fff;
+      border: none;
+      padding: 14px 22px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .atividade {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .imprimir {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    @media print {
+      button, .imprimir {
+        display: none;
+      }
+      body {
+        background: #fff;
+      }
+      .container {
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🦉 Coruja IA</h1>
+
+  <div class="resumo">
+    <strong>Série:</strong> <span id="resumoSerie"></span>
+    <strong>Matéria:</strong> <span id="resumoMateria"></span>
+    <strong>Conteúdo:</strong> <span id="resumoConteudo"></span>
+  </div>
+
+  <div class="acoes">
+    <button id="btnGerar" onclick="gerarAtividade()">Gerar atividade</button>
+  </div>
+
+  <div id="resultado" class="atividade"></div>
+
+  <div class="imprimir" id="areaImprimir" style="display:none;">
+    <button onclick="window.print()">🖨️ Imprimir / Salvar em PDF</button>
+  </div>
+</div>
+
+<script>
+const serie = sessionStorage.getItem("serie");
+const materia = sessionStorage.getItem("materia");
+const conteudo = {
+  id: sessionStorage.getItem("conteudo"),
+  nome: sessionStorage.getItem("conteudo_nome")
+};
+
+if (!serie || !materia || !conteudo.id) {
+  alert("Fluxo incompleto. Volte e selecione novamente.");
+  window.location.href = "coruja-ia.html";
+}
+
+document.getElementById("resumoSerie").innerText = serie.replace("-", " ");
+document.getElementById("resumoMateria").innerText = materia;
+document.getElementById("resumoConteudo").innerText = conteudo.nome;
+
+/* 🔗 Ponte com Netlify Function */
+async function chamarOpenAI(prompt) {
+  const res = await fetch("/.netlify/functions/coruja", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt })
+  });
+
+  const data = await res.json();
+
+  if (!res.ok || data.erro) {
+    throw new Error(data.erro || "Erro ao chamar IA");
+  }
+
+  return data.resposta;
+}
+
+async function gerarAtividade() {
+  const btn = document.getElementById("btnGerar");
+  btn.disabled = true;
+  btn.innerText = "Gerando atividade...";
+
+  const prompt = `
+Você é um professor experiente do ensino fundamental.
+
+Crie uma atividade escolar em HTML para impressão, seguindo as regras:
+
+- Série: ${serie}
+- Matéria: ${materia}
+- Conteúdo: ${conteudo.nome}
+
+Regras obrigatórias:
+- Linguagem simples para crianças
+- Atividade adequada à série
+- Entre 5 e 10 exercícios
+- Incluir título, instruções e espaço para resposta
+- NÃO usar JavaScript
+- NÃO usar CSS externo
+- HTML limpo e organizado
+- Deve caber em 1 ou 2 páginas impressas
+- Não mencionar inteligência artificial
+
+Retorne APENAS o HTML da atividade.
+`;
+
+  try {
+    const resposta = await chamarOpenAI(prompt);
+    document.getElementById("resultado").innerHTML = resposta;
+    document.getElementById("areaImprimir").style.display = "block";
+  } catch (e) {
+    alert("Erro ao gerar atividade.");
+    console.error(e);
+  }
+
+  btn.disabled = false;
+  btn.innerText = "Gerar nova atividade";
+}
+</script>
+
+</body>
+</html>

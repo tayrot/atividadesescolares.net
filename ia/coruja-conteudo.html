@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Coruja IA – Escolher Conteúdo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .coruja {
+      font-size: 52px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+      color: #2c7be5;
+    }
+
+    p {
+      font-size: 15px;
+      margin-bottom: 25px;
+      color: #555;
+    }
+
+    .lista {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .item {
+      border: 2px solid #e3e7ed;
+      padding: 14px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .item:hover {
+      border-color: #2c7be5;
+      background: #f0f6ff;
+    }
+
+    .item strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .item span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .voltar {
+      margin-top: 25px;
+      font-size: 14px;
+    }
+
+    .voltar a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .voltar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="coruja">🦉</div>
+
+  <h1>Escolha o conteúdo</h1>
+  <p id="contexto"></p>
+
+  <div class="lista" id="listaConteudos"></div>
+
+  <div class="voltar">
+    <a href="coruja-materia.html">← Voltar e mudar a matéria</a>
+  </div>
+
+</div>
+
+<script>
+  const serie = sessionStorage.getItem('serie');
+  const materia = sessionStorage.getItem('materia');
+
+  if (!serie || !materia) {
+    window.location.href = "coruja-ia.html";
+  }
+
+  const conteudosPortugues1Ano = [
+    { id: "vogais", nome: "Vogais", desc: "Reconhecimento das vogais A, E, I, O, U" },
+    { id: "consoantes", nome: "Consoantes", desc: "Identificação das letras do alfabeto" },
+    { id: "maiusculas-minusculas", nome: "Letras maiúsculas e minúsculas", desc: "Diferença entre letras grandes e pequenas" },
+    { id: "ordem-alfabetica", nome: "Ordem alfabética", desc: "Organizar letras em ordem" },
+
+    { id: "silabas-simples", nome: "Sílabas simples", desc: "BA, BE, BI, BO, BU e similares" },
+    { id: "silabas-com-b", nome: "Sílabas com B", desc: "Palavras e sílabas iniciadas com B" },
+    { id: "silabas-com-c", nome: "Sílabas com C", desc: "Palavras e sílabas iniciadas com C" },
+    { id: "silabas-com-d", nome: "Sílabas com D", desc: "Palavras e sílabas iniciadas com D" },
+    { id: "silabas-com-f", nome: "Sílabas com F", desc: "Palavras e sílabas iniciadas com F" },
+    { id: "silabas-com-g", nome: "Sílabas com G", desc: "Palavras e sílabas iniciadas com G" },
+    { id: "silabas-com-l", nome: "Sílabas com L", desc: "Palavras e sílabas iniciadas com L" },
+    { id: "silabas-com-m", nome: "Sílabas com M", desc: "Palavras e sílabas iniciadas com M" },
+    { id: "silabas-com-n", nome: "Sílabas com N", desc: "Palavras e sílabas iniciadas com N" },
+    { id: "silabas-com-p", nome: "Sílabas com P", desc: "Palavras e sílabas iniciadas com P" },
+    { id: "silabas-com-r", nome: "Sílabas com R", desc: "Palavras e sílabas iniciadas com R" },
+    { id: "silabas-com-s", nome: "Sílabas com S", desc: "Palavras e sílabas iniciadas com S" },
+    { id: "silabas-com-t", nome: "Sílabas com T", desc: "Palavras e sílabas iniciadas com T" },
+    { id: "silabas-com-v", nome: "Sílabas com V", desc: "Palavras e sílabas iniciadas com V" },
+
+    { id: "treino-letras", nome: "Treino de escrita de letras", desc: "Prática da escrita correta das letras" },
+    { id: "treino-silabas", nome: "Treino de escrita de sílabas", desc: "Prática da escrita de sílabas simples" },
+    { id: "escrita-palavras", nome: "Escrita de palavras simples", desc: "Formar e escrever palavras simples" },
+    { id: "completar-palavras", nome: "Completar palavras", desc: "Completar palavras com letras faltantes" },
+    { id: "ditado-ilustrado", nome: "Ditado ilustrado", desc: "Escrever o nome das figuras" },
+
+    { id: "leitura-silabas", nome: "Leitura de sílabas", desc: "Leitura guiada de sílabas" },
+    { id: "leitura-palavras", nome: "Leitura de palavras", desc: "Leitura de palavras simples" },
+    { id: "palavra-imagem", nome: "Palavra e imagem", desc: "Relacionar palavras às figuras" },
+    { id: "compreensao-simples", nome: "Leitura e compreensão", desc: "Responder perguntas simples sobre o texto" },
+
+    { id: "juntar-silabas", nome: "Juntar sílabas", desc: "Formar palavras juntando sílabas" },
+    { id: "separar-silabas", nome: "Separar sílabas", desc: "Dividir palavras em sílabas" },
+    { id: "ordem-letras", nome: "Ordem das letras", desc: "Organizar letras para formar palavras" }
+  ];
+
+  const conteudosPortugues2Ano = [
+  { id: "leitura-frases", nome: "Leitura de frases", desc: "Leitura e interpretação de frases" },
+  { id: "leitura-textos", nome: "Leitura de pequenos textos", desc: "Compreensão de textos curtos" },
+  { id: "compreensao-texto", nome: "Compreensão de texto", desc: "Responder perguntas simples" },
+
+  { id: "escrita-frases", nome: "Escrita de frases", desc: "Produção de frases simples" },
+  { id: "escrita-textos", nome: "Escrita de pequenos textos", desc: "Produção orientada de textos" },
+  { id: "letra-maiuscula", nome: "Uso de letra maiúscula", desc: "Início de frases e nomes próprios" },
+  { id: "pontuacao", nome: "Pontuação", desc: "Ponto final e interrogação" },
+
+  { id: "silabas-complexas", nome: "Sílabas complexas", desc: "CA, CE, CI, CO, CU e variações" },
+  { id: "encontros-consonantais", nome: "Encontros consonantais", desc: "BR, CL, TR, PL, entre outros" },
+  { id: "digrafos", nome: "Dígrafos", desc: "CH, NH, LH" },
+  { id: "separacao-silabica", nome: "Separação silábica", desc: "Separar palavras em sílabas" },
+
+  { id: "familia-palavras", nome: "Família de palavras", desc: "Palavras da mesma família" },
+  { id: "sinonimos", nome: "Sinônimos", desc: "Palavras com significado parecido" },
+  { id: "antonimos", nome: "Antônimos", desc: "Palavras com significado oposto" },
+
+  { id: "substantivos", nome: "Substantivos", desc: "Comuns e próprios" },
+  { id: "artigos", nome: "Artigos", desc: "O, A, Os, As" },
+  { id: "adjetivos", nome: "Adjetivos", desc: "Características dos substantivos" }
+];
+
+
+
+const conteudosMatematica1Ano = [
+  { id: "numeros-0-10", nome: "Números de 0 a 10", desc: "Reconhecimento dos números de 0 a 10" },
+  { id: "numeros-0-20", nome: "Números de 0 a 20", desc: "Reconhecimento dos números de 0 a 20" },
+  { id: "contagem", nome: "Contagem de objetos", desc: "Contar objetos do dia a dia" },
+  { id: "ordem-numerica", nome: "Ordem dos números", desc: "Ordem crescente e decrescente" },
+  { id: "antecessor-sucessor", nome: "Antecessor e sucessor", desc: "Número que vem antes e depois" },
+
+  { id: "soma-simples", nome: "Soma simples", desc: "Adição até 10" },
+  { id: "soma-visual", nome: "Soma com figuras", desc: "Soma usando apoio visual" },
+  { id: "subtracao-simples", nome: "Subtração simples", desc: "Subtração até 10" },
+  { id: "subtracao-visual", nome: "Subtração com figuras", desc: "Subtração usando apoio visual" },
+
+  { id: "sequencias", nome: "Completar sequências", desc: "Completar sequências numéricas" },
+  { id: "comparar-quantidades", nome: "Comparar quantidades", desc: "Maior, menor ou igual" },
+  { id: "problemas-soma", nome: "Probleminhas de soma", desc: "Problemas simples de adição" },
+  { id: "problemas-subtracao", nome: "Probleminhas de subtração", desc: "Problemas simples de subtração" },
+
+  { id: "formas-geometricas", nome: "Formas geométricas", desc: "Círculo, quadrado, triângulo e retângulo" },
+  { id: "formas-cotidiano", nome: "Formas no cotidiano", desc: "Identificar formas em objetos" },
+
+  { id: "grande-pequeno", nome: "Grande e pequeno", desc: "Comparação de tamanhos" },
+  { id: "alto-baixo", nome: "Alto e baixo", desc: "Comparação de altura" },
+  { id: "pesado-leve", nome: "Pesado e leve", desc: "Comparação de peso" },
+
+  { id: "dinheiro-moedas", nome: "Noções de dinheiro", desc: "Reconhecimento de moedas" },
+  { id: "situacoes-dia-a-dia", nome: "Situações do dia a dia", desc: "Matemática no cotidiano" }
+];
+
+
+const conteudosMatematica2Ano = [
+  { id: "numeros-ate-100", nome: "Números até 100", desc: "Leitura e escrita de números" },
+  { id: "ordem-numerica", nome: "Ordem numérica", desc: "Ordem crescente e decrescente" },
+  { id: "antecessor-sucessor", nome: "Antecessor e sucessor", desc: "Número anterior e posterior" },
+
+  { id: "adicao-reagrupamento", nome: "Adição", desc: "Soma com e sem reagrupamento" },
+  { id: "subtracao-reagrupamento", nome: "Subtração", desc: "Subtração com e sem reagrupamento" },
+
+  { id: "problemas-soma", nome: "Problemas de soma", desc: "Situações-problema simples" },
+  { id: "problemas-subtracao", nome: "Problemas de subtração", desc: "Problemas do cotidiano" },
+
+  { id: "formas-planas", nome: "Formas geométricas planas", desc: "Quadrado, triângulo, círculo" },
+  { id: "formas-espaciais", nome: "Formas geométricas espaciais", desc: "Cubo, esfera, cilindro" },
+  { id: "formas-cotidiano", nome: "Formas no cotidiano", desc: "Objetos do dia a dia" },
+
+  { id: "medidas-comprimento", nome: "Medidas de comprimento", desc: "Noções de medida" },
+  { id: "medidas-tempo", nome: "Medidas de tempo", desc: "Dias, semanas e meses" },
+  { id: "massa-capacidade", nome: "Massa e capacidade", desc: "Noções básicas" },
+
+  { id: "dinheiro", nome: "Sistema monetário", desc: "Moedas e cédulas" },
+  { id: "problemas-dinheiro", nome: "Problemas com dinheiro", desc: "Situações simples" }
+];
+
+
+
+
+  const lista = document.getElementById("listaConteudos");
+const contexto = document.getElementById("contexto");
+
+if (serie === "1-ano" && materia === "portugues") {
+  contexto.innerText = "Português – 1º ano. Escolha o conteúdo da atividade:";
+  renderizar(conteudosPortugues1Ano);
+}
+
+if (serie === "1-ano" && materia === "matematica") {
+  contexto.innerText = "Matemática – 1º ano. Escolha o conteúdo da atividade:";
+  renderizar(conteudosMatematica1Ano);
+}
+
+if (serie === "2-ano" && materia === "portugues") {
+  contexto.innerText = "Português – 1º ano. Escolha o conteúdo da atividade:";
+  renderizar(conteudosPortugues2Ano);
+}
+
+if (serie === "2-ano" && materia === "matematica") {
+  contexto.innerText = "Matemática – 1º ano. Escolha o conteúdo da atividade:";
+  renderizar(conteudosMatematica2Ano);
+}
+
+function renderizar(listaConteudos) {
+  lista.innerHTML = "";
+  listaConteudos.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = `<strong>${item.nome}</strong><span>${item.desc}</span>`;
+    div.onclick = () => selecionarConteudo(item);
+    lista.appendChild(div);
+  });
+}
+
+  function selecionarConteudo(item) {
+    sessionStorage.setItem('conteudo', item.id);
+    sessionStorage.setItem('conteudo_nome', item.nome);
+
+
+    // Próximo passo:
+    window.location.href = "coruja-gerar.html";
+  }
+</script>
+
+</body>
+</html>

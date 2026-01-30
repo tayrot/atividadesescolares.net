@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Coruja IA – Escolher Matéria</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .coruja {
+      font-size: 56px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #2c7be5;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: #555;
+    }
+
+    .opcoes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .opcao {
+      border: 2px solid #e3e7ed;
+      padding: 25px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .opcao:hover {
+      border-color: #2c7be5;
+      background: #f0f6ff;
+    }
+
+    .opcao strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .opcao span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .voltar {
+      margin-top: 25px;
+      font-size: 14px;
+    }
+
+    .voltar a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .voltar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="coruja">🦉</div>
+
+    <h1>Qual a matéria?</h1>
+
+    <p>
+      Ótimo 😊  
+      Agora escolha a matéria da atividade que você deseja criar.
+    </p>
+
+    <div class="opcoes">
+      <div class="opcao" onclick="selecionarMateria('portugues')">
+        <strong>📘 Português</strong>
+        <span>Leitura, escrita, sílabas e interpretação</span>
+      </div>
+
+      <div class="opcao" onclick="selecionarMateria('matematica')">
+        <strong>📕 Matemática</strong>
+        <span>Números, soma, subtração e problemas simples</span>
+      </div>
+    </div>
+
+    <div class="voltar">
+      <a href="coruja-ia.html">← Voltar e mudar a série</a>
+    </div>
+
+  </div>
+
+<script>
+  const serie = sessionStorage.getItem('serie');
+
+  if (!serie) {
+    window.location.href = "coruja-ia.html";
+  }
+
+  function selecionarMateria(materia) {
+    sessionStorage.setItem('materia', materia);
+    window.location.href = "coruja-conteudo.html";
+  }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>AtividadesEscolares.net — Atividades em PDF para Imprimir</title>
+  <meta name="description" content="Baixe atividades escolares em PDF para o 1º e 2º ano do Ensino Fundamental. Materiais de Matemática, Português e Inglês prontos para imprimir." />
+  <meta name="keywords" content="atividades escolares, PDF para imprimir, 1 ano fundamental, 2 ano fundamental, alfabetização, matemática fundamental" />
+  <link rel="canonical" href="https://atividadesescolares.net/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #3498db; /* Azul Educacional */
+      --secondary: #27ae60; /* Verde Sucesso */
+      --text-main: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.8);
+      --overlay: rgba(44, 62, 80, 0.7); /* Overlay mais escuro para leitura */
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      min-height: 100vh;
+      /* Imagem de fundo voltada para educação */
+      background: linear-gradient(var(--overlay), var(--overlay)), 
+                  url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    header { text-align: center; padding: 80px 0 40px; }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      margin-bottom: 15px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .lead {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* Destaque IA / Gerador de Atividades */
+    .ai-hero {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 24px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-bottom: 60px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .ai-hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .ai-btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: #fff;
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    }
+
+    .ai-btn:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    /* Grid de Categorias */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 35px 25px;
+      border-radius: 18px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-8px);
+      border-color: var(--accent);
+    }
+
+    .card h3 { color: #fff; margin-bottom: 12px; font-size: 1.5rem; }
+    .card p { color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; }
+
+    /* SEO Article */
+    .seo-text {
+      background: rgba(0,0,0,0.4);
+      padding: 45px;
+      border-radius: 24px;
+      margin-bottom: 60px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+    }
+    .seo-text h2 { color: #fff; margin-bottom: 20px; }
+    .seo-text strong { color: var(--accent); }
+
+    /* Formulário de Contato Netlify */
+    .contact-section {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 50px 30px;
+      border-radius: 24px;
+      margin-bottom: 80px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-section h2 { 
+      margin-bottom: 25px; 
+      text-align: center; 
+      font-family: 'Playfair Display', serif; 
+      font-size: 2rem;
+    }
+
+    form { display: grid; gap: 15px; max-width: 600px; margin: 0 auto; }
+
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-family: inherit;
+      outline: none;
+    }
+
+    button[type="submit"] {
+      background: var(--accent);
+      color: #fff;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
+
+    button:hover { background: var(--secondary); }
+
+    footer {
+      text-align: center;
+      padding: 50px 0;
+      color: rgba(255, 255, 255, 0.6);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 60px 0 30px; }
+      h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <header>
+      <h1>AtividadesEscolares.net</h1>
+      <p class="lead">Atividades em PDF prontas para imprimir e aplicar</p>
+    </header>
+
+    <section class="ai-hero">
+      <h2>Gerador de Atividades com IA</h2>
+      <p>Precisa de um exercício específico? Nossa inteligência artificial cria atividades personalizadas de acordo com a BNCC para sua turma (1º e 2º Anos - ensino fundamental).</p>
+      <a href="./ia/coruja-ia.html" class="ai-btn">Criar Atividade Agora </a>
+    </section>
+
+    <main class="grid">
+      <a class="card" href="./portugues/index.html">
+        <h3>Português</h3>
+        <p>Alfabetização, leitura, interpretação de texto e gramática básica para 1º e 2º ano.</p>
+      </a>
+
+      <a class="card" href="./matematica/index.html">
+        <h3>Matemática</h3>
+        <p>Contas de adição, subtração, formas geométricas e raciocínio lógico em PDF.</p>
+      </a>
+
+      <a class="card" href="./categorias/ingles/index.html">
+        <h3>Inglês</h3>
+        <p>Vocabulário inicial, cores, números e saudações para o Ensino Fundamental.</p>
+      </a>
+
+      <a class="card" href="./1-ano/index.html">
+        <h3>1º Ano</h3>
+        <p>Materiais focados na transição e nos primeiros passos da alfabetização.</p>
+      </a>
+
+      <a class="card" href="./2-ano/index.html">
+        <h3>2º Ano</h3>
+        <p>Atividades de fixação e avanço nos conteúdos de escrita e cálculo.</p>
+      </a>
+
+      <a class="card" href="./categorias/extras/index.html">
+        <h3>Datas Comemorativas</h3>
+        <p>Desenhos para colorir e atividades temáticas para feriados e eventos escolares.</p>
+      </a>
+    </main>
+
+    <article class="seo-text">
+      <h2>Recursos Pedagógicos: Atividades para o 1º e 2º Ano em PDF</h2>
+      <p>
+        No <strong>AtividadesEscolares.net</strong>, facilitamos a rotina de professores e pais. Encontrar <strong>atividades de matemática para imprimir</strong> ou exercícios de <strong>português para alfabetização</strong> nunca foi tão simples. Nosso portal oferece uma curadoria de materiais para o <strong>1º e 2º ano do Ensino Fundamental</strong>, todos em formato PDF de alta qualidade. Além do acervo fixo, utilizamos <strong>IA Pedagógica</strong> para gerar conteúdos sob medida, garantindo que o aprendizado seja dinâmico e alinhado aos desafios de cada aluno. Explore nossas categorias de <strong>Inglês</strong>, <strong>Matemática</strong> e <strong>Leitura</strong> e transforme suas aulas.
+      </p>
+    </article>
+
+    <section class="contact-section">
+      <h2>Sugira um Tema</h2>
+      <form name="contato-atividades" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contato-atividades" />
+        
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="mensagem" rows="5" placeholder="Qual atividade você gostaria de ver aqui no portal?" required></textarea>
+        <button type="submit">Enviar Sugestão</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2026 AtividadesEscolares.net — Recursos Educativos Gratuitos.</p>
+      <p style="margin-top: 15px; display: flex; justify-content: center; gap: 20px;">
+        <a href="sobrenos.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.85rem;">Sobre Nós</a>
+        <a href="privacidade.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.85rem;">Privacidade</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
