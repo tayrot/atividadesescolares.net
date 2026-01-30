@@ -108,24 +108,50 @@
   </div>
 </div>
 
-<script>
+<!-- 🔹 Importa o mapa pedagógico -->
+<script type="module">
+import { pedagogia } from "./pedagogia.js";
+
 const serie = sessionStorage.getItem("serie");
 const materia = sessionStorage.getItem("materia");
-const conteudo = {
-  id: sessionStorage.getItem("conteudo"),
-  nome: sessionStorage.getItem("conteudo_nome")
-};
+const conteudoId = sessionStorage.getItem("conteudo");
+const conteudoNome = sessionStorage.getItem("conteudo_nome");
 
-if (!serie || !materia || !conteudo.id) {
+if (!serie || !materia || !conteudoId) {
   alert("Fluxo incompleto. Volte e selecione novamente.");
   window.location.href = "coruja-ia.html";
 }
 
 document.getElementById("resumoSerie").innerText = serie.replace("-", " ");
 document.getElementById("resumoMateria").innerText = materia;
-document.getElementById("resumoConteudo").innerText = conteudo.nome;
+document.getElementById("resumoConteudo").innerText = conteudoNome;
 
-/* 🔗 Ponte com Netlify Function */
+// 🔎 Configuração pedagógica do conteúdo
+const config = pedagogia[conteudoId];
+
+if (!config) {
+  alert("Conteúdo pedagógico não encontrado.");
+  throw new Error("Conteúdo não mapeado no pedagogia.js");
+}
+
+// 🎯 Definição de nível (por enquanto fixo)
+const nivel = "nivel1"; // futuramente pode virar botão
+
+// 🔀 Função para embaralhar
+function embaralhar(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+// 📚 Seleção segura de palavras
+let palavrasSelecionadas = [];
+
+if (config.dataset[nivel]) {
+  palavrasSelecionadas = embaralhar(
+    [...config.dataset[nivel]]
+  ).slice(0, 6);
+}
+
+// 🔗 Ponte com Netlify Function
 async function chamarOpenAI(prompt) {
   const res = await fetch("/.netlify/functions/coruja", {
     method: "POST",
@@ -142,55 +168,39 @@ async function chamarOpenAI(prompt) {
   return data.resposta;
 }
 
-async function gerarAtividade() {
+window.gerarAtividade = async function () {
   const btn = document.getElementById("btnGerar");
   btn.disabled = true;
   btn.innerText = "Gerando atividade...";
 
   const prompt = `
-Você é um professor experiente do ensino fundamental brasileiro.
-Você escreve EXCLUSIVAMENTE em Português do Brasil (pt-BR).
-Use vocabulário escolar brasileiro, simples e adequado à série informada.
+Você é um professor do 1º ano do Ensino Fundamental no Brasil.
 
-DADOS DA ATIVIDADE:
+Crie uma atividade escolar adequada à alfabetização inicial.
+
+DADOS:
 - Série: ${serie}
 - Matéria: ${materia}
-- Conteúdo: ${conteudo.nome}
+- Conteúdo: ${conteudoNome}
 
-REGRAS PEDAGÓGICAS (OBRIGATÓRIAS):
-- Use SOMENTE palavras reais da língua portuguesa
-- Use palavras comuns, conhecidas por crianças brasileiras
-- NÃO invente palavras
-- NÃO use palavras ambíguas
-- NÃO repita a mesma palavra
-- As dicas DEVEM corresponder corretamente à palavra
-- O conteúdo deve estar adequado à série informada
-- Se o conteúdo envolver sílabas ou letras, use exemplos simples e corretos
+Use SOMENTE estas palavras:
+${palavrasSelecionadas.join(", ")}
 
-FORMATO DA ATIVIDADE:
-- Crie um TÍTULO claro
-- Inclua INSTRUÇÕES simples
-- Gere entre 5 e 8 exercícios
-- Cada exercício deve ter espaço para resposta
-- Linguagem infantil, clara e objetiva
-- Exercícios variados, mas coerentes com o tema escolhido
+REGRAS OBRIGATÓRIAS:
+- Linguagem simples e infantil
+- Não inventar palavras
+- Não repetir palavras
+- Dicas corretas e claras
+- Entre 5 e 8 exercícios
+- Espaço para resposta
 
-FORMATO TÉCNICO:
+FORMATO:
 - Retorne APENAS HTML
-- NÃO use JavaScript
-- NÃO use CSS externo
-- HTML limpo, organizado e fácil de imprimir
-- Deve caber em no máximo 2 páginas impressas
-- NÃO mencionar inteligência artificial
-
-VERIFICAÇÃO FINAL (MUITO IMPORTANTE):
-Antes de finalizar, revise a atividade e confirme que:
-- Todas as palavras existem
-- Todas as dicas fazem sentido
-- Não há erros conceituais ou semânticos
-
-Retorne SOMENTE o HTML da atividade.
-
+- Sem JavaScript
+- Sem CSS externo
+- Pronto para impressão
+- Máximo de 2 páginas
+- Não mencionar IA
 `;
 
   try {
@@ -204,7 +214,7 @@ Retorne SOMENTE o HTML da atividade.
 
   btn.disabled = false;
   btn.innerText = "Gerar nova atividade";
-}
+};
 </script>
 
 </body>
