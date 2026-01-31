@@ -1,121 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Coruja IA – Criar Atividade Escolar</title>
-  <meta name="description" content="Crie atividades escolares personalizadas para o 1º e 2º ano com o apoio da Coruja IA.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7fb;
-      margin: 0;
-      color: #333;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 60px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      text-align: center;
-    }
-
-    .coruja {
-      font-size: 64px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      margin-bottom: 10px;
-      color: #2c7be5;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
-      color: #555;
-    }
-
-    .opcoes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .opcao {
-      border: 2px solid #e3e7ed;
-      padding: 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .opcao:hover {
-      border-color: #2c7be5;
-      background: #f0f6ff;
-    }
-
-    .opcao strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .opcao span {
-      font-size: 14px;
-      color: #666;
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 13px;
-      color: #888;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coruja IA - Atividades Escolares (Em Breve)</title>
+    <meta name="description" content="A Coruja IA do Atividades Escolares está chegando para transformar sua rotina de estudos. Inteligência Artificial aplicada à educação.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 { font-size: 2.5rem; color: #2c3e50; }
+        p { font-size: 1.2rem; color: #7f8c8d; }
+        .badge {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
-
-  <div class="container">
-
-    <div class="coruja">🦉</div>
-
-    <h1>Coruja IA</h1>
-    <p>
-      Vou te ajudar a criar uma atividade escolar simples e adequada
-      para seu filho. Vamos começar?
-    </p>
-
-    <h2>Qual a série?</h2>
-
-    <div class="opcoes">
-      <div class="opcao" onclick="selecionarSerie('1-ano')">
-        <strong>1º Ano</strong>
-        <span>Alfabetização inicial</span>
-      </div>
-
-      <div class="opcao" onclick="selecionarSerie('2-ano')">
-        <strong>2º Ano</strong>
-        <span>Leitura, escrita e matemática básica</span>
-      </div>
+    <div class="container">
+        <span class="badge">Novidade</span>
+        <h1>Coruja IA</h1>
+        <p>Estamos preparando uma inteligência artificial incrível para ajudar nos seus estudos.</p>
+        <p><strong>Em breve...</strong></p>
+        <br>
+        <a href="/" style="text-decoration: none; color: #3498db;">← Voltar para Atividades Escolares</a>
     </div>
-
-    <footer>
-      Você poderá escolher a matéria e o conteúdo no próximo passo.
-    </footer>
-
-  </div>
-
- <script>
-  function selecionarSerie(serie) {
-    sessionStorage.setItem('serie', serie);
-    window.location.href = "coruja-materia.html";
-  }
-</script>
-
-
 </body>
 </html>
