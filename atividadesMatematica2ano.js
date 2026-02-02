@@ -1,0 +1,21 @@
+const atividadesMatematica2ano = [
+    { nome: "Antecessor e Sucessor", slug: "antecessor-e-sucessor-2ano" },
+    { nome: "Comparação Comprimento", slug: "comparacao-comprimento-2ano" },
+    { nome: "Comparar e Ordenar", slug: "comparar-e-ordenar-2ano" },
+    { nome: "Comparar Quantidades", slug: "comparar-quantidades-2ano" },
+    { nome: "Divisão (Repartição Igual)", slug: "divisao-reparticao-igual-2ano" },
+    { nome: "Estratégias de Contagem", slug: "estrategias-de-contagem" },
+    { nome: "Figuras Planas", slug: "figuras-planas-2ano" },
+    { nome: "Gráficos e Tabelas", slug: "graficos-e-tabelas-2ano" },
+    { nome: "Horas e Meia Hora", slug: "horas-e-meia-hora" },
+    { nome: "Introdução ao Dinheiro", slug: "introducao-ao-dinheiro-2ano" },
+    { nome: "Introdução às Frações", slug: "introducao-as-fracoes-2ano" },
+    { nome: "Multiplicação e Divisão", slug: "introducao-multiplicacao-divisao" },
+    { nome: "Medidas Básicas", slug: "medidas-basicas-2ano" },
+    { nome: "Números 101 a 200", slug: "numeros-101-a-200" },
+    { nome: "Números até 100", slug: "numeros-ate-100" },
+    { nome: "Operações e Problemas", slug: "operacoes-problemas-2ano" },
+    { nome: "Posição e Espaço", slug: "posicao-e-espaco-2ano" },
+    { nome: "Problemas Simples", slug: "problemas-simples-2ano" },
+    { nome: "Sequências Múltiplas", slug: "sequencias-multiplas" }
+];
