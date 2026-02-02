@@ -4,170 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matemática - Portal de Atividades</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <style>
-        :root { 
-            --orange: #f59e0b; 
-            --orange-dark: #c2410c;
-            --gray: #64748b; 
-            --text-main: #1e293b;
-            --overlay: rgba(241, 245, 249, 0.90); 
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --secondary: #27ae60;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.8);
+            --overlay: rgba(44, 62, 80, 0.75);
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-main);
             min-height: 100vh;
             background: linear-gradient(var(--overlay), var(--overlay)), 
-                        url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+                        url('https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             line-height: 1.6;
-            margin: 0;
             padding: 20px;
         }
 
-        .container { 
-            max-width: 1200px; 
-            margin: auto; 
-            background: rgba(255, 255, 255, 0.95); 
-            border-radius: 12px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
-            overflow: hidden; 
-            backdrop-filter: blur(8px);
-        }
-        
-        .hero { background: var(--orange); color: white; padding: 35px 20px; text-align: center; }
-        .hero h1 { margin: 0; font-size: 2.2rem; }
-        .btn-home { display: inline-block; margin-top: 12px; color: white; text-decoration: none; border: 1px solid rgba(255,255,255,0.5); padding: 6px 18px; border-radius: 20px; font-size: 0.85rem; transition: 0.3s; }
-        .btn-home:hover { background: white; color: var(--orange); }
+        .container { max-width: 1100px; margin: 0 auto; }
 
-        .content { padding: 30px; }
-        
-        .year-header { 
-            background: #fff7ed; 
-            padding: 15px 20px; 
-            border-radius: 8px; 
-            margin: 40px 0 20px; 
-            color: var(--orange-dark);
-            font-size: 1.5rem;
-            font-weight: bold;
-            border-left: 6px solid var(--orange);
+        header { text-align: center; padding: 60px 0 40px; }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            margin-bottom: 10px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .btn-portal {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+            margin-top: 15px;
+        }
+
+        .btn-portal:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin: 50px 0 25px;
+            border-left: 6px solid var(--accent);
+            padding-left: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-            gap: 12px; 
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
         }
-        
-        .card { 
-            border: 1px solid #e2e8f0; 
-            background: white; 
-            border-radius: 10px; 
-            padding: 12px 15px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            transition: 0.2s; 
-        }
-        .card:hover { border-color: var(--orange); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .card-name { font-weight: 600; font-size: 0.88rem; color: #334155; }
 
-        .btns { display: flex; gap: 5px; }
-        .btn { 
-            text-decoration: none; 
-            padding: 7px 10px; 
-            border-radius: 6px; 
-            font-size: 0.7rem; 
-            font-weight: bold; 
-            transition: 0.2s; 
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .btns { display: flex; gap: 10px; }
+
+        .btn {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
+            transition: 0.3s;
         }
-        
-        .btn-view { color: var(--orange); border: 1px solid var(--orange); }
-        .btn-view:hover { background: var(--orange); color: white; }
-        
-        .btn-pdf { background: var(--orange); color: white; border: none; }
+
+        .btn-view {
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            background: transparent;
+        }
+
+        .btn-view:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .btn-pdf {
+            background: var(--secondary);
+            color: #fff;
+        }
+
         .btn-pdf:hover { filter: brightness(1.1); }
 
-        .footer { text-align: center; padding: 40px; color: var(--gray); font-size: 0.85rem; }
+        footer {
+            text-align: center;
+            padding: 80px 0 40px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
-    <div class="hero">
+    <header>
         <h1>🔢 Matemática</h1>
-        <a href="../index.html" class="btn-home">← Voltar ao Portal Principal</a>
-    </div>
+        <p style="color: var(--text-muted)">Desafios lógicos, cálculos e raciocínio matemático.</p>
+        <a href="../index.html" class="btn-portal">← Voltar ao Portal Principal</a>
+    </header>
 
-    <div class="content">
-        
-        <div class="year-header"><span>📐</span> Conteúdo do 1º Ano</div>
-        <div class="grid">
-            <div class="card"><span class="card-name">Adição Simples</span><div class="btns"><a href="../1-ano/matematica/adicao-simples.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/adicao-simples.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Subtração</span><div class="btns"><a href="../1-ano/matematica/subtracao.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/subtracao.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Unidade e Dezena</span><div class="btns"><a href="../1-ano/matematica/unidade-e-dezena.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/unidade-e-dezena.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Sequência Numérica</span><div class="btns"><a href="../1-ano/matematica/sequencia-numerica.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/sequencia-numerica.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Sequências e Padrões</span><div class="btns"><a href="../1-ano/matematica/sequencias-e-padroes.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/sequencias-e-padroes.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Comparação de Números</span><div class="btns"><a href="../1-ano/matematica/comparacao-de-numeros.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/comparacao-de-numeros.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Contagem e Grupos</span><div class="btns"><a href="../1-ano/matematica/contagem-e-grupos.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/contagem-e-grupos.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Decomposição Simples</span><div class="btns"><a href="../1-ano/matematica/decomposicao-simples.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/decomposicao-simples.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Formas Geométricas Básicas</span><div class="btns"><a href="../1-ano/matematica/formas-geometricas-basicas.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/formas-geometricas-basicas.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Formas</span><div class="btns"><a href="../1-ano/matematica/formas.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/formas.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Gráfico e Contagem</span><div class="btns"><a href="../1-ano/matematica/grafico-e-contagem.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/grafico-e-contagem.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Gráficos Simples</span><div class="btns"><a href="../1-ano/matematica/graficos-simples.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/graficos-simples.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Jogos e Desafios Lógicos</span><div class="btns"><a href="../1-ano/matematica/jogos-e-desafios-logicos.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/jogos-e-desafios-logicos.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Massa e Capacidade</span><div class="btns"><a href="../1-ano/matematica/massa-e-capacidade.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/massa-e-capacidade.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Matemática 1 a 10</span><div class="btns"><a href="../1-ano/matematica/matematica-1-a-10.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/matematica-1-a-10.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Medidas e Comparação</span><div class="btns"><a href="../1-ano/matematica/medidas-e-comparacao.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/medidas-e-comparacao.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Noções de Espaço</span><div class="btns"><a href="../1-ano/matematica/nocoes-de-espaco.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/nocoes-de-espaco.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Noções de Quantidade</span><div class="btns"><a href="../1-ano/matematica/nocoes-de-quantidade.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/nocoes-de-quantidade.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Noções de Tempo</span><div class="btns"><a href="../1-ano/matematica/nocoes-de-tempo.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/nocoes-de-tempo.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Nosso Dinheiro</span><div class="btns"><a href="../1-ano/matematica/nosso-dinheiro.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/nosso-dinheiro.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Números Simples 1 a 5</span><div class="btns"><a href="../1-ano/matematica/numeros-simples-1-a-5.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/numeros-simples-1-a-5.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Números Simples 6 a 9</span><div class="btns"><a href="../1-ano/matematica/numeros-simples-6-a-9.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/numeros-simples-6-a-9.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Ordem Crescente e Decrescente</span><div class="btns"><a href="../1-ano/matematica/ordem-crescente-e-decrescente.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/ordem-crescente-e-decrescente.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Raciocínio Lógico Problemas</span><div class="btns"><a href="../1-ano/matematica/raciocinio-logico-problemas.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/raciocinio-logico-problemas.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Reconhecimento Par Ímpar</span><div class="btns"><a href="../1-ano/matematica/reconhecimento-par-impar.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/reconhecimento-par-impar.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Simetria Simples</span><div class="btns"><a href="../1-ano/matematica/simetria-simples.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/simetria-simples.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Sucessor Antecessor</span><div class="btns"><a href="../1-ano/matematica/sucessor-antecessor.html" class="btn btn-view">Ver</a><a href="../1-ano/matematica/pdf/sucessor-antecessor.pdf" class="btn btn-pdf" download>PDF</a></div></div>
+    <main>
+        <div class="year-header-block">
+            <h2 class="section-title">📐 1º Ano</h2>
+            <div id="grid-mat-1" class="grid"></div>
         </div>
 
-        <div class="year-header"><span>📊</span> Conteúdo do 2º Ano</div>
-        <div class="grid">
-            <div class="card"><span class="card-name">Antecessor e Sucessor</span><div class="btns"><a href="../2-ano/matematica/antecessor-e-sucessor-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/antecessor-e-sucessor-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Comparação Comprimento</span><div class="btns"><a href="../2-ano/matematica/comparacao-comprimento-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/comparacao-comprimento-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Comparar e Ordenar</span><div class="btns"><a href="../2-ano/matematica/comparar-e-ordenar-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/comparar-e-ordenar-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Comparar Quantidades</span><div class="btns"><a href="../2-ano/matematica/comparar-quantidades-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/comparar-quantidades-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Divisão (Repartição Igual)</span><div class="btns"><a href="../2-ano/matematica/divisao-reparticao-igual-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/divisao-reparticao-igual-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Estratégias de Contagem</span><div class="btns"><a href="../2-ano/matematica/estrategias-de-contagem.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/estrategias-de-contagem.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Figuras Planas</span><div class="btns"><a href="../2-ano/matematica/figuras-planas-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/figuras-planas-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Gráficos e Tabelas</span><div class="btns"><a href="../2-ano/matematica/graficos-e-tabelas-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/graficos-e-tabelas-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Horas e Meia Hora</span><div class="btns"><a href="../2-ano/matematica/horas-e-meia-hora.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/horas-e-meia-hora.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Introdução ao Dinheiro</span><div class="btns"><a href="../2-ano/matematica/introducao-ao-dinheiro-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/introducao-ao-dinheiro-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Introdução às Frações</span><div class="btns"><a href="../2-ano/matematica/introducao-as-fracoes-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/introducao-as-fracoes-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Multiplicação e Divisão</span><div class="btns"><a href="../2-ano/matematica/introducao-multiplicacao-divisao.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/introducao-multiplicacao-divisao.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Medidas Básicas</span><div class="btns"><a href="../2-ano/matematica/medidas-basicas-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/medidas-basicas-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Números 101 a 200</span><div class="btns"><a href="../2-ano/matematica/numeros-101-a-200.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/numeros-101-a-200.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Números até 100</span><div class="btns"><a href="../2-ano/matematica/numeros-ate-100.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/numeros-ate-100.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Operações e Problemas</span><div class="btns"><a href="../2-ano/matematica/operacoes-problemas-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/operacoes-problemas-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Posição e Espaço</span><div class="btns"><a href="../2-ano/matematica/posicao-e-espaco-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/posicao-e-espaco-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Problemas Simples</span><div class="btns"><a href="../2-ano/matematica/problemas-simples-2ano.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/problemas-simples-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Sequências Múltiplas</span><div class="btns"><a href="../2-ano/matematica/sequencias-multiplas.html" class="btn btn-view">Ver</a><a href="../2-ano/matematica/pdf/sequencias-multiplas.pdf" class="btn btn-pdf" download>PDF</a></div></div>
+        <div class="year-header-block">
+            <h2 class="section-title">📊 2º Ano</h2>
+            <div id="grid-mat-2" class="grid"></div>
         </div>
+    </main>
 
-    </div>
-
-    <div class="footer">
-        &copy; 2026 atividadesescolares.net - Recursos Educativos
-    </div>
+    <footer>
+        <p>© 2026 atividadesescolares.net — Recursos Gratuitos.</p>
+    </footer>
 </div>
+
+<script src="../1-ano/atividadesMatematica1ano.js"></script>
+<script src="../2-ano/atividadesMatematica2ano.js"></script>
+
+<script>
+    function renderizarGrid(lista, containerId, baseFolder) {
+        const container = document.getElementById(containerId);
+        if (!container || typeof lista === 'undefined') return;
+
+        // Constrói os links saindo da pasta /matematica/ para as pastas dos anos
+        container.innerHTML = lista.map(atv => `
+            <div class="card">
+                <span class="card-name">${atv.nome}</span>
+                <div class="btns">
+                    <a href="../${baseFolder}/matematica/${atv.slug}.html" class="btn btn-view">Ver Atividade</a>
+                    <a href="../${baseFolder}/matematica/pdf/${atv.slug}.pdf" class="btn btn-pdf" download>PDF</a>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        // Renderiza o 1º ano
+        renderizarGrid(atividadesMatematica1ano, 'grid-mat-1', '1-ano');
+        
+        // Renderiza o 2º ano
+        renderizarGrid(atividadesMatematica2ano, 'grid-mat-2', '2-ano');
+    });
+</script>
 
 </body>
 </html>
