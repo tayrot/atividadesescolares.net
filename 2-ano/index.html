@@ -3,164 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2º Ano - Portal de Atividades Educativas</title>
+    <title>Portal de Atividades - 2º Ano</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <style>
-        :root { 
-            --blue: #2563eb; 
-            --green: #10b981; 
-            --orange: #f59e0b; 
-            --gray: #64748b; 
-            --text-main: #1e293b;
-            --overlay: rgba(241, 245, 249, 0.85); /* Tom claro para leitura */
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --secondary: #27ae60;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.8);
+            --overlay: rgba(44, 62, 80, 0.7);
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-main);
             min-height: 100vh;
-            /* Imagem de fundo voltada para educação conforme solicitado */
             background: linear-gradient(var(--overlay), var(--overlay)), 
                         url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             line-height: 1.6;
-            margin: 0;
             padding: 20px;
         }
 
-        .container { 
-            max-width: 1100px; 
-            margin: auto; 
-            background: rgba(255, 255, 255, 0.95); 
-            border-radius: 12px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-            overflow: hidden; 
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        header { text-align: center; padding: 60px 0 40px; }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 10px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .btn-portal {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
             backdrop-filter: blur(5px);
+            margin-top: 15px;
         }
-        
-        .hero { background: var(--blue); color: white; padding: 40px 20px; text-align: center; }
-        .hero h1 { margin: 0; font-size: 2.2rem; }
-        .hero p { opacity: 0.9; margin-top: 10px; font-weight: 300; }
 
-        .content { padding: 30px; }
-        
-        .materia-title { 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            margin: 40px 0 20px; 
-            border-bottom: 2px solid #e2e8f0; 
-            padding-bottom: 8px; 
+        .btn-portal:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
         }
-        .title-pt { color: var(--blue); }
-        .title-mat { color: var(--orange); }
-        
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); 
-            gap: 15px; 
-        }
-        
-        .card { 
-            border: 1px solid #e2e8f0; 
-            background: white; 
-            border-radius: 10px; 
-            padding: 15px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            transition: 0.2s; 
-        }
-        .card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .card-name { font-weight: 600; font-size: 0.9rem; text-transform: capitalize; }
 
-        .btns { display: flex; gap: 8px; }
-        .btn { 
-            text-decoration: none; 
-            padding: 8px 14px; 
-            border-radius: 6px; 
-            font-size: 0.8rem; 
-            font-weight: bold; 
-            transition: 0.2s; 
-            text-align: center; 
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
         }
-        
-        .btn-view { color: var(--blue); border: 1px solid var(--blue); }
-        .btn-view:hover { background: var(--blue); color: white; }
-        
-        .btn-pdf { background: var(--green); color: white; border: none; }
-        .btn-pdf:hover { opacity: 0.9; transform: scale(1.05); }
 
-        .footer { text-align: center; padding: 40px; color: var(--gray); font-size: 0.85rem; border-top: 1px solid #eee; margin-top: 40px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .btns { display: flex; gap: 10px; }
+
+        .btn {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        /* Botão Ver Atividade: Branco com hover Azul */
+        .btn-view {
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            background: transparent;
+        }
+
+        .btn-view:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        /* Botão PDF: Verde para ambas as matérias */
+        .btn-pdf {
+            background: var(--secondary);
+            color: #fff;
+        }
+
+        .btn-pdf:hover {
+            filter: brightness(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
-    <div class="hero">
-        <h1>atividadesescolares.net</h1>
-        <p>Portal de Atividades Pedagógicas - 2º Ano</p>
-    </div>
+    <header>
+        <h1>Atividades 2º Ano</h1>
+        <p style="color: var(--text-muted)">Desenvolvimento de fluência leitora e raciocínio lógico.</p>
+        <a href="../index.html" class="btn-portal">← Voltar ao Portal Principal</a>
+    </header>
 
-    <div class="content">
-        
-        <div class="materia-title title-pt"><h2>📚 Língua Portuguesa</h2></div>
-        <div class="grid">
-            <div class="card"><span class="card-name">Ações no Texto</span><div class="btns"><a href="portugues/acoes-texto-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/acoes-texto-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Adjetivos</span><div class="btns"><a href="portugues/adjetivos-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/adjetivos-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Artigos</span><div class="btns"><a href="portugues/artigos-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/artigos-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Consciência Fonológica</span><div class="btns"><a href="portugues/consciencia-fonologica-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/consciencia-fonologica-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Escrita e Coerência</span><div class="btns"><a href="portugues/escrita-e-coerencia-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/escrita-e-coerencia-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Escuta de Instruções</span><div class="btns"><a href="portugues/escuta-instrucoes-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/escuta-instrucoes-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Espaço entre Palavras</span><div class="btns"><a href="portugues/espaco-entre-palavras-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/espaco-entre-palavras-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Fonemas Parecidos</span><div class="btns"><a href="portugues/fonemas-parecidos-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/fonemas-parecidos-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Grafia Correta</span><div class="btns"><a href="portugues/grafia-correta-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/grafia-correta-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Leitura e Fluência</span><div class="btns"><a href="portugues/leitura-fluencia-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/leitura-fluencia-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Lugar e Tempo no Texto</span><div class="btns"><a href="portugues/lugar-tempo-texto-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/lugar-tempo-texto-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Ortografia C e S</span><div class="btns"><a href="portugues/ortografia-c-s-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/ortografia-c-s-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Ortografia R e RR</span><div class="btns"><a href="portugues/ortografia-r-rr-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/ortografia-r-rr-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Ortografia S e SS</span><div class="btns"><a href="portugues/ortografia-s-ss-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/ortografia-s-ss-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Personagens do Texto</span><div class="btns"><a href="portugues/personagens-texto-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/personagens-texto-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Pontuação e Maiúsculas</span><div class="btns"><a href="portugues/pontuacao-e-maiusculas-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/pontuacao-e-maiusculas-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Recontar História</span><div class="btns"><a href="portugues/recontar-historia-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/recontar-historia-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Responder ao Ouvir</span><div class="btns"><a href="portugues/responder-ouvir-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/responder-ouvir-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Rimas e Sons</span><div class="btns"><a href="portugues/rimas-e-sons-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/rimas-e-sons-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Sons e Variações</span><div class="btns"><a href="portugues/sons-e-variacoes-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/sons-e-variacoes-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Substantivos</span><div class="btns"><a href="portugues/substantivos-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/substantivos-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Texto a partir de Imagem</span><div class="btns"><a href="portugues/texto-imagem-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/texto-imagem-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Vogais e Consoantes</span><div class="btns"><a href="portugues/vogais-e-consoantes-2ano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/vogais-e-consoantes-2ano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-        </div>
+    <main>
+        <h2 class="section-title">Língua Portuguesa</h2>
+        <div id="grid-portugues" class="grid"></div>
 
-        <div class="materia-title title-mat"><h2>🔢 Matemática</h2></div>
-        <div class="grid">
-            <div class="card"><span class="card-name">Antecessor e Sucessor</span><div class="btns"><a href="matematica/antecessor-e-sucessor-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/antecessor-e-sucessor-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Comparação Comprimento</span><div class="btns"><a href="matematica/comparacao-comprimento-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/comparacao-comprimento-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Comparar e Ordenar</span><div class="btns"><a href="matematica/comparar-e-ordenar-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/comparar-e-ordenar-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Comparar Quantidades</span><div class="btns"><a href="matematica/comparar-quantidades-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/comparar-quantidades-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Divisão (Repartição Igual)</span><div class="btns"><a href="matematica/divisao-reparticao-igual-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/divisao-reparticao-igual-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Estratégias de Contagem</span><div class="btns"><a href="matematica/estrategias-de-contagem.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/estrategias-de-contagem.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Figuras Planas</span><div class="btns"><a href="matematica/figuras-planas-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/figuras-planas-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Gráficos e Tabelas</span><div class="btns"><a href="matematica/graficos-e-tabelas-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/graficos-e-tabelas-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Horas e Meia Hora</span><div class="btns"><a href="matematica/horas-e-meia-hora.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/horas-e-meia-hora.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Introdução ao Dinheiro</span><div class="btns"><a href="matematica/introducao-ao-dinheiro-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/introducao-ao-dinheiro-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Introdução às Frações</span><div class="btns"><a href="matematica/introducao-as-fracoes-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/introducao-as-fracoes-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Multiplicação e Divisão</span><div class="btns"><a href="matematica/introducao-multiplicacao-divisao.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/introducao-multiplicacao-divisao.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Medidas Básicas</span><div class="btns"><a href="matematica/medidas-basicas-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/medidas-basicas-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Números 101 a 200</span><div class="btns"><a href="matematica/numeros-101-a-200.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/numeros-101-a-200.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Números até 100</span><div class="btns"><a href="matematica/numeros-ate-100.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/numeros-ate-100.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Operações e Problemas</span><div class="btns"><a href="matematica/operacoes-problemas-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/operacoes-problemas-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Posição e Espaço</span><div class="btns"><a href="matematica/posicao-e-espaco-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/posicao-e-espaco-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Problemas Simples</span><div class="btns"><a href="matematica/problemas-simples-2ano.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/problemas-simples-2ano.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Sequências Múltiplas</span><div class="btns"><a href="matematica/sequencias-multiplas.html" class="btn btn-view" style="color:var(--orange); border-color:var(--orange);">Ver</a><a href="matematica/pdf/sequencias-multiplas.pdf" class="btn btn-pdf" style="background:var(--orange);" download>PDF</a></div></div>
-        </div>
-    </div>
+        <h2 class="section-title">Matemática</h2>
+        <div id="grid-matematica" class="grid"></div>
+    </main>
 
-    <div class="footer">
-        &copy; 2026 atividadesescolares.net - Recursos Educativos Gratuitos.
-    </div>
+    <footer>
+        <p>© 2026 atividadesescolares.net — Recursos Gratuitos.</p>
+    </footer>
 </div>
+
+<script src="atividadesPortugues2ano.js"></script>
+<script src="atividadesMatematica2ano.js"></script>
+
+<script>
+    function renderizarGrid(lista, containerId, pasta) {
+        const container = document.getElementById(containerId);
+        if (!container || typeof lista === 'undefined') return;
+
+        container.innerHTML = lista.map(atv => `
+            <div class="card">
+                <span class="card-name">${atv.nome}</span>
+                <div class="btns">
+                    <a href="${pasta}/${atv.slug}.html" class="btn btn-view">Ver Atividade</a>
+                    <a href="${pasta}/pdf/${atv.slug}.pdf" class="btn btn-pdf" download>PDF</a>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        renderizarGrid(atividadesPortugues2ano, 'grid-portugues', 'portugues');
+        renderizarGrid(atividadesMatematica2ano, 'grid-matematica', 'matematica');
+    });
+</script>
 
 </body>
 </html>
