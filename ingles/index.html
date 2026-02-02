@@ -1,61 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inglês 1º e 2º Ano - Atividades Escolares</title>
-    <meta name="description" content="Exercícios de inglês para o 1º e 2º ano do ensino fundamental. Conteúdo em desenvolvimento.">
+    <title>Inglês - Portal de Atividades</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --orange: #f39c12;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.8);
+            --overlay: rgba(44, 62, 80, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            min-height: 100vh;
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #333;
+            padding: 20px;
+        }
+
+        .container { max-width: 600px; width: 100%; }
+
+        .card-status {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 50px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 400px;
-        }
-        h1 { color: #2e86de; font-size: 1.8rem; margin-bottom: 10px; }
+
         .tag {
-            background-color: #ff9f43;
+            background-color: var(--orange);
             color: white;
-            padding: 4px 12px;
+            padding: 6px 16px;
             border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
             margin-bottom: 15px;
         }
-        p { line-height: 1.6; color: #576574; }
-        .btn {
+
+        .btn-back {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #2e86de;
-            color: white;
             text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 14px 35px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+            margin-top: 30px;
         }
-        .btn:hover { background-color: #227093; }
+
+        .btn-back:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <span class="tag">EM DESENVOLVIMENTO</span>
+
+<div class="container">
+    <div class="card-status">
+        <span class="tag">Em Desenvolvimento</span>
         <h1>Exercícios de Inglês</h1>
         <p>Estamos preparando os melhores materiais de <strong>Inglês para o 1º e 2º ano</strong>.</p>
         <p>Em breve, centenas de atividades prontas para imprimir!</p>
-        <a href="https://atividadesescolares.net" class="btn">Voltar para o site principal</a>
+        
+        <a href="../index.html" class="btn-back">← Voltar ao Portal Principal</a>
     </div>
+</div>
+
 </body>
 </html>
