@@ -3,123 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1º Ano - Portal de Atividades Educativas</title>
-    <a href="../index.html" class="btn-home">← Voltar ao Portal Principal</a>
+    <title>Portal de Atividades - 1º Ano</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <style>
-        :root { --blue: #2563eb; --green: #10b981; --orange: #f59e0b; --gray: #64748b; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f1f5f9; color: #1e293b; margin: 0; padding: 20px; }
-        .container { max-width: 1100px; margin: auto; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
-        
-        .hero { background: var(--blue); color: white; padding: 40px 20px; text-align: center; }
-        .hero h1 { margin: 0; font-size: 2rem; }
-        .hero p { opacity: 0.9; margin-top: 10px; font-weight: 300; }
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --secondary: #27ae60;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.8);
+            --overlay: rgba(44, 62, 80, 0.7);
+        }
 
-        .content { padding: 30px; }
-        .intro-box { background: #eff6ff; border-left: 5px solid var(--blue); padding: 15px; margin-bottom: 30px; border-radius: 0 8px 8px 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .materia-title { display: flex; align-items: center; gap: 10px; margin: 40px 0 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; color: var(--blue); }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
-        
-        .card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 15px; display: flex; justify-content: space-between; align-items: center; transition: 0.2s; }
-        .card:hover { border-color: var(--blue); background: #f8fafc; }
-        .card-name { font-weight: 600; font-size: 0.9rem; text-transform: capitalize; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            min-height: 100vh;
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            line-height: 1.6;
+            padding: 20px;
+        }
 
-        .btns { display: flex; gap: 6px; }
-        .btn { text-decoration: none; padding: 7px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; transition: 0.2s; text-align: center; }
-        .btn-view { color: var(--blue); border: 1px solid var(--blue); }
-        .btn-view:hover { background: var(--blue); color: white; }
-        .btn-pdf { background: var(--green); color: white; }
-        .btn-pdf:hover { opacity: 0.9; }
+        .container { max-width: 1100px; margin: 0 auto; }
 
-        .footer { text-align: center; padding: 40px; color: var(--gray); font-size: 0.85rem; border-top: 1px solid #eee; margin-top: 40px; }
+        header { text-align: center; padding: 60px 0 40px; }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 10px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .btn-portal {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-portal:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(3px);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .btns { display: flex; gap: 10px; }
+
+        .btn {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-view {
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            background: transparent;
+        }
+
+        .btn-view:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .btn-pdf {
+            background: var(--secondary);
+            color: #fff;
+        }
+
+        .btn-pdf:hover { filter: brightness(1.1); }
+
+        footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="hero">
-        <h1>Portal 1º Ano - atividadesescolares.net</h1>
-        <p>Organização e Praticidade para Pais e Professores</p>
-    </div>
+    <header>
+        <h1>Atividades 1º Ano</h1>
+        <p style="color: var(--text-muted); margin-bottom: 25px;">Selecione uma disciplina abaixo para acessar os exercícios</p>
+        <a href="../index.html" class="btn-portal">← Voltar ao Portal Principal</a>
+    </header>
 
-    <div class="content">
-        <div class="intro-box">
-            <strong>Dica Pedagógica:</strong> Todas as atividades estão formatadas para papel A4. Incentive a leitura em voz alta durante os exercícios de caligrafia e sílabas.
-        </div>
+    <main>
+        <h2 class="section-title">Português</h2>
+        <div id="grid-portugues" class="grid"></div>
 
-        <div class="materia-title"><h2>📚 Língua Portuguesa</h2></div>
-        <div class="grid">
-            <div class="card"><span class="card-name">Alfabeto: Vogais</span><div class="btns"><a href="portugues/vogais.html" class="btn btn-view">Ver</a><a href="portugues/pdf/vogais.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com B</span><div class="btns"><a href="portugues/silabas-com-b.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-b.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com D</span><div class="btns"><a href="portugues/silabas-com-d.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-d.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com F</span><div class="btns"><a href="portugues/silabas-com-f.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-f.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com G</span><div class="btns"><a href="portugues/silabas-com-g.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-g.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com L</span><div class="btns"><a href="portugues/silabas-com-l.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-l.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com M</span><div class="btns"><a href="portugues/silabas-com-m.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-m.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com N</span><div class="btns"><a href="portugues/silabas-com-n.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-n.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com P</span><div class="btns"><a href="portugues/silabas-com-p.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-p.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com R</span><div class="btns"><a href="portugues/silabas-com-r.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-r.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com T</span><div class="btns"><a href="portugues/silabas-com-t.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-t.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Silabas com V</span><div class="btns"><a href="portugues/silabas-com-v.html" class="btn btn-view">Ver</a><a href="portugues/pdf/silabas-com-v.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            
-            <div class="card"><span class="card-name">Sons e Sílabas</span><div class="btns"><a href="portugues/sons-e-silabas.html" class="btn btn-view">Ver</a><a href="portugues/pdf/sons-e-silabas.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Rimas e Aliteração</span><div class="btns"><a href="portugues/rimas-e-aliteracao.html" class="btn btn-view">Ver</a><a href="portugues/pdf/rimas-e-aliteracao.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            
-            <div class="card"><span class="card-name">Substantivos e Verbos</span><div class="btns"><a href="portugues/substantivos-e-verbos.html" class="btn btn-view">Ver</a><a href="portugues/pdf/substantivos-e-verbos.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Artigos Simples</span><div class="btns"><a href="portugues/artigos-simples.html" class="btn btn-view">Ver</a><a href="portugues/pdf/artigos-simples.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Pronomes Pessoais</span><div class="btns"><a href="portugues/pronomes-pessoais.html" class="btn btn-view">Ver</a><a href="portugues/pdf/pronomes-pessoais.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Ponto Final e Interrogação</span><div class="btns"><a href="portugues/ponto-final-e-interrogacao.html" class="btn btn-view">Ver</a><a href="portugues/pdf/ponto-final-e-interrogacao.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Letras Maiúsculas (Início/Próprios)</span><div class="btns"><a href="portugues/letras-maiusculas-uso.html" class="btn btn-view">Ver</a><a href="portugues/pdf/letras-maiusculas-uso.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Maiúsculas e Minúsculas</span><div class="btns"><a href="portugues/maiusculas-e-minusculas.html" class="btn btn-view">Ver</a><a href="portugues/pdf/maiusculas-e-minusculas.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            
-            <div class="card"><span class="card-name">Palavras do Cotidiano</span><div class="btns"><a href="portugues/palavras-do-cotidiano.html" class="btn btn-view">Ver</a><a href="portugues/pdf/palavras-do-cotidiano.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Palavras Familiares</span><div class="btns"><a href="portugues/palavras-familiares.html" class="btn btn-view">Ver</a><a href="portugues/pdf/palavras-familiares.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Instruções Simples</span><div class="btns"><a href="portugues/instrucoes-simples.html" class="btn btn-view">Ver</a><a href="portugues/pdf/instrucoes-simples.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Compreensão de Textos</span><div class="btns"><a href="portugues/compreensao-de-textos.html" class="btn btn-view">Ver</a><a href="portugues/pdf/compreensao-de-textos.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Construção de Frases</span><div class="btns"><a href="portugues/construcao-de-frases.html" class="btn btn-view">Ver</a><a href="portugues/pdf/construcao-de-frases.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Formação de Palavras</span><div class="btns"><a href="portugues/formacao-de-palavras.html" class="btn btn-view">Ver</a><a href="portugues/pdf/formacao-de-palavras.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Nomear e Ligar</span><div class="btns"><a href="portugues/nomear-e-ligar.html" class="btn btn-view">Ver</a><a href="portugues/pdf/nomear-e-ligar.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Autoditado Simples</span><div class="btns"><a href="portugues/autoditado-simples.html" class="btn btn-view">Ver</a><a href="portugues/pdf/autoditado-simples.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Treino de Escrita</span><div class="btns"><a href="portugues/treino-escrita.html" class="btn btn-view">Ver</a><a href="portugues/pdf/treino-escrita.pdf" class="btn btn-pdf" download>PDF</a></div></div>
-        </div>
+        <h2 class="section-title">Matemática</h2>
+        <div id="grid-matematica" class="grid"></div>
+    </main>
 
-        <div class="materia-title"><h2 style="color: var(--orange);">🔢 Matemática</h2></div>
-        <div class="grid">
-            <div class="card"><span class="card-name">Adição Simples</span><div class="btns"><a href="matematica/adicao-simples.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/adicao-simples.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Subtração</span><div class="btns"><a href="matematica/subtracao.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/subtracao.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Unidade e Dezena</span><div class="btns"><a href="matematica/unidade-e-dezena.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/unidade-e-dezena.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Sequência Numérica</span><div class="btns"><a href="matematica/sequencia-numerica.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/sequencia-numerica.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Sequências e Padrões</span><div class="btns"><a href="matematica/sequencias-e-padroes.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/sequencias-e-padroes.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Comparação de Números</span><div class="btns"><a href="matematica/comparacao-de-numeros.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/comparacao-de-numeros.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Contagem e Grupos</span><div class="btns"><a href="matematica/contagem-e-grupos.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/contagem-e-grupos.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Decomposição Simples</span><div class="btns"><a href="matematica/decomposicao-simples.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/decomposicao-simples.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Formas Geométricas Básicas</span><div class="btns"><a href="matematica/formas-geometricas-basicas.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/formas-geometricas-basicas.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Formas</span><div class="btns"><a href="matematica/formas.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/formas.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Gráfico e Contagem</span><div class="btns"><a href="matematica/grafico-e-contagem.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/grafico-e-contagem.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Gráficos Simples</span><div class="btns"><a href="matematica/graficos-simples.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/graficos-simples.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Jogos e Desafios Lógicos</span><div class="btns"><a href="matematica/jogos-e-desafios-logicos.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/jogos-e-desafios-logicos.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Massa e Capacidade</span><div class="btns"><a href="matematica/massa-e-capacidade.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/massa-e-capacidade.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Matemática 1 a 10</span><div class="btns"><a href="matematica/matematica-1-a-10.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/matematica-1-a-10.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Medidas e Comparação</span><div class="btns"><a href="matematica/medidas-e-comparacao.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/medidas-e-comparacao.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Noções de Espaço</span><div class="btns"><a href="matematica/nocoes-de-espaco.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/nocoes-de-espaco.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Noções de Quantidade</span><div class="btns"><a href="matematica/nocoes-de-quantidade.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/nocoes-de-quantidade.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Noções de Tempo</span><div class="btns"><a href="matematica/nocoes-de-tempo.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/nocoes-de-tempo.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Nosso Dinheiro</span><div class="btns"><a href="matematica/nosso-dinheiro.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/nosso-dinheiro.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Números Simples 1 a 5</span><div class="btns"><a href="matematica/numeros-simples-1-a-5.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/numeros-simples-1-a-5.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Números Simples 6 a 9</span><div class="btns"><a href="matematica/numeros-simples-6-a-9.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/numeros-simples-6-a-9.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Ordem Crescente e Decrescente</span><div class="btns"><a href="matematica/ordem-crescente-e-decrescente.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/ordem-crescente-e-decrescente.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Raciocínio Lógico Problemas</span><div class="btns"><a href="matematica/raciocinio-logico-problemas.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/raciocinio-logico-problemas.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Reconhecimento Par Ímpar</span><div class="btns"><a href="matematica/reconhecimento-par-impar.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/reconhecimento-par-impar.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Simetria Simples</span><div class="btns"><a href="matematica/simetria-simples.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/simetria-simples.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-            <div class="card"><span class="card-name">Sucessor Antecessor</span><div class="btns"><a href="matematica/sucessor-antecessor.html" class="btn btn-view" style="color: var(--orange); border-color: var(--orange);">Ver</a><a href="matematica/pdf/sucessor-antecessor.pdf" class="btn btn-pdf" style="background: var(--orange);" download>PDF</a></div></div>
-        </div>
-    </div>
-
-    <div class="footer">
-        &copy; 2026 atividadesescolares.net - Recursos Educativos Gratuitos.
-    </div>
+    <footer>
+        <p>© 2026 AtividadesEscolares.net — Recursos Gratuitos.</p>
+    </footer>
 </div>
+
+<script src="atividadesPortugues1ano.js"></script>
+<script src="atividadesMatematica1ano.js"></script>
+
+<script>
+    function renderizarGrid(lista, containerId, pasta) {
+        const container = document.getElementById(containerId);
+        if (!container || typeof lista === 'undefined') return;
+
+        container.innerHTML = lista.map(atv => `
+            <div class="card">
+                <span class="card-name">${atv.nome}</span>
+                <div class="btns">
+                    <a href="${pasta}/${atv.slug}.html" class="btn btn-view">Ver Atividade</a>
+                    <a href="${pasta}/pdf/${atv.slug}.pdf" class="btn btn-pdf" download>PDF</a>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        renderizarGrid(atividadesPortugues1ano, 'grid-portugues', 'portugues');
+        renderizarGrid(atividadesMatematica1ano, 'grid-matematica', 'matematica');
+    });
+</script>
 
 </body>
 </html>
