@@ -16,8 +16,8 @@ jobs:
         with:
           base-url-path: https://atividadesescolares.net/
           path-to-root: .
-          # Aqui ele ignora arquivos que não precisam estar no Google
-          exclude-files: '404.html' 
+          # Corrigido de exclude-files para exclude-paths
+          exclude-paths: 404.html
 
       - name: Commit and push
         run: |
