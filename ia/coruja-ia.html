@@ -1,45 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coruja IA - Atividades Escolares (Em Breve)</title>
-    <meta name="description" content="A Coruja IA do Atividades Escolares está chegando para transformar sua rotina de estudos. Inteligência Artificial aplicada à educação.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --blue-light: #00d2ff;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.8);
+            --overlay: rgba(15, 23, 42, 0.85); /* Tom mais escuro para IA */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            min-height: 100vh;
+            /* Fundo focado em tecnologia/IA */
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #333;
-            text-align: center;
-        }
-        .container {
             padding: 20px;
         }
-        h1 { font-size: 2.5rem; color: #2c3e50; }
-        p { font-size: 1.2rem; color: #7f8c8d; }
-        .badge {
-            background-color: #3498db;
+
+        .container { max-width: 600px; width: 100%; }
+
+        .card-status {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 50px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+
+        .tag {
+            background: linear-gradient(45deg, var(--accent), var(--blue-light));
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 14px 35px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(5px);
+            margin-top: 30px;
+        }
+
+        .btn-back:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(52, 152, 219, 0.4);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <span class="badge">Novidade</span>
+
+<div class="container">
+    <div class="card-status">
+        <span class="tag">Novidade</span>
         <h1>Coruja IA</h1>
-        <p>Estamos preparando uma inteligência artificial incrível para ajudar nos seus estudos.</p>
-        <p><strong>Em breve...</strong></p>
-        <br>
-        <a href="/" style="text-decoration: none; color: #3498db;">← Voltar para Atividades Escolares</a>
+        <p>Estamos preparando uma <strong>inteligência artificial incrível</strong> para transformar sua rotina de estudos.</p>
+        <p>Aguarde! Em breve você terá um assistente educacional inteligente na ponta dos dedos.</p>
+        
+        <a href="../index.html" class="btn-back">← Voltar ao Portal Principal</a>
     </div>
+</div>
+
 </body>
 </html>
