@@ -11,7 +11,7 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # Importante para evitar erros de histórico
+          fetch-depth: 0 
 
       - name: Generate XML Sitemap
         uses: cicirello/generate-sitemap@v1
@@ -24,8 +24,16 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
+          
+          # 1. Guarda o sitemap gerado temporariamente
           git add sitemap.xml
-          # O segredo está nestas linhas abaixo:
+          
+          # 2. Faz o commit local do novo sitemap
+          git commit -m "Automated sitemap update" || echo "Sem mudanças no sitemap"
+          
+          # 3. Puxa as alterações que você fez manualmente no site, 
+          # colocando o commit do sitemap no final da fila (rebase)
           git pull --rebase origin main
-          git commit -m "Automated sitemap update" || exit 0
-          git push
+          
+          # 4. Envia tudo para o GitHub
+          git push origin main
