@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; background-color: #f5f5f5; padding: 20px; }
+        .folha-a4 { background: white; width: 210mm; margin: auto; padding: 15mm; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 5px; }
+        
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; color: #2e7d32; }
+        
+        .titulo-atv { font-weight: bold; margin: 25px 0 15px; display: block; background: #e8f5e9; padding: 10px; border-left: 5px solid #4caf50; font-size: 18px; }
+
+        /* ESTILO DAS CÉDULAS DESENHADAS (Agora com números!) */
+        .cedula-fake {
+            width: 150px;
+            height: 70px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 28px;
+            position: relative;
+            border: 3px solid rgba(0,0,0,0.2);
+            box-shadow: 3px 3px 0px #ccc;
+        }
+        .c2 { background-color: #bbdefb; color: #0d47a1; } /* Azul */
+        .c5 { background-color: #f8bbd0; color: #880e4f; } /* Rosa/Roxo */
+        .c10 { background-color: #ffcdd2; color: #b71c1c; } /* Carmim */
+        .cedula-fake::before { content: 'R$'; position: absolute; top: 5px; left: 8px; font-size: 12px; }
+        .cedula-fake::after { content: 'REAIS'; position: absolute; bottom: 5px; right: 8px; font-size: 10px; opacity: 0.7; }
+
+        /* COLUNAS DE LIGAR */
+        .colunas-ligar { display: flex; justify-content: space-around; align-items: center; margin: 30px 0; }
+        .coluna { display: flex; flex-direction: column; gap: 30px; }
+        .valor-alvo { border: 2px solid #4caf50; padding: 15px 25px; border-radius: 30px; font-weight: bold; font-size: 20px; background: #f1f8e9; }
+
+        /* EXERCÍCIO 3: MOEDAS */
+        .grid-moedas { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .item-moeda { border: 2px dashed #ccc; padding: 15px; border-radius: 15px; display: flex; align-items: center; gap: 15px; }
+        .moeda { 
+            width: 40px; height: 40px; background: #ffd700; border: 2px solid #daa520; 
+            border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 14px; box-shadow: 2px 2px 0 #b8860b;
+        }
+
+        .mercadinho { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
+        .produto { border: 2px solid #eee; padding: 10px; text-align: center; border-radius: 10px; }
+        .preco { color: #d32f2f; font-weight: bold; display: block; margin-top: 5px; }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: #fff; color: #a21caf; text-decoration: none; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5d0fe; font-weight: bold; }
+        .footer-site { text-align: center; font-size: 11px; margin-top: 40px; color: #777; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="folha-a4">
+    <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO - MATEMÁTICA</strong></div>
+    </div>
+
+    <h1>Sistema Monetário: Conhecendo nosso Dinheiro</h1>
+
+    <span class="titulo-atv">1. LIGUE A CÉDULA AO SEU VALOR POR EXTENSO:</span>
+    
+    <div class="colunas-ligar">
+        <div class="coluna">
+            <div class="cedula-fake c10">10</div>
+            <div class="cedula-fake c2">2</div>
+            <div class="cedula-fake c5">5</div>
+        </div>
+        <div class="coluna">
+            <div class="valor-alvo">R$ 2,00</div>
+            <div class="valor-alvo">R$ 5,00</div>
+            <div class="valor-alvo">R$ 10,00</div>
+        </div>
+    </div>
+
+    <span class="titulo-atv">2. MERCADINHO - QUAL O PREÇO?</span>
+    <div class="mercadinho">
+        <div class="produto">🍎<br>MAÇÃ<br><span class="preco">R$ 3,00</span></div>
+        <div class="produto">🥛<br>LEITE<br><span class="preco">R$ 5,00</span></div>
+        <div class="produto">🍞<br>PÃO<br><span class="preco">R$ 2,00</span></div>
+    </div>
+    <p><strong>A)</strong> SE VOCÊ COMPRAR O <strong>LEITE</strong> E O <strong>PÃO</strong>, QUANTO VAI PAGAR? __________</p>
+
+    <span class="titulo-atv">3. COFRINHO: CONTE AS MOEDAS DE R$ 1,00 E ESCREVA O TOTAL:</span>
+    <div class="grid-moedas">
+        <div class="item-moeda">
+            <div><div class="moeda">1</div> <div class="moeda">1</div> <div class="moeda">1</div></div>
+            <strong>= R$ ________</strong>
+        </div>
+        <div class="item-moeda">
+            <div><div class="moeda">1</div> <div class="moeda">1</div> <div class="moeda">1</div> <div class="moeda">1</div> <div class="moeda">1</div></div>
+            <strong>= R$ ________</strong>
+        </div>
+        <div class="item-moeda">
+            <div><div class="moeda">1</div> <div class="moeda">1</div></div>
+            <strong>= R$ ________</strong>
+        </div>
+        <div class="item-moeda">
+            <div><div class="moeda">1</div> <div class="moeda">1</div> <div class="moeda">1</div> <div class="moeda">1</div></div>
+            <strong>= R$ ________</strong>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net - Material pedagógico para impressão</div>
+</div>
+
+</body>
+</html>
