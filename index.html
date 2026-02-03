@@ -179,16 +179,25 @@
       </p>
     </article>
 
-    <section class="contact-section">
-      <h2>O que você gostaria de ver aqui?</h2>
-      <form name="contato-atividades" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contato-atividades" />
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu e-mail" required>
-        <textarea name="mensagem" rows="5" placeholder="Qual tema de atividade está fazendo falta para você hoje?" required></textarea>
-        <button type="submit">Enviar Sugestão</button>
-      </form>
-    </section>
+   <section class="contact-section">
+  <h2>O que você gostaria de ver aqui?</h2>
+  <form id="contato-atividades" name="contato-atividades" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="contato-atividades" />
+    
+    <p>
+      <label>Seu nome: <input type="text" name="nome" placeholder="Seu nome" required></label>
+    </p>
+    <p>
+      <label>Seu e-mail: <input type="email" name="email" placeholder="Seu e-mail" required></label>
+    </p>
+    <p>
+      <label>Mensagem: <textarea name="mensagem" rows="5" placeholder="Qual tema de atividade está fazendo falta para você hoje?" required></textarea></label>
+    </p>
+    <p>
+      <button type="submit">Enviar Sugestão</button>
+    </p>
+  </form>
+</section>
 
     <footer>
       <p>© 2026 AtividadesEscolares.net — Recursos Gratuitos para Pais e Educadores.</p>
