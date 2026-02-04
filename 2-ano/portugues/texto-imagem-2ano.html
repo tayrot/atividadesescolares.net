@@ -10,29 +10,80 @@
         @page { size: A4; margin: 15mm; }
         body { font-family: 'Arial', sans-serif; background: #fdf2f8; padding: 20px; }
         .folha-a4 { background: white; width: 210mm; min-height: 297mm; padding: 20px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; box-sizing: border-box; }
-        .btn-voltar { display: inline-block; padding: 10px 15px; background: #fff; color: #db2777; text-decoration: none; border-radius: 8px; border: 1px solid #fbcfe8; font-weight: bold; margin-bottom: 20px; }
+        
+        /* Estilo do botão de voltar conforme solicitado */
+        .btn-voltar { 
+            display: inline-block; 
+            padding: 10px 15px; 
+            background-color: #ffffff; 
+            color: #166534; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-size: 14px; 
+            margin-bottom: 20px; 
+            border: 1px solid #bbf7d0; 
+            transition: 0.3s; 
+            font-weight: bold; 
+        }
+        .btn-voltar:hover { background-color: #dcfce7; }
+
         .header { border: 2px solid #db2777; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
-        h1 { color: #9d174d; text-align: center; font-size: 22px; }
-        .box-imagem { width: 100%; height: 250px; border: 2px dashed #db2777; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #db2777; font-weight: bold; margin: 20px 0; background: #fffafb; }
+        h1 { color: #9d174d; text-align: center; font-size: 22px; text-transform: uppercase; }
+        
+        /* Box de imagem com a cena visual em emojis */
+        .box-imagem { 
+            width: 100%; 
+            height: 300px; 
+            border: 2px dashed #db2777; 
+            border-radius: 10px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            margin: 20px 0; 
+            background: linear-gradient(to bottom, #e0f2fe, #ffffff); 
+        }
+
         .titulo-atv { font-weight: bold; background: #fdf2f8; padding: 10px; border-left: 5px solid #db2777; display: block; margin: 15px 0; }
         .linha { border-bottom: 1px solid #ccc; height: 35px; width: 100%; margin-bottom: 5px; }
-        @media print { .btn-voltar { display: none; } }
+        
+        @media print { .btn-voltar { display: none; } .folha-a4 { box-shadow: none; border: none; } body { background: white; } }
     </style>
 </head>
 <body>
     <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+
     <div class="folha-a4">
-        <div class="header"><strong>ALUNO(A):</strong> ___________________________________</div>
+        <div class="header">
+            <strong>ALUNO(A):</strong> ________________________________________________ <br>
+            <div style="margin-top: 10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - PORTUGUÊS</strong></div>
+        </div>
+
         <h1>Fábrica de Histórias</h1>
         
         <p>Observe a cena abaixo com muita atenção. Imagine quem são os personagens, o que estão fazendo e como a história termina.</p>
 
         <div class="box-imagem">
-            [COLE OU DESENHE AQUI: UMA CRIANÇA E UM CACHORRO BRINCANDO NA CHUVA COM UM GUARDA-CHUVA COLORIDO]
+            <div style="font-size: 80px; line-height: 1;">
+                ☁️ 🌧️ ☁️
+            </div>
+            <div style="font-size: 100px; line-height: 1; margin-top: -20px;">
+                👧 ☂️ 🐕
+            </div>
+            <div style="font-size: 40px; line-height: 1;">
+                🌱 🌷 🌊 🍄
+            </div>
+            
+            <div style="color: #0369a1; font-size: 14px; margin-top: 15px; background: rgba(255,255,255,0.7); padding: 5px 15px; border-radius: 20px; font-weight: bold;">
+                O dia está chuvoso! O que aconteceu nesta brincadeira?
+            </div>
         </div>
 
         <span class="titulo-atv">AGORA É SUA VEZ DE ESCREVER!</span>
+        
         <p><strong>TÍTULO:</strong> __________________________________________</p>
+        
+        <div class="linha"></div>
         <div class="linha"></div>
         <div class="linha"></div>
         <div class="linha"></div>
@@ -44,6 +95,10 @@
 
         <div style="margin-top: 20px; font-size: 12px; color: #666; font-style: italic;">
             Dica: Não esqueça de usar letras maiúsculas no início das frases e o ponto final!
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; font-size: 10px; color: #777; border-top: 1px solid #eee; padding-top: 10px;">
+            atividadesescolares.net - Produção Textual Criativa
         </div>
     </div>
 </body>
