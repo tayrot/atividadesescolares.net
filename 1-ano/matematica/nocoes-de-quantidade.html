@@ -6,36 +6,36 @@
         @page { size: A4; margin: 15mm; }
         body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
         .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
-        h1 { text-align: center; text-transform: uppercase; font-size: 20px; }
-        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #fff3e0; padding: 10px; border-left: 5px solid #ff9800; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; color: #2e7d32; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e8f5e9; padding: 10px; border-left: 5px solid #4caf50; }
         
         .legenda-sinais {
             display: flex;
             justify-content: space-around;
-            background: #f9f9f9;
+            background: #f1f8e9;
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 30px;
-            border: 1px solid #ddd;
+            border: 1px solid #c8e6c9;
         }
-        .sinal-item { text-align: center; font-size: 18px; }
-        .sinal-grande { font-size: 30px; font-weight: bold; color: #ff9800; display: block; }
+        .sinal-item { text-align: center; font-size: 16px; font-weight: bold; }
+        .sinal-grande { font-size: 35px; font-weight: bold; color: #2e7d32; display: block; }
 
         .exercicio-comparar {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
             padding: 10px;
-            font-size: 35px;
+            font-size: 40px;
             font-weight: bold;
             text-align: center;
             align-items: center;
         }
 
         .circulo-sinal {
-            width: 60px;
-            height: 60px;
-            border: 2px solid #ff9800;
+            width: 65px;
+            height: 65px;
+            border: 3px dashed #4caf50;
             border-radius: 50%;
             margin: auto;
             display: flex;
@@ -43,17 +43,31 @@
             justify-content: center;
         }
 
+        .item-quantidade {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #2e7d32; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #c8e6c9; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #e8f5e9; }
+
         .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        .emoji-box { font-size: 25px; letter-spacing: 5px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-
+    <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    
     <div class="header-escola">
         <div><strong>NOME:</strong> ___________________________________________________</div>
-        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>MATEMÁTICA</strong></div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>MATEMÁTICA: QUANTIDADES</strong></div>
     </div>
 
-    <h1>Maior, Menor ou Igual</h1>
+    <h1>Mais, Menos ou Igual</h1>
 
     <div class="atividade">
         <div class="legenda-sinais">
@@ -62,24 +76,36 @@
             <div class="sinal-item"><span class="sinal-grande">=</span> IGUAL A</div>
         </div>
 
-        <span class="titulo-atv">1. COMPARE OS NÚMEROS E COLOQUE O SINAL CORRETO:</span>
+        <span class="titulo-atv">1. CONTE OS ELEMENTOS E USE OS SINAIS PARA COMPARAR:</span>
         
         <div class="exercicio-comparar">
-            <span>8</span> <div class="circulo-sinal"></div> <span>3</span>
-            <span>5</span> <div class="circulo-sinal"></div> <span>9</span>
-            <span>4</span> <div class="circulo-sinal"></div> <span>4</span>
-            <span>10</span> <div class="circulo-sinal"></div> <span>2</span>
-            <span>7</span> <div class="circulo-sinal"></div> <span>7</span>
-            <span>1</span> <div class="circulo-sinal"></div> <span>6</span>
+            <div class="item-quantidade"><div class="emoji-box">🍎🍎🍎</div><span>3</span></div>
+            <div class="circulo-sinal"></div>
+            <div class="item-quantidade"><div class="emoji-box">🍎</div><span>1</span></div>
+
+            <div class="item-quantidade"><div class="emoji-box">⭐</div><span>1</span></div>
+            <div class="circulo-sinal"></div>
+            <div class="item-quantidade"><div class="emoji-box">⭐⭐⭐⭐</div><span>4</span></div>
+
+            <div class="item-quantidade"><div class="emoji-box">☁️☁️</div><span>2</span></div>
+            <div class="circulo-sinal"></div>
+            <div class="item-quantidade"><div class="emoji-box">☁️☁️</div><span>2</span></div>
         </div>
     </div>
 
-    <div class="atividade" style="margin-top: 30px;">
-        <span class="titulo-atv">2. PINTE O NÚMERO <u>MAIOR</u> EM CADA DUPLA:</span>
-        <div style="display: flex; justify-content: space-around; font-size: 28px; font-weight: bold;">
-            <div style="border: 1px solid #ccc; padding: 10px; border-radius: 8px;"> 9 e 5 </div>
-            <div style="border: 1px solid #ccc; padding: 10px; border-radius: 8px;"> 2 e 8 </div>
-            <div style="border: 1px solid #ccc; padding: 10px; border-radius: 8px;"> 10 e 1 </div>
+    <div class="atividade" style="margin-top: 40px;">
+        <span class="titulo-atv">2. PINTE O QUADRADO QUE TEM A <u>MENOR</u> QUANTIDADE:</span>
+        <div style="display: flex; justify-content: space-around;">
+            <div style="border: 2px solid #4caf50; padding: 15px; border-radius: 10px; text-align: center; width: 30%;">
+                <div style="font-size: 30px;">🐱🐱🐱</div>
+                <hr>
+                <div style="font-size: 30px;">🐱🐱</div>
+            </div>
+            <div style="border: 2px solid #4caf50; padding: 15px; border-radius: 10px; text-align: center; width: 30%;">
+                <div style="font-size: 30px;">🚗</div>
+                <hr>
+                <div style="font-size: 30px;">🚗🚗🚗🚗</div>
+            </div>
         </div>
     </div>
 
