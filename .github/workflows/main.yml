@@ -19,21 +19,22 @@ jobs:
           base-url-path: https://atividadesescolares.net/
           path-to-root: .
           exclude-paths: 404.html
+          # Esta linha abaixo remove os PDFs do sitemap
+          include-pdf: false
 
       - name: Commit and push
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
           
-          # 1. Guarda o sitemap gerado temporariamente
+          # 1. Adiciona o sitemap.xml modificado
           git add sitemap.xml
           
-          # 2. Faz o commit local do novo sitemap
-          git commit -m "Automated sitemap update" || echo "Sem mudanças no sitemap"
+          # 2. Faz o commit local
+          git commit -m "Automated sitemap update (remover PDFs)" || echo "Sem mudanças"
           
-          # 3. Puxa as alterações que você fez manualmente no site, 
-          # colocando o commit do sitemap no final da fila (rebase)
+          # 3. Sincroniza com o servidor
           git pull --rebase origin main
           
-          # 4. Envia tudo para o GitHub
+          # 4. Envia para o GitHub
           git push origin main
