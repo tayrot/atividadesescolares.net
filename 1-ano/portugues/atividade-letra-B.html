@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Comic Sans MS', 'Arial', sans-serif; background-color: #f9f9f9; padding: 20px; }
+        .folha { background: white; width: 210mm; min-height: 297mm; padding: 20mm; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .cabecalho { border: 2px solid #333; padding: 15px; margin-bottom: 30px; border-radius: 10px; font-size: 18px; }
+        h1 { text-align: center; color: #2563eb; text-transform: uppercase; margin-bottom: 40px; }
+        .grid-seguro { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card-exercicio { border: 2px dashed #3b82f6; padding: 15px; display: flex; align-items: center; border-radius: 12px; background: #eff6ff; }
+        .emoji-grande { font-size: 50px; margin-right: 20px; }
+        .escrita span { font-size: 24px; letter-spacing: 5px; font-weight: bold; display: block; }
+        .escrita small { color: #666; font-size: 12px; }
+        @media print { .btn-voltar { display: none; } .folha { box-shadow: none; border: none; } body { background: white; padding: 0; } }
+
+
+	.btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #a21caf; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; 	border: 1px solid #f5d0fe; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #fae8ff; }
+
+    </style>
+</head>
+<body>
+ <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    <div class="folha">
+        <div class="cabecalho">
+            ALUNO(A): ________________________________________________ <br><br>
+            DATA: ____/____/_______ | 1º ANO - PORTUGUÊS
+        </div>
+        <h1>APRENDENDO A LETRA B</h1>
+        <div class="conteudo">
+            <div class="grid-seguro">
+                <div class="card-exercicio">
+                    <span class="emoji-grande">⚽</span>
+                    <div class="escrita">
+                        <span>__ __ __ __</span> <small>(BOLA)</small>
+                    </div>
+                </div>
+                <div class="card-exercicio">
+                    <span class="emoji-grande">🎂</span>
+                    <div class="escrita">
+                        <span>__ __ __ __</span> <small>(BOLO)</small>
+                    </div>
+                </div>
+                <div class="card-exercicio">
+                    <span class="emoji-grande">🍬</span>
+                    <div class="escrita">
+                        <span>__ __ __ __</span> <small>(BALA)</small>
+                    </div>
+                </div>
+                <div class="card-exercicio">
+                    <span class="emoji-grande">👶</span>
+                    <div class="escrita">
+                        <span>__ __ __ __</span> <small>(BEBÊ)</small>
+                    </div>
+                </div>
+                <div class="card-exercicio">
+                    <span class="emoji-grande">🐳</span>
+                    <div class="escrita">
+                        <span>__ __ __ __ __ __</span> <small>(BALEIA)</small>
+                    </div>
+                </div>
+                <div class="card-exercicio">
+                    <span class="emoji-grande">👢</span>
+                    <div class="escrita">
+                        <span>__ __ __ __</span> <small>(BOTA)</small>
+                    </div>
+                </div>
+                <div class="card-exercicio">
+                    <span class="emoji-grande">🥩</span>
+                    <div class="escrita">
+                        <span>__ __ __ __</span> <small>(BIFE)</small>
+                    </div>
+                </div>
+                <div class="card-exercicio">
+                    <span class="emoji-grande">🧸</span>
+                    <div class="escrita">
+                        <span>__ __ __ __ __ __</span> <small>(BONECO)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        
+        .header-escola {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        .header-escola div { margin-bottom: 10px; border-bottom: 1px solid #eee; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        h2 { text-align: center; font-size: 16px; color: #555; margin-bottom: 30px; font-weight: normal; }
+        
+        .atividade { margin-bottom: 35px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #fff3e0; padding: 8px; border-left: 5px solid #ff9800; }
+
+        .exercicio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            font-size: 22px;
+        }
+        
+        .item-palavra { margin-bottom: 15px; display: flex; align-items: center; }
+        .traco { display: inline-block; width: 55px; border-bottom: 2px solid #000; margin-left: 8px; height: 25px; }
+
+        .rimas-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .rima-item { font-size: 18px; font-weight: bold; }
+
+        .leitura-box {
+            margin-top: 20px;
+            padding: 25px;
+            border: 2px dashed #ff9800;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            background: #fff;
+        }
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #1e88e5; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #bbdefb; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #e3f2fd; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+   <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 1º ANO</span>
+        </div>
+    </div>
+
+    <h1>Atividade: Sílabas Finais</h1>
+    <h2>O SOM NO FIM DAS PALAVRAS</h2>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. COMPLETE COM A SÍLABA FINAL (LA - TO - CA - PO):</span>
+        <div class="exercicio-grid">
+            <div class="item-palavra">🎈 BA <span class="traco"></span></div>
+            <div class="item-palavra">🐀 RA <span class="traco"></span></div>
+            <div class="item-palavra">🥤 CO <span class="traco"></span></div>
+            <div class="item-palavra">🥣 SO <span class="traco"></span></div>
+            <div class="item-palavra">⚽ BO <span class="traco"></span></div>
+            <div class="item-palavra">🐱 GA <span class="traco"></span></div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">2. LIGUE AS PALAVRAS QUE TERMINAM COM O MESMO SOM (RIMAS):</span>
+        <div class="rimas-container">
+            <div class="rima-item">
+                PIÃO<br>
+                MOLA<br>
+                GATO
+            </div>
+            <div class="rima-item" style="color: #ff9800;">
+                ●<br>
+                ●<br>
+                ●
+            </div>
+            <div class="rima-item">
+                COLA<br>
+                RATO<br>
+                AVIÃO
+            </div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">3. LEITURA RÍTMICA:</span>
+        <div class="leitura-box">
+            <strong>A BOLA ROLA.</strong><br>
+            <strong>O RATO PEGOU O SAPATO.</strong><br>
+            <strong>O PIÃO CAI NO CHÃO.</strong>
+        </div>
+    </div>
+
+    <div class="footer-site">
+        Material gratuito para fins pedagógicos.
+    </div>
+
+</body>
+</html>

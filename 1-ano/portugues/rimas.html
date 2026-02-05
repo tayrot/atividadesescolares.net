@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        
+        .header-escola {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        .header-escola div { margin-bottom: 10px; border-bottom: 1px solid #eee; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        h2 { text-align: center; font-size: 16px; color: #555; margin-bottom: 30px; font-weight: normal; }
+        
+        .atividade { margin-bottom: 35px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f3e5f5; padding: 8px; border-left: 5px solid #9c27b0; }
+
+        .rima-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: center;
+        }
+        .par-rimas {
+            border: 1px solid #e1bee7;
+            padding: 15px;
+            border-radius: 12px;
+            background: #fafafa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lista-palavras {
+            font-size: 22px;
+            line-height: 2;
+            column-count: 2;
+            text-align: center;
+            border: 2px solid #9c27b0;
+            padding: 20px;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .leitura-box {
+            margin-top: 20px;
+            padding: 25px;
+            border: 2px dashed #9c27b0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            background: #fff;
+        }
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #1e88e5; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #bbdefb; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #e3f2fd; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 1º ANO</span>
+        </div>
+    </div>
+
+    <h1>Atividade: Brincando com Rimas</h1>
+    <h2>SONS QUE COMBINAM</h2>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. DIGA O NOME DAS FIGURAS E CIRCULE OS PARES QUE RIMAM:</span>
+        <div class="rima-grid">
+            <div class="par-rimas">
+                <span style="font-size: 40px;">🧤 🍎</span>
+                <small>LUVA - MAÇÃ</small>
+            </div>
+            <div class="par-rimas">
+                <span style="font-size: 40px;">🐝 🛳️</span>
+                <small>ABELHA - NAVIO</small>
+            </div>
+            <div class="par-rimas">
+                <span style="font-size: 40px;">🐁 ⛸️</span>
+                <small>RATO - SAPATO</small>
+            </div>
+            <div class="par-rimas">
+                <span style="font-size: 40px;">🧤 🍐</span>
+                <small>MEIA - TEIA</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">2. LEIA AS PALAVRAS E CIRCULE O FINAL IGUAL:</span>
+        <div class="lista-palavras">
+            PANELA<br>
+            JANELA<br>
+            CANELA<br>
+            PIÃO<br>
+            MÃO<br>
+            LIMÃO
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">3. COMPLETE A RIMA:</span>
+        <div class="leitura-box">
+            <strong>O RATO ENTROU NO... (SAPATO)</strong><br>
+            <strong>A GATINHA COME... (BALINHA)</strong><br>
+            <strong>O GATO SUBIU NO... (TELHADO)</strong>
+        </div>
+    </div>
+
+    <div class="footer-site">
+        Material gratuito para fins pedagógicos.
+    </div>
+
+</body>
+</html>
