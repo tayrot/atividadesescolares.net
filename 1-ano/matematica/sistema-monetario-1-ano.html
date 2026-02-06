@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f1f8e9; padding: 8px; border-left: 5px solid #689f38; }
+        
+        .compra-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .produto { text-align: center; flex: 1; }
+        .produto-icone { font-size: 40px; }
+        .preco-tag { background: #689f38; color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-top: 5px; display: inline-block; }
+        
+        .pagamento { flex: 2; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .cedula-fake { 
+            border: 1px solid #999; 
+            padding: 5px 10px; 
+            background: #e8f5e9; 
+            border-radius: 4px; 
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .resultado-box {
+            width: 60px;
+            height: 50px;
+            border: 2px solid #689f38;
+            border-radius: 8px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #689f38; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #dcedc8; transition: 0.3s; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Lojinha de Brinquedos</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. VEJA QUANTO CUSTA CADA BRINQUEDO E SOME AS NOTAS PARA PAGAR:</span>
+        
+        <div class="compra-row">
+            <div class="produto">
+                <div class="produto-icone">🚗</div>
+                <div class="preco-tag">R$ 7,00</div>
+            </div>
+            <div class="pagamento">
+                <div class="cedula-fake">R$ 5</div> + <div class="cedula-fake">R$ 2</div> = 
+                <div class="resultado-box"></div>
+            </div>
+        </div>
+
+        <div class="compra-row">
+            <div class="produto">
+                <div class="produto-icone">🧸</div>
+                <div class="preco-tag">R$ 10,00</div>
+            </div>
+            <div class="pagamento">
+                <div class="cedula-fake">R$ 5</div> + <div class="cedula-fake">R$ 5</div> = 
+                <div class="resultado-box"></div>
+            </div>
+        </div>
+
+        <div class="compra-row">
+            <div class="produto">
+                <div class="produto-icone">⚽</div>
+                <div class="preco-tag">R$ 12,00</div>
+            </div>
+            <div class="pagamento">
+                <div class="cedula-fake">R$ 10</div> + <div class="cedula-fake">R$ 2</div> = 
+                <div class="resultado-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="atividade" style="margin-top: 30px;">
+        <span class="titulo-atv">2. DESAFIO: QUAL É A NOTA DE MAIOR VALOR?</span>
+        <div style="display: flex; justify-content: space-around; padding: 10px;">
+            <div class="cedula-fake" style="padding: 20px;">R$ 2</div>
+            <div class="cedula-fake" style="padding: 20px; border-width: 3px;">R$ 20</div>
+            <div class="cedula-fake" style="padding: 20px;">R$ 10</div>
+        </div>
+        <p style="text-align: center; font-size: 14px; margin-top: 10px;">(Circule a nota correta)</p>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+</body>
+</html>

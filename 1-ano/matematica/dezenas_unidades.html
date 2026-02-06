@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f3e5f5; padding: 8px; border-left: 5px solid #9c27b0; }
+        
+        .sistema-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .material-visual { flex: 1; font-size: 28px; }
+        .qvl-box { 
+            display: flex; 
+            border: 2px solid #9c27b0; 
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .coluna {
+            width: 50px;
+            text-align: center;
+        }
+        .label { background: #9c27b0; color: white; font-weight: bold; padding: 5px 0; }
+        .input-vazio { height: 50px; border-top: 1px solid #9c27b0; }
+        .traco { border-left: 2px solid #9c27b0; }
+
+        .barra { background: #ffd700; width: 12px; height: 50px; display: inline-block; border: 1px solid #b8860b; margin-right: 5px; }
+        .cubinho { background: #ffd700; width: 12px; height: 12px; display: inline-block; border: 1px solid #b8860b; margin-right: 3px; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 30px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #9c27b0; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #e1bee7; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #f3e5f5; }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Dezenas e Unidades</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. CONTE AS PEÇAS E PREENCHA O QUADRO DE VALOR E LUGAR:</span>
+        
+        <div class="sistema-row">
+            <div class="material-visual">
+                <div class="barra"></div>
+                <div class="cubinho"></div><div class="cubinho"></div>
+            </div>
+            <div class="qvl-box">
+                <div class="coluna"><div class="label">D</div><div class="input-vazio"></div></div>
+                <div class="coluna traco"><div class="label">U</div><div class="input-vazio"></div></div>
+            </div>
+        </div>
+
+        <div class="sistema-row">
+            <div class="material-visual">
+                <div class="barra"></div><div class="barra"></div>
+                <div class="cubinho"></div><div class="cubinho"></div><div class="cubinho"></div><div class="cubinho"></div>
+            </div>
+            <div class="qvl-box">
+                <div class="coluna"><div class="label">D</div><div class="input-vazio"></div></div>
+                <div class="coluna traco"><div class="label">U</div><div class="input-vazio"></div></div>
+            </div>
+        </div>
+
+        <div class="sistema-row">
+            <div class="material-visual">
+                <div class="barra"></div>
+                <div class="cubinho"></div><div class="cubinho"></div><div class="cubinho"></div><div class="cubinho"></div><div class="cubinho"></div><div class="cubinho"></div><div class="cubinho"></div>
+            </div>
+            <div class="qvl-box">
+                <div class="coluna"><div class="label">D</div><div class="input-vazio"></div></div>
+                <div class="coluna traco"><div class="label">U</div><div class="input-vazio"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="atividade" style="margin-top: 20px;">
+        <span class="titulo-atv">2. PINTE O NÚMERO CORRESPONDENTE A 1 DEZENA E 5 UNIDADES:</span>
+        <div style="display: flex; justify-content: space-around; padding: 10px;">
+            <div style="border: 2px solid #ccc; padding: 10px; border-radius: 50%;">10</div>
+            <div style="border: 2px solid #ccc; padding: 10px; border-radius: 50%;">15</div>
+            <div style="border: 2px solid #ccc; padding: 10px; border-radius: 50%;">51</div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+</body>
+</html>

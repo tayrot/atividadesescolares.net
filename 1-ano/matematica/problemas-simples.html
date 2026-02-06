@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e0f7fa; padding: 8px; border-left: 5px solid #00bcd4; }
+        
+        .problema-box {
+            padding: 15px;
+            border-bottom: 1px dashed #ccc;
+            margin-bottom: 10px;
+        }
+        .enunciado { font-size: 18px; margin-bottom: 15px; }
+        .espaco-solucao {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .quadro-desenho {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #00bcd4;
+            border-radius: 5px;
+            position: relative;
+        }
+        .quadro-desenho::before {
+            content: "Desenhe aqui";
+            font-size: 10px;
+            color: #999;
+            position: absolute;
+            top: 2px;
+            left: 5px;
+        }
+        .operacao {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .resultado-final {
+            width: 60px;
+            height: 50px;
+            border: 2px solid #00bcd4;
+            border-radius: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 30px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #00838f; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #b2ebf2; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #e0f7fa; }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Resolvendo Problemas</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. LEIA COM ATENÇÃO E RESOLVA OS DESAFIOS:</span>
+        
+        <div class="problema-box">
+            <div class="enunciado">
+                A) NO JARDIM DA ANA TINHAM <strong>5</strong> FLORES 🌸. ELA PLANTOU MAIS <strong>3</strong> FLORES 🌸. QUANTAS FLORES TÊM AGORA?
+            </div>
+            <div class="espaco-solucao">
+                <div class="quadro-desenho"></div>
+                <div class="operacao">5 + 3 = <div class="resultado-final"></div></div>
+            </div>
+        </div>
+
+        <div class="problema-box">
+            <div class="enunciado">
+                B) JOÃO COMPROU <strong>8</strong> OVOS 🥚. NO CAMINHO, <strong>2</strong> OVOS QUEBRARAM. QUANTOS OVOS SOBRARAM?
+            </div>
+            <div class="espaco-solucao">
+                <div class="quadro-desenho"></div>
+                <div class="operacao">8 - 2 = <div class="resultado-final"></div></div>
+            </div>
+        </div>
+
+        <div class="problema-box">
+            <div class="enunciado">
+                C) EM UM GALHO TINHAM <strong>4</strong> PASSARINHOS 🐦. CHEGARAM MAIS <strong>4</strong>. QUANTOS PASSARINHOS FICARAM NO TOTAL?
+            </div>
+            <div class="espaco-solucao">
+                <div class="quadro-desenho"></div>
+                <div class="operacao">4 + 4 = <div class="resultado-final"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+</body>
+</html>

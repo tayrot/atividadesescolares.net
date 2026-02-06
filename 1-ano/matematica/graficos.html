@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e0f2f1; padding: 8px; border-left: 5px solid #009688; }
+        
+        .frutas-misturadas {
+            border: 2px dashed #009688;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+        }
+
+        .grafico-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 20px;
+            height: 200px;
+            margin-top: 20px;
+            border-bottom: 3px solid #333;
+            padding-bottom: 5px;
+        }
+
+        .coluna-grafico {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 2px;
+        }
+
+        .quadradinho {
+            width: 40px;
+            height: 30px;
+            border: 1px solid #009688;
+        }
+
+        .legenda-fruta {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .pergunta-row {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 30px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #00796b; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #b2dfdb; transition: 0.3s; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Gráfico das Frutas</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. CONTE AS FRUTAS NO QUADRO ABAIXO:</span>
+        <div class="frutas-misturadas">
+            🍎 🍌 🍎 🍎 🍇 🍌 🍎 🍇 🍎 🍌
+        </div>
+
+        <span class="titulo-atv">2. PINTE UM QUADRADINHO PARA CADA FRUTA QUE VOCÊ CONTOU:</span>
+        
+        <div style="display: flex; justify-content: center; gap: 40px;">
+            <div>
+                <div class="grafico-container">
+                    <div class="coluna-grafico">
+                        <div class="quadradinho"></div><div class="quadradinho"></div><div class="quadradinho"></div>
+                        <div class="quadradinho"></div><div class="quadradinho"></div><div class="quadradinho"></div>
+                    </div>
+                </div>
+                <div class="legenda-fruta">🍎</div>
+            </div>
+
+            <div>
+                <div class="grafico-container">
+                    <div class="coluna-grafico">
+                        <div class="quadradinho"></div><div class="quadradinho"></div><div class="quadradinho"></div>
+                        <div class="quadradinho"></div><div class="quadradinho"></div><div class="quadradinho"></div>
+                    </div>
+                </div>
+                <div class="legenda-fruta">🍌</div>
+            </div>
+
+            <div>
+                <div class="grafico-container">
+                    <div class="coluna-grafico">
+                        <div class="quadradinho"></div><div class="quadradinho"></div><div class="quadradinho"></div>
+                        <div class="quadradinho"></div><div class="quadradinho"></div><div class="quadradinho"></div>
+                    </div>
+                </div>
+                <div class="legenda-fruta">🍇</div>
+            </div>
+        </div>
+
+        <div class="pergunta-row">
+            <p>A) QUAL FRUTA APARECE EM <strong>MAIOR</strong> QUANTIDADE? _______________</p>
+            <p>B) QUAL FRUTA APARECE EM <strong>MENOR</strong> QUANTIDADE? _______________</p>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+</body>
+</html>

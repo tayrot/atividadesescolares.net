@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e8f5e9; padding: 8px; border-left: 5px solid #4caf50; }
+        
+        .subtracao-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            border-bottom: 1px dashed #ccc;
+            font-size: 24px;
+        }
+        .desenhos-sub { font-size: 30px; letter-spacing: 5px; flex: 1; }
+        .conta-texto { flex: 1; text-align: center; font-weight: bold; }
+        .resultado-box {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        .instrucao { font-size: 14px; color: #666; font-style: italic; margin-bottom: 5px; }
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #4caf50; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #c8e6c9; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #e8f5e9; }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Praticando a Subtração</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. OBSERVE OS DESENHOS, RISQUE O QUE SE PEDE E RESOLVA:</span>
+        
+        <div class="subtracao-row">
+            <div class="desenhos-sub">
+                <div class="instrucao">Tinha 7 joaninhas, 4 voaram:</div>
+                🐞 🐞 🐞 🐞 🐞 🐞 🐞
+            </div>
+            <div class="conta-texto">
+                7 - 4 = <div class="resultado-box"></div>
+            </div>
+        </div>
+
+        <div class="subtracao-row">
+            <div class="desenhos-sub">
+                <div class="instrucao">Tinha 9 uvas, comi 5 delas:</div>
+                🍇 🍇 🍇 🍇 🍇 🍇 🍇 🍇 🍇
+            </div>
+            <div class="conta-texto">
+                9 - 5 = <div class="resultado-box"></div>
+            </div>
+        </div>
+
+        <div class="subtracao-row">
+            <div class="desenhos-sub">
+                <div class="instrucao">Tinha 5 sorvetes, 3 derreteram:</div>
+                🍦 🍦 🍦 🍦 🍦
+            </div>
+            <div class="conta-texto">
+                5 - 3 = <div class="resultado-box"></div>
+            </div>
+        </div>
+
+        <div class="subtracao-row">
+            <div class="desenhos-sub">
+                <div class="instrucao">Tinha 8 passarinhos, 6 fugiram:</div>
+                🐦 🐦 🐦 🐦 🐦 🐦 🐦 🐦
+            </div>
+            <div class="conta-texto">
+                8 - 6 = <div class="resultado-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="atividade" style="margin-top: 20px;">
+        <span class="titulo-atv">2. RESOLVA AS OPERAÇÕES:</span>
+        <div style="display: flex; justify-content: space-around; font-size: 26px; font-weight: bold; padding: 20px;">
+            <span>6 - 1 = ____</span>
+            <span>4 - 4 = ____</span>
+            <span>7 - 2 = ____</span>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+</body>
+</html>

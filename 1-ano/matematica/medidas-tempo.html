@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #fffde7; padding: 8px; border-left: 5px solid #fbc02d; }
+        
+        .tempo-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .periodo-box {
+            width: 45%;
+            border: 2px solid #fbc02d;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .icone-tempo { font-size: 40px; margin-bottom: 10px; }
+        .quadro-desenho {
+            width: 100%;
+            height: 120px;
+            border: 1px dashed #ccc;
+            margin-top: 10px;
+        }
+
+        .lista-atividades {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .item-atv {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .opcao-check {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #fbc02d;
+            border-radius: 5px;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 30px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #f9a825; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #fff9c4; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #fffde7; }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="btn-voltar">← Voltar ao Portal</a>
+    
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>O Tempo e o Nosso Dia</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. DESENHE UMA ATIVIDADE QUE VOCÊ FAZ EM CADA PERÍODO:</span>
+        <div class="tempo-container">
+            <div class="periodo-box">
+                <div class="icone-tempo">☀️</div>
+                <strong>DIA</strong>
+                <div class="quadro-desenho"></div>
+            </div>
+            <div class="periodo-box">
+                <div class="icone-tempo">🌙</div>
+                <strong>NOITE</strong>
+                <div class="quadro-desenho"></div>
+            </div>
+        </div>
+
+        <span class="titulo-atv">2. MARQUE UM "X" NO PERÍODO QUE VOCÊ VAI PARA A ESCOLA:</span>
+        <div style="display: flex; justify-content: center; gap: 50px; font-weight: bold; font-size: 18px;">
+            <div>( ) MANHÃ</div>
+            <div>( ) TARDE</div>
+        </div>
+
+        <span class="titulo-atv" style="margin-top: 20px;">3. PINTE O QUE VOCÊ FAZ ANTES DE DORMIR:</span>
+        <div class="lista-atividades">
+            <div class="item-atv"><span>🦷 ESCOVAR OS DENTES</span> <div class="opcao-check"></div></div>
+            <div class="item-atv"><span>☀️ VER O SOL NASCER</span> <div class="opcao-check"></div></div>
+            <div class="item-atv"><span>📖 LER UMA HISTÓRIA</span> <div class="opcao-check"></div></div>
+            <div class="item-atv"><span>⚽ JOGAR FUTEBOL NA RUA</span> <div class="opcao-check"></div></div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+</body>
+</html>
