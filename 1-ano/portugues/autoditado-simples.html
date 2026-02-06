@@ -61,11 +61,15 @@
             text-transform: uppercase;
         }
 
+	.btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #a21caf; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; 	border: 1px solid #f5d0fe; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #fae8ff; }
+
+
         .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
     </style>
 </head>
 <body>
-
+  <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
     <div class="header-escola">
         <div><strong>NOME:</strong> ___________________________________________________</div>
         <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>TURMA:</strong> 1º ANO</div>
@@ -74,35 +78,64 @@
     <h1>Autoditado Ilustrado</h1>
     <h2>ESCREVA O NOME DAS FIGURAS OU RECORTE AS PALAVRAS NO FINAL DA PÁGINA</h2>
 
-    <div class="atividade">
-        <span class="titulo-atv">1. IDENTIFIQUE CADA DESENHO E ESCREVA O NOME:</span>
-        <div class="grid-autoditado">
-            <div class="item-autoditado">
-                <span class="icone">⚽</span>
-                <div class="linha-escrita"></div>
-            </div>
-            <div class="item-autoditado">
-                <span class="icone">🍦</span>
-                <div class="linha-escrita"></div>
-            </div>
-            <div class="item-autoditado">
-                <span class="icone">🦒</span>
-                <div class="linha-escrita"></div>
-            </div>
-            <div class="item-autoditado">
-                <span class="icone">🚁</span>
-                <div class="linha-escrita"></div>
-            </div>
-            <div class="item-autoditado">
-                <span class="icone">🔋</span>
-                <div class="linha-escrita"></div>
-            </div>
-            <div class="item-autoditado">
-                <span class="icone">🌙</span>
-                <div class="linha-escrita"></div>
-            </div>
+<style>
+    .grid-autoditado {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        text-align: center;
+    }
+    .item-autoditado {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .icone {
+        font-size: 50px; /* Deixa os ícones maiores */
+        margin-bottom: 10px;
+    }
+    .linha-escrita {
+        width: 100px;
+        border-bottom: 2px solid #000;
+        height: 20px;
+    }
+    .titulo-atv {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="atividade">
+    <span class="titulo-atv">1. IDENTIFIQUE CADA DESENHO E ESCREVA O NOME:</span>
+    <div class="grid-autoditado">
+        <div class="item-autoditado">
+            <span class="icone">⚽</span>
+            <div class="linha-escrita"></div>
+        </div>
+        <div class="item-autoditado">
+            <span class="icone">🍦</span>
+            <div class="linha-escrita"></div>
+        </div>
+        <div class="item-autoditado">
+            <span class="icone">🦒</span>
+            <div class="linha-escrita"></div>
+        </div>
+        <div class="item-autoditado">
+            <span class="icone">🐒</span>
+            <div class="linha-escrita"></div>
+        </div>
+        <div class="item-autoditado">
+            <span class="icone">🦁</span>
+            <div class="linha-escrita"></div>
+        </div>
+        <div class="item-autoditado">
+            <span class="icone">🌙</span>
+            <div class="linha-escrita"></div>
         </div>
     </div>
+</div>
 
     <div class="area-recorte">
         <div class="tesoura">✂️ ------------------------------------------------------------------</div>
@@ -112,8 +145,8 @@
             <div class="box-palavra">BOLA</div>
             <div class="box-palavra">LUA</div>
             <div class="box-palavra">SORVETE</div>
-            <div class="box-palavra">PILHA</div>
-            <div class="box-palavra">HELICÓPTERO</div>
+            <div class="box-palavra">MACACO</div>
+            <div class="box-palavra">LEÃO</div>
         </div>
     </div>
 
