@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sobre Nós — Atividades Escolares</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #2c3e50;
+  --accent: #3498db;
+  --secondary: #27ae60;
+  --text-main: #ffffff;
+  --text-muted: rgba(255,255,255,.85);
+  --overlay: rgba(44,62,80,.7);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  min-height: 100vh;
+
+  /* MESMO FUNDO DO INDEX */
+  background:
+    linear-gradient(var(--overlay), var(--overlay)),
+    url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1920&q=80');
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* botão voltar */
+.btn-voltar {
+  display: inline-block;
+  margin-bottom: 25px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.btn-voltar:hover {
+  transform: translateY(-2px);
+  background: var(--secondary);
+}
+
+/* card estilo glass igual ao site */
+.card {
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 22px;
+  padding: 45px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+p {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: .9rem;
+  color: rgba(255,255,255,.6);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <button class="btn-voltar" onclick="history.back()">← Voltar</button>
+
+  <div class="card">
+    <h1>Sobre o Atividades Escolares</h1>
+
+    <p>O <strong>AtividadesEscolares.net</strong> nasceu para ajudar pais, professores e alunos a encontrarem materiais educativos prontos para imprimir de forma simples e gratuita.</p>
+
+    <p>Nosso foco é oferecer atividades organizadas, práticas e pedagógicas para o 1º e 2º ano do Ensino Fundamental, facilitando o reforço escolar em casa ou na sala de aula.</p>
+
+    <p>Além dos PDFs tradicionais, estamos sempre criando novas ferramentas, como a <strong>Coruja IA</strong>, que gera atividades personalizadas em segundos.</p>
+
+    <p>Se tiver sugestões ou ideias de conteúdos, ficaremos felizes em ouvir você. Educação melhora quando a gente constrói junto 💙</p>
+  </div>
+
+  <footer>
+    © 2026 AtividadesEscolares.net
+  </footer>
+
+</div>
+
+</body>
+</html>
