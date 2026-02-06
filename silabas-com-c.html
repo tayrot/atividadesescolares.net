@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        
+        .header-escola {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        .header-escola div { margin-bottom: 10px; border-bottom: 1px solid #eee; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 20px; }
+        h2 { text-align: center; font-size: 16px; color: #555; margin-bottom: 30px; font-weight: normal; }
+        
+        .atividade { margin-bottom: 35px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f0f0f0; padding: 5px; }
+
+        .silabas-destaque {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .silaba-box {
+            font-size: 32px;
+            font-weight: bold;
+            border: 2px solid #e67e22; /* Cor diferente para identificar a nova letra */
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #fff3e0;
+        }
+
+        .completar-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .item-completar {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        .espaco {
+            width: 60px;
+            border-bottom: 2px solid #000;
+            margin-right: 10px;
+            display: inline-block;
+            height: 30px;
+        }
+
+        .leitura-box {
+            border: 1px dashed #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            background: #fffdf0;
+        }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #a21caf; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #f5d0fe; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #fae8ff; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+    
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 1º ANO</span>
+        </div>
+    </div>
+
+    <h1>Atividade: A Família da Letra C</h1>
+    <h2>CA - CO - CU</h2>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. HORA DE FALAR E PINTAR: LEIA AS SÍLABAS ABAIXO E PINTE CADA BOX:</span>
+        <div class="silabas-destaque">
+            <div class="silaba-box">CA</div>
+            <div class="silaba-box">CO</div>
+            <div class="silaba-box">CU</div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">2. COMPLETE COM A SÍLABA INICIAL (CA, CO OU CU):</span>
+        <div class="completar-container">
+            <div class="item-completar">🏠 <span class="espaco"></span> SA</div>
+            <div class="item-completar">🥤 <span class="espaco"></span> PO</div>
+            <div class="item-completar">🛌 <span class="espaco"></span> MA</div>
+            <div class="item-completar">🥥 <span class="espaco"></span> CO</div>
+            <div class="item-completar">🐎 <span class="espaco"></span> VALO</div>
+            <div class="item-completar">🩲 <span class="espaco"></span> ECA</div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">3. TREINO DE ESCRITA:</span>
+        <p>COPIE AS PALAVRAS COM MUITA ATENÇÃO:</p>
+        <div style="margin-top: 15px; font-size: 20px;">
+            <p>CASA: _____________________________________</p>
+            <p style="margin-top: 15px;">COCO: _____________________________________</p>
+            <p style="margin-top: 15px;">CUCA: _____________________________________</p>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">4. DESAFIO DE LEITURA:</span>
+        <div class="leitura-box">
+            <strong>O COCO É DO CAIO.</strong><br>
+            <strong>A COLA CAIU NA CAMA.</strong>
+        </div>
+    </div>
+
+    <div class="footer-site">
+        Conteúdo Pedagógico: atividadesescolares.net - Atividades Prontas para Imprimir.
+    </div>
+
+</body>
+</html>
