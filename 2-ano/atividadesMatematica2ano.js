@@ -1,6 +1,7 @@
 const atividadesMatematica2ano = [
     { nome: "Antecessor E Sucessor 2º Ano", slug: "antecessor-e-sucessor-2ano" },
     { nome: "Antecessor E Sucessor 2º Ano 2", slug: "antecessor-e-sucessor-2ano-2" },
+    { nome: "Atividades De Subtração 2º Ano", slug: "atividades-de-subtração-2-ano" },
     { nome: "Comparação Comprimento 2º Ano", slug: "comparacao-comprimento-2ano" },
     { nome: "Comparar E Ordenar 2º Ano", slug: "comparar-e-ordenar-2ano" },
     { nome: "Comparar Quantidades 2º Ano", slug: "comparar-quantidades-2ano" },
@@ -17,6 +18,7 @@ const atividadesMatematica2ano = [
     { nome: "Introdução Multiplicação Divisão", slug: "introducao-multiplicacao-divisao" },
     { nome: "Lógica Inicial 2º Ano", slug: "logica-inicial-2-ano" },
     { nome: "Medidas Básicas 2º Ano", slug: "medidas-basicas-2ano" },
+    { nome: "Medidas De Capacidade 2º Ano", slug: "medidas-de-capacidade-2-ano" },
     { nome: "Mundo Das Formas", slug: "mundo-das-formas" },
     { nome: "Mundo Das Horas", slug: "mundo-das-horas" },
     { nome: "Números 101 A 200", slug: "numeros-101-a-200" },
