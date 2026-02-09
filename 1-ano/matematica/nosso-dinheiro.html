@@ -57,7 +57,21 @@
 <body>
 
 <div class="folha-a4">
-    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+   <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+<script>
+function voltarInteligente(event) {
+    event.preventDefault(); // Impede o link de tentar navegar
+    
+    // Se o histórico for maior que 1, significa que ele veio de algum lugar do seu site
+    if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+        window.history.back();
+    } else {
+        // Se veio do Google ou acesso direto, manda para a home do portal
+        window.location.href = "../index.html"; 
+    }
+}
+</script>
 
     <div class="header-escola">
         <div><strong>ALUNO(A):</strong> ________________________________________________</div>
