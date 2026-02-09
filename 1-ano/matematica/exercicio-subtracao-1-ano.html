@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        
+        /* Cor de destaque para Subtração: Vermelho/Rosa */
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #fff1f2; padding: 8px; border-left: 5px solid #e11d48; }
+        
+        .subtracao-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            border-bottom: 1px dashed #fecdd3;
+        }
+        .desenhos-soma { 
+            flex: 1; 
+            display: flex; 
+            flex-wrap: wrap; 
+            max-width: 180px; 
+            gap: 5px; 
+            font-size: 35px;
+        }
+        .operacao-texto { flex: 1; text-align: center; color: #e11d48; }
+        .resultado-box {
+            width: 80px;
+            height: 70px;
+            border: 2px solid #333;
+            border-radius: 4px;
+            display: inline-block;
+            vertical-align: middle;
+            background: #fff;
+        }
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+
+        /* Botão Voltar combinando com o tema de subtração */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #e11d48; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #fecdd3; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #fff1f2; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+  
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO - MATEMÁTICA</strong></div>
+    </div>
+
+    <h1>Resolva as Operações de Subtração</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. OBSERVE A QUANTIDADE DE FRUTAS E TIRE O NÚMERO INDICADO:</span>
+        
+        <div class="subtracao-row">
+            <div class="desenhos-soma">🍉🍉🍉🍉🍉<br>🍉🍉🍉🍉</div>
+            <div class="operacao-texto">- 4 =</div>
+            <div class="resultado-box"></div>
+        </div>
+
+        <div class="subtracao-row">
+            <div class="desenhos-soma">🍍🍍🍍🍍<br>🍍🍍🍍</div>
+            <div class="operacao-texto">- 3 =</div>
+            <div class="resultado-box"></div>
+        </div>
+
+        <div class="subtracao-row">
+            <div class="desenhos-soma">🍎🍎🍎🍎🍎</div>
+            <div class="operacao-texto">- 5 =</div>
+            <div class="resultado-box"></div>
+        </div>
+
+        <div class="subtracao-row">
+            <div class="desenhos-soma">🍓🍓🍓🍓🍓<br>🍓🍓🍓</div>
+            <div class="operacao-texto">- 2 =</div>
+            <div class="resultado-box"></div>
+        </div>
+
+        <div class="subtracao-row">
+            <div class="desenhos-soma">🍇🍇🍇🍇🍇🍇</div>
+            <div class="operacao-texto">- 4 =</div>
+            <div class="resultado-box"></div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

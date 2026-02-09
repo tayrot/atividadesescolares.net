@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; background-color: #fff; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; color: #1a1a1a; }
+        
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e0f2fe; padding: 10px; border-left: 5px solid #0284c7; border-radius: 0 4px 4px 0; }
+        
+        /* QUADRADOS AMPLIADOS */
+        .container-quadrados {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 15px;
+        }
+        .quadro {
+            border: 2px solid #333;
+            width: 30%; /* Largura relativa para ocupar bem a folha */
+            min-height: 220px; /* Altura aumentada */
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 35px 15px 15px 15px; /* Espaço para o número no topo */
+            gap: 10px;
+            align-content: flex-start;
+            justify-content: center;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        
+        /* Número dentro e discreto */
+        .quadro::before {
+            content: attr(data-numero);
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #444;
+            background: #f1f5f9;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+        }
+        
+        .flor { font-size: 32px; line-height: 1; }
+
+        /* Blocos de Perguntas */
+        .pergunta-box {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .pergunta-texto {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .campo-resposta {
+            border-bottom: 2px solid #000;
+            width: 100%;
+            height: 25px;
+        }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #0284c7; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #bae6fd; font-weight: bold; }
+        
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+  
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO - MATEMÁTICA</strong></div>
+    </div>
+
+    <h1>Contagem e Soma das Flores</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. OBSERVE OS QUADRADOS ABAIXO COM ATENÇÃO:</span>
+        
+        <div class="container-quadrados">
+            <div class="quadro" data-numero="1">
+                <span class="flor">🌻</span> <span class="flor">🌸</span> <span class="flor">🌻</span> <span class="flor">🌸</span>
+                <span class="flor">🌻</span> <span class="flor">🌸</span> <span class="flor">🌻</span> <span class="flor">🌸</span>
+            </div>
+
+            <div class="quadro" data-numero="2">
+                <span class="flor">🌻</span> <span class="flor">🌸</span> <span class="flor">🌻</span> <span class="flor">🌸</span>
+                <span class="flor">🌻</span> <span class="flor">🌸</span> <span class="flor">🌻</span> <span class="flor">🌸</span>
+                <span class="flor">🌻</span> <span class="flor">🌸</span> <span class="flor">🌻</span>
+            </div>
+
+            <div class="quadro" data-numero="3">
+                <span class="flor">🌻</span> <span class="flor">🌸</span> <span class="flor">🌻</span> <span class="flor">🌸</span>
+                <span class="flor">🌻</span> <span class="flor">🌸</span> <span class="flor">🌻</span> <span class="flor">🌸</span>
+                <span class="flor">🌻</span> <span class="flor">🌸</span> <span class="flor">🌻</span> <span class="flor">🌸</span>
+                <span class="flor">🌻</span>
+            </div>
+        </div>
+
+        <span class="titulo-atv">2. RESPONDA ÀS PERGUNTAS ABAIXO:</span>
+
+        <div class="pergunta-box">
+            <span class="pergunta-texto">A) Quantas flores estão presentes no quadro nº 3?</span>
+            <div class="campo-resposta"></div>
+        </div>
+
+        <div class="pergunta-box">
+            <span class="pergunta-texto">B) Somando as flores do quadro nº 1 com as do quadro nº 2, qual é o resultado?</span>
+            <div class="campo-resposta"></div>
+        </div>
+
+        <div class="pergunta-box">
+            <span class="pergunta-texto">C) Qual é o total da soma das flores contidas nos três quadros?</span>
+            <div class="campo-resposta"></div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

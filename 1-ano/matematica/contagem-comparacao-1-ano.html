@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; background-color: #fff; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; color: #1a1a1a; }
+        
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e0f2fe; padding: 10px; border-left: 5px solid #0284c7; border-radius: 0 4px 4px 0; }
+        
+        /* AQUÁRIOS (QUADRADOS) AMPLIADOS */
+        .container-quadrados {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 15px;
+        }
+        .quadro {
+            border: 2px solid #333;
+            width: 30%; 
+            min-height: 220px; 
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 35px 15px 15px 15px; 
+            gap: 12px;
+            align-content: flex-start;
+            justify-content: center;
+            background: #f0f9ff; /* Azul clarinho para parecer água */
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+        
+        /* Número dentro e discreto */
+        .quadro::before {
+            content: attr(data-numero);
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e3a8a;
+            background: #fff;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            border: 1px solid #0284c7;
+        }
+        
+        .peixe { font-size: 35px; line-height: 1; }
+
+        /* Blocos de Perguntas */
+        .pergunta-box {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .pergunta-texto {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .campo-resposta {
+            border-bottom: 2px solid #000;
+            width: 100%;
+            height: 25px;
+        }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #0284c7; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #bae6fd; font-weight: bold; }
+        
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+  
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO - MATEMÁTICA</strong></div>
+    </div>
+
+    <h1>O Aquário dos Números</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. CONTE QUANTOS PEIXINHOS HÁ EM CADA AQUÁRIO:</span>
+        
+        <div class="container-quadrados">
+            <div class="quadro" data-numero="1">
+                <span class="peixe">🐟</span> <span class="peixe">🐠</span> <span class="peixe">🐟</span> 
+                <span class="peixe">🐠</span> <span class="peixe">🐟</span> <span class="peixe">🐠</span>
+                <span class="peixe">🐟</span>
+            </div>
+
+            <div class="quadro" data-numero="2">
+                <span class="peixe">🐠</span> <span class="peixe">🐠</span> <span class="peixe">🐟</span> 
+                <span class="peixe">🐟</span> <span class="peixe">🐠</span> <span class="peixe">🐠</span>
+                <span class="peixe">🐟</span> <span class="peixe">🐟</span> <span class="peixe">🐠</span>
+            </div>
+
+            <div class="quadro" data-numero="3">
+                <span class="peixe">🐟</span> <span class="peixe">🐠</span> <span class="peixe">🐟</span> <span class="peixe">🐠</span>
+                <span class="peixe">🐟</span> <span class="peixe">🐠</span> <span class="peixe">🐟</span> <span class="peixe">🐠</span>
+                <span class="peixe">🐟</span> <span class="peixe">🐠</span> <span class="peixe">🐟</span> <span class="peixe">🐠</span>
+            </div>
+        </div>
+
+        <span class="titulo-atv">2. AGORA, RESOLVA OS PROBLEMAS:</span>
+
+        <div class="pergunta-box">
+            <span class="pergunta-texto">A) Qual aquário tem a MAIOR quantidade de peixes?</span>
+            <div class="campo-resposta"></div>
+        </div>
+
+        <div class="pergunta-box">
+            <span class="pergunta-texto">B) Se juntarmos os peixes do aquário 1 e do aquário 2, quantos teremos no total?</span>
+            <div class="campo-resposta"></div>
+        </div>
+
+        <div class="pergunta-box">
+            <span class="pergunta-texto">C) Quantos peixes faltam no aquário 1 para ele ter a mesma quantidade que o aquário 3?</span>
+            <div class="campo-resposta"></div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>

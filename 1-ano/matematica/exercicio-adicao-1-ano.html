@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e8f5e9; padding: 8px; border-left: 5px solid #4caf50; }
+        
+        .adicao-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .desenhos-soma { 
+            flex: 1; 
+            display: flex; 
+            flex-wrap: wrap; 
+            max-width: 150px; 
+            gap: 5px; 
+            font-size: 35px;
+        }
+        .operacao-texto { flex: 1; text-align: center; }
+        .resultado-box {
+            width: 80px;
+            height: 70px;
+            border: 2px solid #333;
+            border-radius: 4px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #a21caf; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #f5d0fe; transition: 0.3s; font-weight: bold; }
+        .btn-voltar:hover { background-color: #fae8ff; }
+    </style>
+</head>
+<body>
+  
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO</strong></div>
+    </div>
+
+    <h1>Realize as Operações de Adição</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. CONTE AS FRUTAS E SOME COM O NÚMERO PARA DESCOBRIR O TOTAL:</span>
+        
+        <div class="adicao-row">
+            <div class="desenhos-soma">🍎🍎🍎🍎🍎</div>
+            <div class="operacao-texto">+ 2 =</div>
+            <div class="resultado-box"></div>
+        </div>
+
+        <div class="adicao-row">
+            <div class="desenhos-soma">🍓🍓</div>
+            <div class="operacao-texto">+ 7 =</div>
+            <div class="resultado-box"></div>
+        </div>
+
+        <div class="adicao-row">
+            <div class="desenhos-soma">🍊🍊🍊🍊🍊🍊</div>
+            <div class="operacao-texto">+ 9 =</div>
+            <div class="resultado-box"></div>
+        </div>
+
+        <div class="adicao-row">
+            <div class="desenhos-soma">🍌🍌🍌</div>
+            <div class="operacao-texto">+ 6 =</div>
+            <div class="resultado-box"></div>
+        </div>
+
+        <div class="adicao-row">
+            <div class="desenhos-soma">🍐🍐🍐🍐</div>
+            <div class="operacao-texto">+ 4 =</div>
+            <div class="resultado-box"></div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+</body>
+</html>
