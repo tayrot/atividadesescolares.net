@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade: Fábrica de Sílabas | 2º Ano Português</title>
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; padding: 20px; background-color: #f0fdf4; color: #333; line-height: 1.4; }
+        .folha-a4 { background: white; width: 210mm; min-height: 297mm; padding: 30px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; box-sizing: border-box; }
+        
+        /* Botão Voltar */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #16a34a; text-decoration: none; border-radius: 8px; border: 1px solid #dcfce7; font-weight: bold; margin-bottom: 20px; }
+        .btn-voltar:hover { background-color: #dcfce7; }
+
+        .header-escola { border: 2px solid #16a34a; padding: 15px; margin-bottom: 25px; border-radius: 8px; }
+        h1 { text-align: center; color: #166534; text-transform: uppercase; font-size: 24px; margin: 0; }
+        
+        .titulo-atv { font-weight: bold; display: block; background: #dcfce7; padding: 10px; border-left: 5px solid #16a34a; margin-top: 20px; margin-bottom: 15px; font-size: 18px; }
+        
+        /* Tabela de Sílabas */
+        .tabela-silabas { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
+        .tabela-silabas th, .tabela-silabas td { border: 2px solid #16a34a; padding: 12px; text-align: center; font-size: 17px; }
+        .tabela-silabas th { background: #f0fdf4; color: #166534; }
+        
+        .linha-resposta { border-bottom: 1px solid #333; width: 200px; display: inline-block; height: 20px; }
+        
+        /* Exercício de Pintar/Marcar */
+        .grid-silabas { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .item-silaba { border: 1px solid #bdf0cc; padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .circulos-contagem { display: flex; gap: 5px; }
+        .circulo { width: 20px; height: 20px; border: 2px solid #16a34a; border-radius: 50%; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 30px; color: #777; border-top: 1px solid #dcfce7; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } .folha-a4 { box-shadow: none; margin: 0; width: 100%; } body { background: white; padding: 0; } }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+            <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - PORTUGUÊS</strong></div>
+        </div>
+
+        <h1>📦 Fábrica de Sílabas</h1>
+
+        <span class="titulo-atv">1. SEPARE AS SÍLABAS E CONTE QUANTAS SÃO:</span>
+        <table class="tabela-silabas">
+            <tr>
+                <th>PALAVRA</th>
+                <th>SEPARAÇÃO SILÁBICA</th>
+                <th>Nº DE SÍLABAS</th>
+            </tr>
+            <tr>
+                <td>PATO</td>
+                <td>________________________</td>
+                <td>_________</td>
+            </tr>
+            <tr>
+                <td>PIPOCA</td>
+                <td>________________________</td>
+                <td>_________</td>
+            </tr>
+            <tr>
+                <td>GELADEIRA</td>
+                <td>________________________</td>
+                <td>_________</td>
+            </tr>
+            <tr>
+                <td>SOL</td>
+                <td>________________________</td>
+                <td>_________</td>
+            </tr>
+            <tr>
+                <td>BORBOLETA</td>
+                <td>________________________</td>
+                <td>_________</td>
+            </tr>
+            <tr>
+                <td>MÃO</td>
+                <td>________________________</td>
+                <td>_________</td>
+            </tr>
+        </table>
+
+        <span class="titulo-atv">2. PINTE UM CÍRCULO PARA CADA SÍLABA QUE VOCÊ FALAR:</span>
+        <div class="grid-silabas">
+            <div class="item-silaba"><strong>MACACO</strong> <div class="circulos-contagem"><div class="circulo"></div><div class="circulo"></div><div class="circulo"></div><div class="circulo"></div></div></div>
+            <div class="item-silaba"><strong>BOLA</strong> <div class="circulos-contagem"><div class="circulo"></div><div class="circulo"></div><div class="circulo"></div><div class="circulo"></div></div></div>
+            <div class="item-silaba"><strong>JACARÉ</strong> <div class="circulos-contagem"><div class="circulo"></div><div class="circulo"></div><div class="circulo"></div><div class="circulo"></div></div></div>
+            <div class="item-silaba"><strong>TREM</strong> <div class="circulos-contagem"><div class="circulo"></div><div class="circulo"></div><div class="circulo"></div><div class="circulo"></div></div></div>
+        </div>
+
+        <span class="titulo-atv">3. JUNTE AS SÍLABAS E FORME PALAVRAS:</span>
+        <div style="font-size: 18px; line-height: 2.5;">
+            A) CA + VA + LO = <span class="linha-resposta"></span> <br>
+            B) BA + NA + NA = <span class="linha-resposta"></span> <br>
+            C) CA + NE + TA = <span class="linha-resposta"></span> <br>
+            D) ME + SA = <span class="linha-resposta"></span>
+        </div>
+
+        <span class="titulo-atv">4. DESAFIO DO MESTRE:</span>
+        <p>Pense e escreva uma palavra que tenha <b>4 sílabas (Polissílaba)</b>:</p>
+        <div class="linha-resposta" style="width: 100%;"></div>
+
+        <div class="footer-site">atividadesescolares.net - Consciência Fonológica e Silábica</div>
+    </div>
+
+</body>
+</html>
