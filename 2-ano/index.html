@@ -45,6 +45,16 @@
             text-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
+        /* Controles de navegação e busca */
+        .header-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
         .btn-portal {
             display: inline-block;
             text-decoration: none;
@@ -57,7 +67,6 @@
             font-weight: 500;
             transition: 0.3s;
             backdrop-filter: blur(5px);
-            margin-top: 15px;
         }
 
         .btn-portal:hover {
@@ -66,10 +75,37 @@
             transform: translateY(-3px);
         }
 
+        #search-input {
+            padding: 12px 20px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(5px);
+            outline: none;
+            transition: 0.3s;
+        }
+
+        #search-input:focus {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+        }
+
+        #search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Estilos de Seção e Visibilidade */
+        .section-wrapper { margin-bottom: 40px; }
+        .hidden { display: none; }
+
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            margin: 40px 0 20px;
+            margin: 20px 0;
             border-left: 5px solid var(--accent);
             padding-left: 15px;
         }
@@ -119,7 +155,6 @@
             transition: 0.3s;
         }
 
-        /* Botão Ver Atividade: Branco com hover Azul */
         .btn-view {
             border: 1px solid #ffffff;
             color: #ffffff;
@@ -132,7 +167,6 @@
             color: #fff;
         }
 
-        /* Botão PDF: Verde para ambas as matérias */
         .btn-pdf {
             background: var(--secondary);
             color: #fff;
@@ -156,15 +190,27 @@
     <header>
         <h1>Atividades 2º Ano</h1>
         <p style="color: var(--text-muted)">Desenvolvimento de fluência leitora e raciocínio lógico.</p>
-        <a href="../index.html" class="btn-portal">← Voltar ao Portal Principal</a>
+        
+        <div class="header-controls">
+            <a href="../index.html" class="btn-portal">← Voltar ao Portal Principal</a>
+            <input type="text" id="search-input" placeholder="Pesquisar atividade...">
+        </div>
     </header>
 
     <main>
-        <h2 class="section-title">Língua Portuguesa</h2>
-        <div id="grid-portugues" class="grid"></div>
+        <section id="section-portugues" class="section-wrapper">
+            <h2 class="section-title">Língua Portuguesa</h2>
+            <div id="grid-portugues" class="grid"></div>
+        </section>
 
-        <h2 class="section-title">Matemática</h2>
-        <div id="grid-matematica" class="grid"></div>
+        <section id="section-matematica" class="section-wrapper">
+            <h2 class="section-title">Matemática</h2>
+            <div id="grid-matematica" class="grid"></div>
+        </section>
+
+        <div id="no-results-msg" class="hidden" style="text-align: center; padding: 50px; opacity: 0.7;">
+            Nenhuma atividade encontrada para sua busca.
+        </div>
     </main>
 
     <footer>
@@ -176,24 +222,53 @@
 <script src="atividadesMatematica2ano.js"></script>
 
 <script>
-    function renderizarGrid(lista, containerId, pasta) {
-        const container = document.getElementById(containerId);
-        if (!container || typeof lista === 'undefined') return;
+    function renderizarGrid(lista, gridId, sectionId, pasta, filtro = "") {
+        const grid = document.getElementById(gridId);
+        const section = document.getElementById(sectionId);
+        
+        if (!grid || !section || typeof lista === 'undefined') return 0;
 
-        container.innerHTML = lista.map(atv => `
-            <div class="card">
-                <span class="card-name">${atv.nome}</span>
-                <div class="btns">
-                    <a href="${pasta}/${atv.slug}.html" class="btn btn-view">Ver Atividade</a>
-                    <a href="${pasta}/pdf/${atv.slug}.pdf" class="btn btn-pdf" download>PDF</a>
+        const listaFiltrada = lista.filter(atv => 
+            atv.nome.toLowerCase().includes(filtro.toLowerCase())
+        );
+
+        if (listaFiltrada.length === 0) {
+            section.classList.add('hidden');
+            grid.innerHTML = '';
+        } else {
+            section.classList.remove('hidden');
+            grid.innerHTML = listaFiltrada.map(atv => `
+                <div class="card">
+                    <span class="card-name">${atv.nome}</span>
+                    <div class="btns">
+                        <a href="${pasta}/${atv.slug}.html" class="btn btn-view">Ver Atividade</a>
+                        <a href="${pasta}/pdf/${atv.slug}.pdf" class="btn btn-pdf" download>PDF</a>
+                    </div>
                 </div>
-            </div>
-        `).join('');
+            `).join('');
+        }
+        return listaFiltrada.length;
+    }
+
+    function atualizarGeral(termo = "") {
+        const totalPort = renderizarGrid(atividadesPortugues2ano, 'grid-portugues', 'section-portugues', 'portugues', termo);
+        const totalMat = renderizarGrid(atividadesMatematica2ano, 'grid-matematica', 'section-matematica', 'matematica', termo);
+
+        const msg = document.getElementById('no-results-msg');
+        if (totalPort === 0 && totalMat === 0) {
+            msg.classList.remove('hidden');
+        } else {
+            msg.classList.add('hidden');
+        }
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-        renderizarGrid(atividadesPortugues2ano, 'grid-portugues', 'portugues');
-        renderizarGrid(atividadesMatematica2ano, 'grid-matematica', 'matematica');
+        const busca = document.getElementById('search-input');
+        atualizarGeral();
+
+        busca.addEventListener('input', (e) => {
+            atualizarGeral(e.target.value);
+        });
     });
 </script>
 
