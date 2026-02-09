@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade: O Código Mágico | 2º Ano Matemática</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #555; line-height: 1.4; margin: 0; padding: 20px; background-color: #fff0f5; /* Fundo rosa claro */ }
+        .folha-a4 { background: white; width: 210mm; min-height: 297mm; padding: 30px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); box-sizing: border-box; position: relative; border-radius: 8px; }
+        
+        /* Botão Voltar Rosa */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #d4007d; text-decoration: none; border-radius: 8px; border: 1px solid #ffc0cb; font-weight: bold; margin-bottom: 20px; }
+        
+        /* Cabeçalho Rosa */
+        .header-escola { border: 2px solid #d4007d; padding: 15px; margin-bottom: 25px; border-radius: 8px; }
+        h1 { text-align: center; color: #a30062; text-transform: uppercase; font-size: 26px; margin-top: 0; } /* Título mais escuro */
+        
+        /* Título de Seção Rosa */
+        .titulo-atv { font-weight: bold; display: block; background: #ffe6f0; /* Rosa mais suave */ padding: 12px; border-left: 6px solid #d4007d; /* Borda rosa escura */ margin-bottom: 25px; font-size: 19px; }
+
+        /* Estilo das Peças (rosa) */
+        .grid-puzzle { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin: 20px 0; }
+        .peca { border: 3px solid #d4007d; padding: 12px 5px; text-align: center; border-radius: 10px; background: #fff; box-shadow: 2px 2px 0px #ffc0cb; } /* Sombra rosa */
+        .operacao { font-size: 20px; font-weight: bold; display: block; margin-bottom: 5px; color: #a30062; } /* Texto da operação mais escuro */
+        .label-peca { font-size: 10px; color: #888; font-weight: bold; text-transform: uppercase; }
+
+        /* Tabela de Decodificação (Rosa) */
+        .tabela-codigo { width: 100%; border-collapse: collapse; margin: 30px 0; text-align: center; }
+        .tabela-codigo td { border: 2px solid #d4007d; padding: 10px; font-size: 18px; }
+        .bg-num { background: #d4007d; color: white; font-weight: bold; } /* Fundo rosa escuro */
+
+        /* Espaço da Resposta (Rosa) */
+        .palavra-container { display: flex; flex-direction: column; align-items: center; margin-top: 40px; border: 2px dashed #ffc0cb; padding: 25px; border-radius: 15px; background: #fff; }
+        .boxes { display: flex; gap: 15px; }
+        .caixa-letra { border: 2px solid #d4007d; width: 45px; height: 55px; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; background: #ffe6f0; border-radius: 8px; color: #a30062; } /* Cor da caixa e texto em rosa */
+        .sub-label { font-size: 11px; margin-top: 8px; color: #666; font-weight: bold; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #999; border-top: 1px solid #ffc0cb; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } .folha-a4 { box-shadow: none; margin: 0; width: 100%; } body { background: white; padding: 0; } }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+            <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - MATEMÁTICA</strong></div>
+        </div>
+
+        <h1>✨ O Código Mágico ✨</h1>
+
+        <div class="atividade">
+            <span class="titulo-atv">1. RESOLVA CADA CONTA E ENCONTRE O NÚMERO DE CADA PEÇA:</span>
+            
+            <div class="grid-puzzle">
+                <div class="peca"><span class="label-peca">Peça 1</span><span class="operacao">10 + 3</span></div>
+                <div class="peca"><span class="label-peca">Peça 2</span><span class="operacao">25 - 5</span></div>
+                <div class="peca"><span class="label-peca">Peça 3</span><span class="operacao">8 + 1</span></div>
+                <div class="peca"><span class="label-peca">Peça 4</span><span class="operacao">18 - 4</span></div>
+                <div class="peca"><span class="label-peca">Peça 5</span><span class="operacao">30 + 0</span></div>
+                <div class="peca"><span class="label-peca">Peça 6</span><span class="operacao">15 - 10</span></div>
+            </div>
+
+            <span class="titulo-atv">2. COM OS RESULTADOS, DECODIFIQUE A PALAVRA SECRETA:</span>
+            
+            <table class="tabela-codigo">
+                <tr>
+                    <td class="bg-num">20</td>
+                    <td class="bg-num">14</td>
+                    <td class="bg-num">13</td>
+                    <td class="bg-num">9</td>
+                    <td class="bg-num">30</td>
+                    <td class="bg-num">5</td>
+                </tr>
+                <tr>
+                    <td>Á</td>
+                    <td>I</td>
+                    <td>M</td>
+                    <td>G</td>
+                    <td>C</td>
+                    <td>O</td>
+                </tr>
+            </table>
+
+            <div class="palavra-container">
+                <p style="margin-top: 0; font-weight: bold; font-size: 18px; color: #a30062;">QUE PALAVRA VOCÊ FORMOU?</p>
+                <div class="boxes">
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 1</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 2</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 3</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 4</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 5</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 6</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px; border: 1px dashed #ffc0cb; padding: 15px; border-radius: 10px; background: #ffe6f0; text-align: center; font-style: italic; color: #666;">
+                Lembre-se: Resolva a conta da Peça 1. Ache o número do resultado na tabela e escreva a letra no quadradinho da Peça 1!
+            </p>
+        </div>
+
+        <div class="footer-site">atividadesescolares.net - Enigmas e Matemática Mágica</div>
+    </div>
+
+</body>
+</html>

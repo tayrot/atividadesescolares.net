@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade: Gráficos | 2º Ano Matemática</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; padding: 20px; background-color: #f0f9ff; color: #333; }
+        .folha-a4 { background: white; width: 210mm; min-height: 297mm; padding: 30px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; box-sizing: border-box; }
+        
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #0369a1; text-decoration: none; border-radius: 8px; border: 1px solid #bae6fd; font-weight: bold; margin-bottom: 20px; }
+        .btn-voltar:hover { background-color: #e0f2fe; }
+
+        .header-escola { border: 2px solid #0369a1; padding: 15px; margin-bottom: 25px; border-radius: 8px; }
+        h1 { text-align: center; color: #0c4a6e; text-transform: uppercase; font-size: 24px; }
+        
+        .titulo-atv { font-weight: bold; display: block; background: #e0f2fe; padding: 10px; border-left: 5px solid #0369a1; margin-bottom: 20px; font-size: 18px; }
+        
+        /* Ajuste do Gráfico */
+        .grafico-container { display: flex; flex-direction: column; align-items: center; margin: 40px 0; }
+        .eixo-y { display: flex; align-items: flex-end; justify-content: space-around; height: 200px; width: 400px; border-bottom: 4px solid #333; border-left: 4px solid #333; position: relative; padding-right: 20px; }
+        
+        .barra { width: 60px; border: 1px solid #0369a1; background: #bae6fd; position: relative; transition: 0.3s; }
+        .valor-topo { position: absolute; top: -25px; width: 100%; text-align: center; font-weight: bold; }
+        
+        /* Nomes abaixo da linha */
+        .legenda-abaixo { display: flex; justify-content: space-around; width: 400px; margin-top: 15px; margin-left: 4px; }
+        .nome-fruta { width: 60px; text-align: center; font-weight: bold; font-size: 14px; color: #0c4a6e; }
+
+        .pergunta { margin: 18px 0; font-size: 18px; line-height: 1.6; }
+        .linha-resposta { border-bottom: 1px solid #333; width: 200px; display: inline-block; margin-left: 5px; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } .folha-a4 { box-shadow: none; margin: 0; width: 100%; } body { background: white; padding: 0; } }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+            <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - MATEMÁTICA</strong></div>
+        </div>
+
+        <h1>📊 O Gráfico de Frutas</h1>
+
+        <div class="atividade">
+            <span class="titulo-atv">1. ANALISE O GRÁFICO DE FRUTAS PREFERIDAS DO 2º ANO:</span>
+
+            <div class="grafico-container">
+                <div class="eixo-y">
+                    <div style="height: 160px;" class="barra">
+                        <div class="valor-topo">8</div>
+                    </div>
+                    <div style="height: 80px;" class="barra">
+                        <div class="valor-topo">4</div>
+                    </div>
+                    <div style="height: 120px;" class="barra">
+                        <div class="valor-topo">6</div>
+                    </div>
+                </div>
+                
+                <div class="legenda-abaixo">
+                    <div class="nome-fruta">MAÇÃ</div>
+                    <div class="nome-fruta">BANANA</div>
+                    <div class="nome-fruta">UVA</div>
+                </div>
+            </div>
+
+            <div class="perguntas-section">
+                <p class="pergunta">A) Qual foi a fruta mais votada pela turma? <span class="linha-resposta"></span></p>
+                
+                <p class="pergunta">B) Qual fruta recebeu exatamente <b>4 votos</b>? <span class="linha-resposta"></span></p>
+                
+                <p class="pergunta">C) Quantos votos a <b>MAÇÃ</b> teve a mais que a <b>UVA</b>? <span class="linha-resposta"></span></p>
+                
+                <p class="pergunta">D) Se juntarmos os votos da <b>BANANA</b> e da <b>UVA</b>, qual o total? <span class="linha-resposta"></span></p>
+                
+                <p class="pergunta">E) Qual foi a fruta que ficou em segundo lugar? <span class="linha-resposta"></span></p>
+                
+                <p class="pergunta">F) Quantas crianças participaram da votação ao todo? <span class="linha-resposta"></span></p>
+            </div>
+        </div>
+
+        <div class="footer-site">atividadesescolares.net - Tratamento de Informação e Gráficos</div>
+    </div>
+
+</body>
+</html>

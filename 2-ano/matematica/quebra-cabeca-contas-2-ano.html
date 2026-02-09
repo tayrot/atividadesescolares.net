@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade: Código Secreto | 2º Ano Matemática</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; margin: 0; padding: 20px; background-color: #f0f9ff; }
+        .folha-a4 { background: white; width: 210mm; min-height: 297mm; padding: 30px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); box-sizing: border-box; position: relative; border-radius: 8px; }
+        
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #0369a1; text-decoration: none; border-radius: 8px; border: 1px solid #bae6fd; font-weight: bold; margin-bottom: 20px; }
+        
+        .header-escola { border: 2px solid #0369a1; padding: 15px; margin-bottom: 25px; border-radius: 8px; }
+        h1 { text-align: center; color: #0c4a6e; text-transform: uppercase; font-size: 24px; margin-top: 0; }
+        
+        .titulo-atv { font-weight: bold; display: block; background: #e0f2fe; padding: 10px; border-left: 5px solid #0369a1; margin-bottom: 20px; font-size: 18px; }
+
+        .grid-puzzle { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin: 20px 0; }
+        .peca { border: 3px solid #333; padding: 15px 5px; text-align: center; border-radius: 12px; background: #fff; box-shadow: 3px 3px 0px #0369a1; }
+        .operacao { font-size: 20px; font-weight: bold; display: block; margin-bottom: 5px; color: #0369a1; }
+        .label-peca { font-size: 11px; color: #666; font-weight: bold; text-transform: uppercase; }
+
+        .tabela-codigo { width: 100%; border-collapse: collapse; margin: 30px 0; text-align: center; }
+        .tabela-codigo td { border: 2px solid #0369a1; padding: 12px; font-size: 20px; }
+        .bg-num { background: #0369a1; color: white; font-weight: bold; }
+
+        .palavra-container { display: flex; flex-direction: column; align-items: center; margin-top: 40px; border: 2px dashed #0369a1; padding: 25px; border-radius: 15px; background: #fff; }
+        .boxes { display: flex; gap: 15px; }
+        .caixa-letra { border: 2px solid #333; width: 55px; height: 65px; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: bold; background: #f8fafc; border-radius: 8px; }
+        .sub-label { font-size: 12px; margin-top: 8px; color: #444; font-weight: bold; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } .folha-a4 { box-shadow: none; margin: 0; width: 100%; } body { background: white; padding: 0; } }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+            <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - MATEMÁTICA</strong></div>
+        </div>
+
+        <h1>🧩 O Código das Operações</h1>
+
+        <div class="atividade">
+            <span class="titulo-atv">1. RESOLVA AS CONTAS E DESCUBRA O VALOR DE CADA PEÇA:</span>
+            
+            <div class="grid-puzzle">
+                <div class="peca"><span class="label-peca">Peça 1</span><span class="operacao">15 + 5</span></div>
+                <div class="peca"><span class="label-peca">Peça 2</span><span class="operacao">30 - 5</span></div>
+                <div class="peca"><span class="label-peca">Peça 3</span><span class="operacao">10 - 9</span></div>
+                <div class="peca"><span class="label-peca">Peça 4</span><span class="operacao">20 + 2</span></div>
+                <div class="peca"><span class="label-peca">Peça 5</span><span class="operacao">18 - 8</span></div>
+            </div>
+
+            <span class="titulo-atv">2. ENCONTRE OS RESULTADOS NA TABELA PARA VER AS LETRAS:</span>
+            
+            <table class="tabela-codigo">
+                <tr>
+                    <td class="bg-num">25</td>
+                    <td class="bg-num">10</td>
+                    <td class="bg-num">20</td>
+                    <td class="bg-num">1</td>
+                    <td class="bg-num">22</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td>O</td>
+                    <td>B</td>
+                    <td>A</td>
+                    <td>V</td>
+                </tr>
+            </table>
+
+            <div class="palavra-container">
+                <p style="margin-top: 0; font-weight: bold; font-size: 18px;">QUAL PALAVRA SE FORMOU?</p>
+                <div class="boxes">
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 1</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 2</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 3</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 4</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 5</div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px; border: 1px dashed #0369a1; padding: 15px; border-radius: 10px; background: #fff; text-align: center; font-style: italic;">
+                Dica: Resolva a Peça 1 (15 + 5 = 20). Procure o 20 na tabela e veja que a letra é "B". Coloque o "B" no quadradinho da Peça 1!
+            </p>
+        </div>
+
+        <div class="footer-site">atividadesescolares.net - Operações e Raciocínio</div>
+    </div>
+
+</body>
+</html>

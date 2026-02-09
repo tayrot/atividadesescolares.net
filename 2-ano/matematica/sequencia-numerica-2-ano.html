@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade: Sequências e Padrões | 2º Ano Matemática</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.5; margin: 0; padding: 20px; background-color: #f0f9ff; }
+        .folha-a4 { background: white; width: 210mm; min-height: 297mm; padding: 30px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); box-sizing: border-box; position: relative; border-radius: 8px; }
+        
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #0369a1; text-decoration: none; border-radius: 8px; border: 1px solid #bae6fd; font-weight: bold; margin-bottom: 20px; }
+        .btn-voltar:hover { background-color: #e0f2fe; }
+
+        .header-escola { border: 2px solid #0369a1; padding: 15px; margin-bottom: 25px; border-radius: 8px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; color: #0c4a6e; margin-bottom: 5px; }
+        
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #e0f2fe; padding: 10px; border-left: 5px solid #0369a1; border-radius: 0 5px 5px 0; }
+
+        /* Estilo da Trilha/Sequência */
+        .trilha { display: flex; gap: 10px; margin-bottom: 30px; justify-content: center; align-items: center; }
+        .circulo { width: 50px; height: 50px; border: 2px solid #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; background: #fff; }
+        .seta { font-size: 20px; color: #0369a1; }
+        .vazio { border-style: dashed; border-color: #0369a1; }
+
+        .pergunta-logica { background: #f8fafc; border: 1px solid #cbd5e1; padding: 15px; border-radius: 10px; margin-top: 20px; }
+        .campo-res { border-bottom: 1px solid #333; width: 100px; display: inline-block; text-align: center; font-weight: bold; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } .folha-a4 { box-shadow: none; margin: 0; width: 100%; } body { background: white; padding: 0; } }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+            <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - MATEMÁTICA</strong></div>
+        </div>
+
+        <h1>🏃 O Caminho dos Números</h1>
+
+        <div class="atividade">
+            <span class="titulo-atv">1. CONTINUE AS SEQUÊNCIAS DESCOBRINDO O PADRÃO:</span>
+            
+            <p><strong>A) DE 2 EM 2 (Pares):</strong></p>
+            <div class="trilha">
+                <div class="circulo">2</div> <div class="seta">→</div>
+                <div class="circulo">4</div> <div class="seta">→</div>
+                <div class="circulo">6</div> <div class="seta">→</div>
+                <div class="circulo vazio"></div> <div class="seta">→</div>
+                <div class="circulo vazio"></div> <div class="seta">→</div>
+                <div class="circulo vazio"></div>
+            </div>
+
+            <p><strong>B) DE 5 EM 5:</strong></p>
+            <div class="trilha">
+                <div class="circulo">5</div> <div class="seta">→</div>
+                <div class="circulo">10</div> <div class="seta">→</div>
+                <div class="circulo">15</div> <div class="seta">→</div>
+                <div class="circulo vazio"></div> <div class="seta">→</div>
+                <div class="circulo vazio"></div> <div class="seta">→</div>
+                <div class="circulo vazio"></div>
+            </div>
+
+            <p><strong>C) DE 10 EM 10 (Dezenas Exatas):</strong></p>
+            <div class="trilha">
+                <div class="circulo">10</div> <div class="seta">→</div>
+                <div class="circulo">20</div> <div class="seta">→</div>
+                <div class="circulo">30</div> <div class="seta">→</div>
+                <div class="circulo vazio"></div> <div class="seta">→</div>
+                <div class="circulo vazio"></div> <div class="seta">→</div>
+                <div class="circulo vazio"></div>
+            </div>
+
+            <span class="titulo-atv">2. DESAFIO DE LÓGICA:</span>
+            <div class="pergunta-logica">
+                <p>Estou pensando em um número. <br>
+                - Ele é <b>MAIOR</b> que 20.<br>
+                - Ele é <b>MENOR</b> que 30.<br>
+                - Ele termina com o número <b>5</b>.<br><br>
+                QUE NÚMERO EU SOU? <span class="campo-res"></span></p>
+            </div>
+
+            <div class="pergunta-logica" style="margin-top: 30px;">
+                <p>Complete a sequência decrescente (do maior para o menor):</p>
+                <div style="font-size: 20px; text-align: center; letter-spacing: 5px;">
+                    20 - 19 - 18 - <span class="campo-res"></span> - <span class="campo-res"></span> - <span class="campo-res"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-site">atividadesescolares.net - Álgebra e Pensamento Computacional</div>
+    </div>
+
+</body>
+</html>

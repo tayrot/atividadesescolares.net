@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade: Quebra-Cabeça de Operações 2 | 2º Ano</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #444; line-height: 1.4; margin: 0; padding: 20px; background-color: #fff5f8; }
+        .folha-a4 { background: white; width: 210mm; min-height: 297mm; padding: 30px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); box-sizing: border-box; position: relative; border-radius: 8px; }
+        
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #e91e63; text-decoration: none; border-radius: 8px; border: 1px solid #f8bbd0; font-weight: bold; margin-bottom: 20px; transition: 0.3s; }
+        .btn-voltar:hover { background-color: #fce4ec; }
+
+        .header-escola { border: 2px solid #e91e63; padding: 15px; margin-bottom: 25px; border-radius: 12px; }
+        h1 { text-align: center; color: #ad1457; text-transform: uppercase; font-size: 24px; margin: 0; letter-spacing: 1px; }
+        
+        .titulo-atv { font-weight: bold; display: block; background: #fce4ec; padding: 12px; border-left: 6px solid #e91e63; margin-bottom: 20px; font-size: 18px; border-radius: 0 8px 8px 0; }
+
+        .grid-puzzle { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin: 25px 0; }
+        .peca { border: 3px solid #e91e63; padding: 15px 5px; text-align: center; border-radius: 15px; background: #fff; box-shadow: 3px 3px 0px #f8bbd0; }
+        .operacao { font-size: 22px; font-weight: bold; display: block; margin-bottom: 5px; color: #ad1457; }
+        .label-peca { font-size: 11px; color: #888; font-weight: bold; text-transform: uppercase; }
+
+        .tabela-codigo { width: 100%; border-collapse: collapse; margin: 30px 0; text-align: center; }
+        .tabela-codigo td { border: 2px solid #f06292; padding: 12px; font-size: 22px; width: 20%; }
+        .bg-num { background: #e91e63; color: white; font-weight: bold; }
+
+        .palavra-container { display: flex; flex-direction: column; align-items: center; margin-top: 40px; border: 3px dashed #f8bbd0; padding: 30px; border-radius: 20px; background: #fffafb; }
+        .boxes { display: flex; gap: 15px; }
+        .caixa-letra { border: 2px solid #ad1457; width: 60px; height: 70px; display: flex; align-items: center; justify-content: center; font-size: 35px; font-weight: bold; background: #fff; border-radius: 10px; color: #ad1457; box-shadow: inset 0 0 5px #fce4ec; }
+        .sub-label { font-size: 12px; margin-top: 10px; color: #ad1457; font-weight: bold; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 50px; color: #ad1457; border-top: 1px solid #f8bbd0; padding-top: 15px; opacity: 0.7; }
+        
+        @media print { .btn-voltar { display: none; } .folha-a4 { box-shadow: none; margin: 0; width: 100%; } body { background: white; padding: 0; } }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+            <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - MATEMÁTICA</strong></div>
+        </div>
+
+        <h1>🧩 Quebra-Cabeça das Contas III</h1>
+
+        <div class="atividade">
+            <span class="titulo-atv">1. RESOLVA AS OPERAÇÕES DE CADA PEÇA:</span>
+            
+            <div class="grid-puzzle">
+                <div class="peca"><span class="label-peca">Peça 1</span><span class="operacao">5 + 5</span></div>
+                <div class="peca"><span class="label-peca">Peça 2</span><span class="operacao">20 - 7</span></div>
+                <div class="peca"><span class="label-peca">Peça 3</span><span class="operacao">10 - 1</span></div>
+                <div class="peca"><span class="label-peca">Peça 4</span><span class="operacao">4 + 3</span></div>
+                <div class="peca"><span class="label-peca">Peça 5</span><span class="operacao">25 - 10</span></div>
+            </div>
+
+            <span class="titulo-atv">2. ENCONTRE OS RESULTADOS E DESCUBRA AS LETRAS:</span>
+            
+            <table class="tabela-codigo">
+                <tr>
+                    <td class="bg-num">9</td>
+                    <td class="bg-num">15</td>
+                    <td class="bg-num">10</td>
+                    <td class="bg-num">7</td>
+                    <td class="bg-num">13</td>
+                </tr>
+                <tr>
+                    <td>I</td>
+                    <td>O</td>
+                    <td>A</td>
+                    <td>G</td>
+                    <td>M</td>
+                </tr>
+            </table>
+
+            <div class="palavra-container">
+                <p style="margin-top: 0; font-weight: bold; font-size: 18px; color: #ad1457;">DECODIFIQUE A PALAVRA SECRETA:</p>
+                <div class="boxes">
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 1</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 2</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 3</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 4</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="caixa-letra"></div>
+                        <div class="sub-label">PEÇA 5</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 35px; padding: 15px; border-radius: 10px; background: #fff0f5; border: 1px solid #f8bbd0; text-align: center;">
+                <strong>DESAFIO:</strong> SE VOCÊ DESCOBRIU A PALAVRA, DESENHE UM <b>AMIGO</b> OU <b>AMIGA</b> NO VERSO DA FOLHA!
+            </div>
+        </div>
+
+        <div class="footer-site">atividadesescolares.net - Quebra-Cabeça Matemático Rosa</div>
+    </div>
+
+</body>
+</html>
