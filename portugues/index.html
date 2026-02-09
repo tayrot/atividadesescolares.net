@@ -45,6 +45,15 @@
             text-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
+        .header-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
         .btn-portal {
             display: inline-block;
             text-decoration: none;
@@ -57,7 +66,6 @@
             font-weight: 500;
             transition: 0.3s;
             backdrop-filter: blur(5px);
-            margin-top: 15px;
         }
 
         .btn-portal:hover {
@@ -66,10 +74,36 @@
             transform: translateY(-3px);
         }
 
+        #search-input {
+            padding: 12px 20px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(5px);
+            outline: none;
+            transition: 0.3s;
+        }
+
+        #search-input:focus {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+        }
+
+        #search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .section-wrapper { margin-bottom: 40px; }
+        .hidden { display: none; }
+
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.2rem;
-            margin: 50px 0 25px;
+            margin: 20px 0;
             border-left: 6px solid var(--accent);
             padding-left: 20px;
             display: flex;
@@ -155,18 +189,26 @@
     <header>
         <h1>📚 Língua Portuguesa</h1>
         <p style="color: var(--text-muted)">Banco completo de atividades de alfabetização e leitura.</p>
-        <a href="../index.html" class="btn-portal">← Voltar ao Portal Principal</a>
+        
+        <div class="header-controls">
+            <a href="../index.html" class="btn-portal">← Voltar ao Portal Principal</a>
+            <input type="text" id="search-input" placeholder="Pesquisar em português...">
+        </div>
     </header>
 
     <main>
-        <div class="year-header-block">
+        <section id="section-port-1" class="section-wrapper">
             <h2 class="section-title">✏️ 1º Ano</h2>
             <div id="grid-port-1" class="grid"></div>
-        </div>
+        </section>
 
-        <div class="year-header-block">
+        <section id="section-port-2" class="section-wrapper">
             <h2 class="section-title">📖 2º Ano</h2>
             <div id="grid-port-2" class="grid"></div>
+        </section>
+
+        <div id="no-results-msg" class="hidden" style="text-align: center; padding: 50px; opacity: 0.7;">
+            Nenhuma atividade de português encontrada.
         </div>
     </main>
 
@@ -179,28 +221,53 @@
 <script src="../2-ano/atividadesPortugues2ano.js"></script>
 
 <script>
-    function renderizarGrid(lista, containerId, baseFolder) {
-        const container = document.getElementById(containerId);
-        if (!container || typeof lista === 'undefined') return;
+    function renderizarGrid(lista, gridId, sectionId, baseFolder, filtro = "") {
+        const grid = document.getElementById(gridId);
+        const section = document.getElementById(sectionId);
+        
+        if (!grid || !section || typeof lista === 'undefined') return 0;
 
-        // "baseFolder" ajuda a construir o link correto saindo da pasta /portugues/
-        container.innerHTML = lista.map(atv => `
-            <div class="card">
-                <span class="card-name">${atv.nome}</span>
-                <div class="btns">
-                    <a href="../${baseFolder}/portugues/${atv.slug}.html" class="btn btn-view">Ver Atividade</a>
-                    <a href="../${baseFolder}/portugues/pdf/${atv.slug}.pdf" class="btn btn-pdf" download>PDF</a>
+        const listaFiltrada = lista.filter(atv => 
+            atv.nome.toLowerCase().includes(filtro.toLowerCase())
+        );
+
+        if (listaFiltrada.length === 0) {
+            section.classList.add('hidden');
+            grid.innerHTML = '';
+        } else {
+            section.classList.remove('hidden');
+            grid.innerHTML = listaFiltrada.map(atv => `
+                <div class="card">
+                    <span class="card-name">${atv.nome}</span>
+                    <div class="btns">
+                        <a href="../${baseFolder}/portugues/${atv.slug}.html" class="btn btn-view">Ver Atividade</a>
+                        <a href="../${baseFolder}/portugues/pdf/${atv.slug}.pdf" class="btn btn-pdf" download>PDF</a>
+                    </div>
                 </div>
-            </div>
-        `).join('');
+            `).join('');
+        }
+        return listaFiltrada.length;
+    }
+
+    function atualizarGeral(termo = "") {
+        const t1 = renderizarGrid(atividadesPortugues1ano, 'grid-port-1', 'section-port-1', '1-ano', termo);
+        const t2 = renderizarGrid(atividadesPortugues2ano, 'grid-port-2', 'section-port-2', '2-ano', termo);
+
+        const msg = document.getElementById('no-results-msg');
+        if (t1 === 0 && t2 === 0) {
+            msg.classList.remove('hidden');
+        } else {
+            msg.classList.add('hidden');
+        }
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-        // Renderiza o 1º ano buscando os dados do arquivo JS importado
-        renderizarGrid(atividadesPortugues1ano, 'grid-port-1', '1-ano');
-        
-        // Renderiza o 2º ano buscando os dados do arquivo JS importado
-        renderizarGrid(atividadesPortugues2ano, 'grid-port-2', '2-ano');
+        const busca = document.getElementById('search-input');
+        atualizarGeral();
+
+        busca.addEventListener('input', (e) => {
+            atualizarGeral(e.target.value);
+        });
     });
 </script>
 
