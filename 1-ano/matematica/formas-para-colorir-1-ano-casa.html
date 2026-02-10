@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; margin-bottom: 10px; }
+        
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #fefce8; padding: 10px; border-left: 5px solid #facc15; }
+        
+        /* Legenda de Cores */
+        .legenda {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+        }
+        .cor-item { text-align: center; font-weight: bold; }
+        .circulo-cor { 
+            width: 40px; height: 40px; border-radius: 50%; border: 2px solid #333; margin: 0 auto 5px; 
+            display: flex; align-items: center; justify-content: center; font-size: 18px;
+        }
+
+        /* Área do Desenho Geométrico */
+        .canvas-colorir {
+            width: 100%;
+            height: 350px;
+            position: relative;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Formas para colorir */
+        .forma { border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold; background: #fff; position: absolute; }
+        
+        /* Triângulo do Teto Corrigido */
+        .teto {
+            width: 0;
+            height: 0;
+            border-left: 110px solid transparent;
+            border-right: 110px solid transparent;
+            border-bottom: 90px solid #000; /* Borda externa */
+            position: absolute;
+            top: 30px;
+        }
+        .teto-interno {
+            width: 0;
+            height: 0;
+            border-left: 106px solid transparent;
+            border-right: 106px solid transparent;
+            border-bottom: 86px solid #fff; /* Fundo branco para colorir */
+            position: absolute;
+            top: 4px;
+            left: -106px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #ca8a04; text-decoration: none; border-radius: 8px; border: 1px solid #fef08a; font-weight: bold; margin-bottom: 20px; }
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO - MATEMÁTICA</strong></div>
+    </div>
+
+    <h1>🎨 Pinte Pelos Resultados</h1>
+
+    <span class="titulo-atv">1. RESOLVA AS CONTAS E DESCUBRA A COR DE CADA NÚMERO:</span>
+
+    <div class="legenda">
+        <div class="cor-item">
+            <div class="circulo-cor"></div>
+            <span>AMARELO</span><br><small>(2 + 3)</small>
+        </div>
+       <div class="cor-item">
+            <div class="circulo-cor"></div>
+            <span>VERMELHO</span><br><small>(5 + 5)</small>
+        </div>
+        <div class="cor-item">
+            <div class="circulo-cor"></div>
+            <span>VERDE</span><br><small>(3 + 3)</small>
+        </div>
+    </div>
+
+    <span class="titulo-atv">2. AGORA, PINTE O DESENHO SEGUINDO O CÓDIGO DE CORES:</span>
+
+    <div class="canvas-colorir">
+        <div class="teto">
+            <div class="teto-interno">
+                <span style="position: absolute; top: 45px; color: #000; font-weight: bold; font-size: 20px;">10</span>
+            </div>
+        </div>
+
+        <div class="forma" style="width: 180px; height: 140px; top: 120px; font-size: 24px;">8</div>
+        
+        <div class="forma" style="width: 50px; height: 80px; top: 180px; left: calc(50% - 25px);">5</div>
+        
+        <div class="forma" style="width: 40px; height: 40px; top: 140px; left: calc(50% - 75px);">6</div>
+        
+        <div class="forma" style="width: 40px; height: 40px; top: 140px; right: calc(50% - 75px);">6</div>
+    </div>
+
+    <div style="margin-top: 30px; padding: 15px; background: #fafafa; border: 1px solid #eee; border-radius: 8px; text-align: center;">
+        <strong>📝 ESPAÇO PARA OS CÁLCULOS:</strong><br><br>
+        2 + 3 = ____ &nbsp;&nbsp; | &nbsp;&nbsp; 5 + 5 = ____ &nbsp;&nbsp; | &nbsp;&nbsp; 3 + 3 = ____
+    </div>
+
+    <div class="footer-site">atividadesescolares.net - Calcular e Colorir</div>
+
+</body>
+</html>

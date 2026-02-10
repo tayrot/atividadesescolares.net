@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.3; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; margin-bottom: 10px; color: #4b5563; }
+        
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f3f4f6; padding: 10px; border-left: 5px solid #4b5563; }
+        
+        /* Legenda de Cores */
+        .legenda {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+            padding: 10px;
+            border: 2px dashed #9ca3af;
+            border-radius: 10px;
+        }
+        .cor-item { text-align: center; font-weight: bold; font-size: 14px; }
+        .circulo-cor { 
+            width: 35px; height: 35px; border-radius: 50%; border: 2px solid #333; margin: 0 auto 5px; 
+            display: flex; align-items: center; justify-content: center; font-size: 16px; background: #fff;
+        }
+
+        /* Área do Robô */
+        .canvas-robo {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .parte { border: 2px solid #000; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; position: absolute; }
+        .circulo { border: 2px solid #000; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; position: absolute; }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #4b5563; text-decoration: none; border-radius: 8px; border: 1px solid #d1d5db; font-weight: bold; margin-bottom: 20px; }
+        .footer-site { text-align: center; font-size: 10px; margin-top: 30px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO - MATEMÁTICA</strong></div>
+    </div>
+
+    <h1>🤖 Robô dos Cálculos</h1>
+
+    <span class="titulo-atv">1. RESOLVA AS CONTAS E PINTE O ROBÔ COM AS CORES CORRETAS:</span>
+
+    <div class="legenda">
+        <div class="cor-item"><div class="circulo-cor"></div><span>LARANJA</span><br><small>(1 + 2)</small></div>
+        <div class="cor-item"><div class="circulo-cor"></div><span>CINZA</span><br><small>(9 - 3)</small></div>
+        <div class="cor-item"><div class="circulo-cor"></div><span>AZUL</span><br><small>(5 + 5)</small></div>
+        <div class="cor-item"><div class="circulo-cor"></div><span>VERDE</span><br><small>(4 - 3)</small></div>
+    </div>
+
+    <div class="canvas-robo">
+        <div class="parte" style="width: 5px; height: 30px; top: 0; left: calc(50% - 2.5px); background: #000;"></div>
+        <div class="circulo" style="width: 20px; height: 20px; top: -15px; left: calc(50% - 10px); font-size: 12px;">1</div>
+
+        <div class="parte" style="width: 80px; height: 70px; top: 30px; border-radius: 10px;">6</div>
+        
+        <div class="circulo" style="width: 20px; height: 20px; top: 45px; left: calc(50% - 30px); font-size: 10px;">10</div>
+        <div class="circulo" style="width: 20px; height: 20px; top: 45px; right: calc(50% - 30px); font-size: 10px;">10</div>
+
+        <div class="parte" style="width: 30px; height: 15px; top: 100px;">1</div>
+
+        <div class="parte" style="width: 120px; height: 130px; top: 115px;">6</div>
+
+        <div class="circulo" style="width: 25px; height: 25px; top: 130px; left: calc(50% - 40px); font-size: 12px;">3</div>
+        <div class="circulo" style="width: 25px; height: 25px; top: 130px; left: calc(50% + 15px); font-size: 12px;">3</div>
+        <div class="circulo" style="width: 25px; height: 25px; top: 170px; font-size: 12px;">3</div>
+
+        <div class="parte" style="width: 40px; height: 80px; top: 115px; left: calc(50% - 102px); border-radius: 5px;">1</div>
+        <div class="parte" style="width: 40px; height: 80px; top: 115px; right: calc(50% - 102px); border-radius: 5px;">1</div>
+
+        <div class="parte" style="width: 45px; height: 90px; top: 245px; left: calc(50% - 55px);">10</div>
+        <div class="parte" style="width: 45px; height: 90px; top: 245px; right: calc(50% - 55px);">10</div>
+    </div>
+
+    <div style="margin-top: 10px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fff;">
+        <strong>📝 VAMOS CONFERIR:</strong><br>
+        1 + 2 = ____ &nbsp; | &nbsp; 9 - 3 = ____ &nbsp; | &nbsp; 5 + 5 = ____ &nbsp; | &nbsp; 4 - 3 = ____
+    </div>
+
+    <div class="footer-site">atividadesescolares.net - Arte e Matemática</div>
+
+</body>
+</html>
