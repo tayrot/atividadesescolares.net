@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.6; margin: 0; padding: 20px; }
+        
+        /* Botão Voltar Padrão */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #a21caf; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #f5d0fe; font-weight: bold; transition: 0.3s; }
+        .btn-voltar:hover { background-color: #fae8ff; }
+
+        /* Cabeçalho padrão */
+        .topo-pagina { border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; }
+        .logo-site { font-weight: bold; font-size: 18px; margin-bottom: 10px; }
+        .campos-cabecalho { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .campo { border-bottom: 1px solid #ccc; padding: 5px 0; }
+
+        /* Título com Ícone ao lado */
+        .container-titulo { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 20px; 
+            margin: 25px 0;
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+        h1 { font-size: 20px; margin: 0; text-align: center; max-width: 500px; }
+        .icone-titulo { font-size: 50px; }
+        
+        .texto-leitura { 
+            background: #fff; 
+            padding: 0 40px; 
+            text-align: justify; 
+            font-size: 16px; 
+            margin-bottom: 30px;
+        }
+
+        .referencia { font-size: 11px; font-style: italic; margin-top: 10px; display: block; text-align: right; }
+
+        /* Linhas para cópia */
+        .linhas-copia { margin-top: 20px; }
+        .linha { 
+            border-bottom: 1px solid #999; 
+            height: 35px; 
+            margin-bottom: 5px; 
+            width: 100%;
+        }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 30px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="topo-pagina">
+        <div class="logo-site">atividadesescolares.net</div>
+        <div class="campos-cabecalho">
+            <div class="campo">ESCOLA: _________________________________________</div>
+            <div class="campo">DATA: ____/____/____</div>
+            <div class="campo">NOME: __________________________________________</div>
+            <div class="campo">TURMA: 2º ANO</div>
+        </div>
+    </div>
+
+    <div class="container-titulo">
+        <h1>Copie o texto abaixo e conheça a Chapeuzinho Amarelo.</h1>
+        <div class="icone-titulo">👧</div>
+    </div>
+
+    <div class="texto-leitura">
+        Chapeuzinho não comeu aquele bolo de lobo, porque sempre preferiu de chocolate. Aliás, ela agora come de tudo, menos sola de sapato.
+        <br><br>
+        Não tem mais medo de chuva, nem foge de carrapato.
+        <br><br>
+        Cai, levanta, se machuca, vai à praia, entra no mato, trepa em árvore, rouba fruta, depois joga amarelinha com o primo da vizinha...
+        <span class="referencia">(BUARQUE, Chico. Chapeuzinho Amarelo. 27. ed. Rio de Janeiro: José Olympio, 2011.)</span>
+    </div>
+
+    <div class="linhas-copia">
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+    </div>
+
+    <div class="footer-site">Conteúdo Pedagógico para o 2º Ano Fundamental.</div>
+
+</body>
+</html>
