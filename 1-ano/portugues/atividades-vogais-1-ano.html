@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        .header-escola div { margin-bottom: 10px; border-bottom: 1px solid #eee; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; }
+        h2 { text-align: center; font-size: 16px; color: #555; margin-bottom: 30px; font-weight: normal; }
+        .atividade { margin-bottom: 35px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f0f0f0; padding: 5px; text-transform: uppercase; }
+        
+        .caça-vogais { 
+            display: grid; 
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 15px; 
+            border: 2px solid #3498db; 
+            padding: 15px; 
+            border-radius: 15px;
+            background-color: #f9f9f9;
+        }
+        .letra-item { 
+            font-size: 28px; 
+            font-weight: bold; 
+            text-align: center; 
+            border: 1px solid #ddd; 
+            border-radius: 50%; 
+            width: 45px; 
+            height: 45px; 
+            line-height: 45px; 
+            margin: auto;
+            background: white;
+        }
+
+        .completar-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .item-completar { display: flex; align-items: center; font-size: 22px; margin-bottom: 10px; font-weight: bold; }
+        .espaco { width: 40px; border-bottom: 2px solid #000; margin-right: 8px; display: inline-block; height: 30px; text-align: center; }
+        
+        /* Ícones aumentados no exercício 3 */
+        .grid-icones { display: flex; justify-content: space-around; margin-top: 30px; }
+        .icone-item { text-align: center; }
+        .emoji-grande { font-size: 65px; display: block; margin-bottom: 15px; }
+        .caixa-escrita { width: 50px; height: 50px; border: 2px solid #333; display: inline-block; font-size: 24px; line-height: 50px; font-weight: bold; }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #a21caf; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #f5d0fe; font-weight: bold; }
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    
+    
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 1º ANO</span>
+        </div>
+    </div>
+
+    <h1>Atividade: As Vogais</h1>
+    <h2>A - E - I - O - U</h2>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. ENCONTRE E CIRCULE APENAS AS VOGAIS:</span>
+        <div class="caça-vogais">
+            <div class="letra-item">A</div> <div class="letra-item">G</div> <div class="letra-item">E</div> <div class="letra-item">K</div> <div class="letra-item">I</div>
+            <div class="letra-item">M</div> <div class="letra-item">O</div> <div class="letra-item">R</div> <div class="letra-item">U</div> <div class="letra-item">X</div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">2. COMPLETE COM AS VOGAIS QUE FALTAM:</span>
+        <div class="completar-container">
+            <div class="item-completar"><span class="espaco"></span> B E L H A</div>
+            <div class="item-completar"><span class="espaco"></span> S C O L A</div>
+            <div class="item-completar"><span class="espaco"></span> L H O</div>
+            <div class="item-completar"><span class="espaco"></span> G R E J A</div>
+            <div class="item-completar"><span class="espaco"></span> R S O</div>
+            <div class="item-completar"><span class="espaco"></span> V A</div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">3. ESCREVA A VOGAL INICIAL DENTRO DO QUADRADINHO:</span>
+        <div class="grid-icones">
+            <div class="icone-item">
+                <span class="emoji-grande">✈️</span>
+                <div class="caixa-escrita"></div>
+            </div>
+            <div class="icone-item">
+                <span class="emoji-grande">🐘</span>
+                <div class="caixa-escrita"></div>
+            </div>
+            <div class="icone-item">
+                <span class="emoji-grande">🍦</span>
+                <div class="caixa-escrita"></div>
+            </div>
+            <div class="icone-item">
+                <span class="emoji-grande">👁️</span>
+                <div class="caixa-escrita"></div>
+            </div>
+            <div class="icone-item">
+                <span class="emoji-grande">🍇</span>
+                <div class="caixa-escrita"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-site">Conteúdo Pedagógico: atividadesescolares.net</div>
+</body>
+</html>

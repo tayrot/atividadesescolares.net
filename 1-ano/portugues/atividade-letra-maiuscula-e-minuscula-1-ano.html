@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        .header-escola div { margin-bottom: 10px; border-bottom: 1px solid #eee; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; margin-bottom: 10px; }
+        h2 { text-align: center; font-size: 15px; color: #555; margin-bottom: 30px; font-weight: normal; }
+        .atividade { margin-bottom: 35px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f0f0f0; padding: 5px; text-transform: uppercase; }
+        
+        /* Estilo para o quadro de associação */
+        .quadro-letras { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 15px; 
+            margin: 20px 0;
+        }
+        .par-letras { 
+            border: 1px solid #3498db; 
+            padding: 10px; 
+            text-align: center; 
+            border-radius: 8px;
+            font-size: 24px;
+            background: #fdfdfd;
+        }
+        .letra-m { font-weight: bold; color: #2c3e50; }
+        .letra-min { color: #e91e63; }
+
+        /* Estilo para ligar */
+        .ligar-container { display: flex; justify-content: space-around; font-size: 26px; font-weight: bold; }
+        .coluna-ligar { display: flex; flex-direction: column; gap: 15px; }
+        .ponto { width: 12px; height: 12px; background: #000; border-radius: 50%; display: inline-block; margin: 0 10px; }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #a21caf; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #f5d0fe; font-weight: bold; }
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    
+    
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 1º ANO</span>
+        </div>
+    </div>
+
+    <h1>Letras Maiúsculas e Minúsculas</h1>
+    <h2>Aprendendo as diferentes formas de escrever</h2>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. VEJA COMO AS LETRAS PODEM MUDAR:</span>
+        <div class="quadro-letras">
+            <div class="par-letras"><span class="letra-m">A</span> <span class="letra-min">a</span></div>
+            <div class="par-letras"><span class="letra-m">B</span> <span class="letra-min">b</span></div>
+            <div class="par-letras"><span class="letra-m">D</span> <span class="letra-min">d</span></div>
+            <div class="par-letras"><span class="letra-m">E</span> <span class="letra-min">e</span></div>
+            <div class="par-letras"><span class="letra-m">F</span> <span class="letra-min">f</span></div>
+            <div class="par-letras"><span class="letra-m">G</span> <span class="letra-min">g</span></div>
+            <div class="par-letras"><span class="letra-m">R</span> <span class="letra-min">r</span></div>
+            <div class="par-letras"><span class="letra-m">T</span> <span class="letra-min">t</span></div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">2. LIGUE A LETRA MAIÚSCULA À SUA VERSÃO MINÚSCULA:</span>
+        <div class="ligar-container">
+            <div class="coluna-ligar">
+                <div>G <span class="ponto"></span></div>
+                <div>M <span class="ponto"></span></div>
+                <div>R <span class="ponto"></span></div>
+                <div>B <span class="ponto"></span></div>
+            </div>
+            <div class="coluna-ligar">
+                <div><span class="ponto"></span> m</div>
+                <div><span class="ponto"></span> g</div>
+                <div><span class="ponto"></span> b</div>
+                <div><span class="ponto"></span> r</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">3. ESCREVA A LETRA MINÚSCULA AO LADO DE CADA LETRA ABAIXO:</span>
+        <div style="display: flex; gap: 30px; justify-content: center; font-size: 28px; font-weight: bold; margin-top: 20px;">
+            <div>A → ____</div>
+            <div>E → ____</div>
+            <div>I → ____</div>
+            <div>O → ____</div>
+            <div>U → ____</div>
+        </div>
+    </div>
+
+    <div class="footer-site">Conteúdo Pedagógico: atividadesescolares.net</div>
+</body>
+</html>

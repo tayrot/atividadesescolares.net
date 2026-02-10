@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; background: #fff; }
+        
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #a21caf; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #f5d0fe; font-weight: bold; transition: 0.3s; }
+        .btn-voltar:hover { background-color: #fae8ff; }
+
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        .header-escola div { margin-bottom: 10px; border-bottom: 1px solid #eee; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 5px; color: #2c3e50; }
+        h2 { text-align: center; font-size: 16px; margin-bottom: 25px; font-weight: normal; color: #555; }
+        
+        .atividade { margin-bottom: 35px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f9f9f9; padding: 8px; border-left: 5px solid #3498db; }
+
+        /* Tabela de Família Silábica */
+        .tabela-familia { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .tabela-familia td { border: 1px solid #333; height: 60px; text-align: center; font-size: 24px; width: 16%; }
+        .header-col { background: #eaf4fb; font-weight: bold; }
+
+        .grid-palavras { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
+        .item-palavra { font-size: 20px; display: flex; align-items: center; }
+        .espaco-silaba { border-bottom: 2px solid #000; width: 50px; display: inline-block; margin: 0 5px; height: 25px; }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+    
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 1º ANO</span>
+        </div>
+    </div>
+
+    <h1>Alfabetização: Sílabas Simples</h1>
+    <h2>Juntando as letras para formar sons</h2>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. JUNTE A CONSOANTE COM AS VOGAIS E FORME AS FAMÍLIAS:</span>
+        <table class="tabela-familia">
+            <tr class="header-col">
+                <td>+</td><td>A</td><td>E</td><td>I</td><td>O</td><td>U</td>
+            </tr>
+            <tr>
+                <td class="header-col">B</td><td>BA</td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td class="header-col">L</td><td></td><td>LE</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td class="header-col">M</td><td></td><td></td><td>MI</td><td></td><td></td>
+            </tr>
+            <tr>
+                <td class="header-col">P</td><td></td><td></td><td></td><td>PO</td><td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">2. COMPLETE AS PALAVRAS COM A SÍLABA INICIAL:</span>
+        <div class="grid-palavras">
+            <div class="item-palavra">🐱 <span class="espaco-silaba"></span> TO (GA)</div>
+            <div class="item-palavra">🎈 <span class="espaco-silaba"></span> LA (BO)</div>
+            <div class="item-palavra">🐵 <span class="espaco-silaba"></span> CACO (MA)</div>
+            <div class="item-palavra">🏠 <span class="espaco-silaba"></span> SA (CA)</div>
+        </div>
+    </div>
+
+    <div class="atividade">
+        <span class="titulo-atv">3. LEITURA SIMPLES - LEIA E COPIE:</span>
+        <div style="display: flex; justify-content: space-around; font-size: 18px; font-weight: bold; border: 1px dashed #ccc; padding: 15px;">
+            <span>BOLA</span>
+            <span>DADO</span>
+            <span>LUVA</span>
+            <span>PATO</span>
+        </div>
+        <div style="margin-top: 15px;">
+            <div style="border-bottom: 1px solid #999; height: 35px;"></div>
+            <div style="border-bottom: 1px solid #999; height: 35px;"></div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net - Apoio à alfabetização inicial.</div>
+
+</body>
+</html>
