@@ -1,6 +1,8 @@
 const atividadesMatematica2ano = [
     { nome: "Antecessor E Sucessor 2º Ano", slug: "antecessor-e-sucessor-2ano" },
     { nome: "Antecessor E Sucessor 2º Ano 2", slug: "antecessor-e-sucessor-2ano-2" },
+    { nome: "Atividade Figuras Planas 2º Ano", slug: "atividade-figuras-planas-2-ano" },
+    { nome: "Atividade Ordem Numerica 2º Ano", slug: "atividade-ordem-numerica-2-ano" },
     { nome: "Atividades De Subtração 2º Ano", slug: "atividades-de-subtração-2-ano" },
     { nome: "Comparação Comprimento 2º Ano", slug: "comparacao-comprimento-2ano" },
     { nome: "Comparar E Ordenar 2º Ano", slug: "comparar-e-ordenar-2ano" },
