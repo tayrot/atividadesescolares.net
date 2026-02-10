@@ -1,6 +1,11 @@
 const atividadesPortugues1ano = [
     { nome: "Artigos Simples", slug: "artigos-simples" },
     { nome: "Atividade Letra B", slug: "atividade-letra-B" },
+    { nome: "Atividade Letra Maiuscula E Minuscula 1 Ano", slug: "atividade-letra-maiuscula-e-minuscula-1-ano" },
+    { nome: "Atividade Sílabas Simples 1 Ano", slug: "atividade-silabas-simples-1-ano" },
+    { nome: "Atividades Numeros 1 Ano Colorir", slug: "atividades-numeros-1-ano-colorir" },
+    { nome: "Atividades Vogais 1 Ano", slug: "atividades-vogais-1-ano" },
+    { nome: "Atividades Vogais 1 Ano Imprimir", slug: "atividades-vogais-1-ano-imprimir" },
     { nome: "Autoditado Simples", slug: "autoditado-simples" },
     { nome: "Compreensão De Textos", slug: "compreensao-de-textos" },
     { nome: "Consoantes", slug: "consoantes" },
