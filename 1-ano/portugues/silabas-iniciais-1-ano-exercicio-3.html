@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; color: #0891b2; }
+        
+        .titulo-atv { font-weight: bold; margin-bottom: 25px; display: block; background: #ecfeff; padding: 12px; border-left: 5px solid #0891b2; border-radius: 0 4px 4px 0; }
+        
+        .container-ligar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            margin-top: 10px;
+        }
+        
+        .coluna-imagens, .coluna-silabas {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .item-imagem {
+            font-size: 50px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #a5f3fc;
+            width: 110px;
+            border-radius: 15px;
+            position: relative;
+            background: #fff;
+        }
+
+        /* Ponto para ligar ao lado da imagem */
+        .item-imagem::after {
+            content: "";
+            position: absolute;
+            right: -35px;
+            width: 14px;
+            height: 14px;
+            background-color: #0891b2;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px #0891b2;
+        }
+
+        .item-silaba {
+            font-size: 35px;
+            font-weight: bold;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 110px;
+            color: #164e63;
+            position: relative;
+        }
+
+        /* Ponto para ligar ao lado da sílaba */
+        .item-silaba::before {
+            content: "";
+            position: absolute;
+            left: -35px;
+            width: 14px;
+            height: 14px;
+            background-color: #0891b2;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px #0891b2;
+        }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #0891b2; text-decoration: none; border-radius: 8px; border: 1px solid #a5f3fc; font-weight: bold; margin-bottom: 20px; }
+        .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO - PORTUGUÊS</strong></div>
+    </div>
+
+    <h1>Oficina de Sílabas 🎲</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. VEJA O DESENHO E LIGUE AO SOM DA PRIMEIRA SÍLABA:</span>
+        
+        <div class="container-ligar">
+            <div class="coluna-imagens">
+                <div class="item-imagem">⚽</div> <div class="item-imagem">🎲</div> <div class="item-imagem">🏠</div> <div class="item-imagem">🧸</div> <div class="item-imagem">🪁</div> </div>
+
+            <div class="coluna-silabas">
+                <div class="item-silaba">BO</div>
+                <div class="item-silaba">DA</div>
+                <div class="item-silaba">CA</div>
+                <div class="item-silaba">PI</div>
+                <div class="item-silaba">UR</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; border: 2px dashed #a5f3fc; padding: 20px; border-radius: 15px; background-color: #ecfeff;">
+            <strong>✍️ DESAFIO:</strong><br>
+            Qual dos desenhos acima, usamos para morar? Escreva o nome dele completo:
+            <div style="border-bottom: 2px solid #0891b2; margin-top: 25px; height: 30px;"></div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net - Alfabetização</div>
+
+</body>
+</html>
