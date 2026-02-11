@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; background-color: #fff; padding: 20px; }
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; color: #0369a1; }
+        
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f0f9ff; padding: 10px; border-left: 5px solid #0ea5e9; border-radius: 0 4px 4px 0; }
+        
+        .container-caça { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        
+        /* Grade do Caça Palavras */
+        .grid-caca {
+            display: grid;
+            grid-template-columns: repeat(10, 38px);
+            gap: 4px;
+            background: #fff;
+            padding: 10px;
+            border: 3px solid #0ea5e9;
+            border-radius: 12px;
+        }
+        .letra {
+            width: 38px;
+            height: 38px;
+            border: 1px solid #bae6fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            text-transform: uppercase;
+            background-color: #fff;
+        }
+
+        /* Lista de Palavras */
+        .lista-palavras {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #0369a1;
+        }
+        .palavra-item { background: #e0f2fe; padding: 5px 15px; border-radius: 8px; border: 1px solid #7dd3fc; }
+
+        /* Área de Escrita */
+        .quadro-escrita {
+            width: 100%;
+            margin-top: 30px;
+            border: 2px dashed #0ea5e9;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #f0f9ff;
+        }
+        .campo-texto {
+            border-bottom: 2px solid #334155;
+            margin-top: 25px;
+            height: 35px;
+            font-size: 18px;
+        }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #0369a1; text-decoration: none; border-radius: 8px; border: 1px solid #0ea5e9; font-weight: bold; margin-bottom: 20px; }
+        .footer { text-align: center; font-size: 10px; color: #64748b; margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+       <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        // Verifica se há histórico e se a página anterior pertence ao seu domínio
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            // Se vier do Google ou acesso direto, redireciona para a home
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO - PORTUGUÊS</strong></div>
+    </div>
+
+    <h1>Caça-Material Escolar ✏️</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. ENCONTRE OS NOMES DOS MATERIAIS NO QUADRO:</span>
+
+        <div class="lista-palavras">
+            <span class="palavra-item">COLA</span>
+            <span class="palavra-item">GIZ</span>
+            <span class="palavra-item">LÁPIS</span>
+            <span class="palavra-item">MESA</span>
+            <span class="palavra-item">SALA</span>
+            <span class="palavra-item">LIVRO</span>
+        </div>
+        
+        <div class="container-caça">
+            <div class="grid-caca">
+                <div class="letra">X</div><div class="letra">B</div><div class="letra">C</div><div class="letra">O</div><div class="letra">L</div><div class="letra">A</div><div class="letra">L</div><div class="letra">K</div><div class="letra">M</div><div class="letra">J</div>
+                <div class="letra">G</div><div class="letra">I</div><div class="letra">Z</div><div class="letra">X</div><div class="letra">R</div><div class="letra">T</div><div class="letra">S</div><div class="letra">Y</div><div class="letra">H</div><div class="letra">G</div>
+                <div class="letra">F</div><div class="letra">Q</div><div class="letra">L</div><div class="letra">Á</div><div class="letra">P</div><div class="letra">I</div><div class="letra">S</div><div class="letra">B</div><div class="letra">V</div><div class="letra">C</div>
+                <div class="letra">L</div><div class="letra">K</div><div class="letra">J</div><div class="letra">M</div><div class="letra">E</div><div class="letra">S</div><div class="letra">A</div><div class="letra">C</div><div class="letra">O</div><div class="letra">X</div>
+                <div class="letra">S</div><div class="letra">A</div><div class="letra">L</div><div class="letra">A</div><div class="letra">W</div><div class="letra">E</div><div class="letra">R</div><div class="letra">T</div><div class="letra">Y</div><div class="letra">U</div>
+                <div class="letra">Z</div><div class="letra">X</div><div class="letra">C</div><div class="letra">L</div><div class="letra">I</div><div class="letra">V</div><div class="letra">R</div><div class="letra">O</div><div class="letra">N</div><div class="letra">M</div>
+                <div class="letra">P</div><div class="letra">O</div><div class="letra">I</div><div class="letra">U</div><div class="letra">Y</div><div class="letra">T</div><div class="letra">R</div><div class="letra">E</div><div class="letra">W</div><div class="letra">Q</div>
+            </div>
+        </div>
+
+        <div class="quadro-escrita">
+            <strong>2. AGORA, ESCREVA O NOME DOS OBJETOS QUE VOCÊ ACHOU:</strong>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="campo-texto">1. ____________________</div>
+                <div class="campo-texto">2. ____________________</div>
+                <div class="campo-texto">3. ____________________</div>
+                <div class="campo-texto">4. ____________________</div>
+                <div class="campo-texto">5. ____________________</div>
+                <div class="campo-texto">6. ____________________</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Preparando para o Futuro</div>
+
+</body>
+</html>

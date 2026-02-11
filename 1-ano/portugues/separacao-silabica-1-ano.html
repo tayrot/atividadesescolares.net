@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.2; padding: 10px; }
+        .header-escola { border: 2px solid #000; padding: 10px; margin-bottom: 20px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 18px; margin-bottom: 5px; color: #1e293b; }
+        
+        .secao { margin-bottom: 25px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f1f5f9; padding: 8px; border-left: 5px solid #1e293b; font-size: 14px; }
+        
+        .lista-separacao { display: flex; flex-direction: column; gap: 15px; }
+        .item-separacao { display: flex; align-items: center; gap: 15px; border-bottom: 1px dashed #ddd; padding-bottom: 10px; }
+        
+        .imagem-box { font-size: 35px; width: 50px; text-align: center; }
+        .palavra-texto { font-size: 18px; font-weight: bold; width: 100px; text-transform: uppercase; }
+        .quadradinhos-container { display: flex; gap: 8px; flex-grow: 1; }
+        .quadrado { width: 45px; height: 45px; border: 2px solid #334155; display: flex; align-items: center; justify-content: center; }
+        
+        .contagem-box { width: 80px; text-align: center; }
+        .circulo-num { width: 35px; height: 35px; border: 2px solid #ef4444; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; color: #ef4444; margin: 0 auto; }
+
+        /* Novo Exercício de Rodapé */
+        .grid-embaralhado { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
+        .box-embaralhado { border: 1px solid #cbd5e1; padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 15px; }
+        .silabas-confusas { background: #fef3c7; padding: 5px 10px; border-radius: 4px; font-weight: bold; letter-spacing: 3px; border: 1px solid #f59e0b; }
+
+        .btn-voltar { display: inline-block; padding: 8px 12px; background: white; color: #1e293b; text-decoration: none; border-radius: 6px; border: 1px solid #cbd5e1; font-weight: bold; margin-bottom: 10px; font-size: 12px; }
+        .footer { text-align: center; font-size: 9px; margin-top: 20px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 5px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        // Verifica se há histórico e se a página anterior pertence ao seu domínio
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            // Se vier do Google ou acesso direto, redireciona para a home
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+  <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>1º ANO - PORTUGUÊS</strong></div>
+    </div>
+
+    <h1>Atividades de Alfabetização 📝</h1>
+
+    <div class="secao">
+        <span class="titulo-atv">1. SEPARE AS SÍLABAS E CONTE QUANTAS SÃO:</span>
+        <div class="lista-separacao">
+            <div class="item-separacao">
+                <div class="imagem-box">🐢</div>
+                <div class="palavra-texto">SAPO</div>
+                <div class="quadradinhos-container"><div class="quadrado"></div><div class="quadrado"></div></div>
+              
+            </div>
+            <div class="item-separacao">
+                <div class="imagem-box">🦒</div>
+                <div class="palavra-texto">GIRAFA</div>
+                <div class="quadradinhos-container"><div class="quadrado"></div><div class="quadrado"></div><div class="quadrado"></div></div>
+              
+            </div>
+            <div class="item-separacao">
+                <div class="imagem-box">🍇</div>
+                <div class="palavra-texto">UVA</div>
+                <div class="quadradinhos-container"><div class="quadrado"></div><div class="quadrado"></div></div>
+              
+            </div>
+            <div class="item-separacao">
+                <div class="imagem-box">🛸</div>
+                <div class="palavra-texto">NAVE</div>
+                <div class="quadradinhos-container"><div class="quadrado"></div><div class="quadrado"></div></div>
+             
+            </div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. DESEMBARALHE AS SÍLABAS E ESCREVA A PALAVRA:</span>
+        <div class="grid-embaralhado">
+            <div class="box-embaralhado">
+                <div class="silabas-confusas">CA - BO - NE</div>
+                <div style="flex-grow:1; border-bottom: 1px solid #000;"></div>
+            </div>
+            <div class="box-embaralhado">
+                <div class="silabas-confusas">LA - BA</div>
+                <div style="flex-grow:1; border-bottom: 1px solid #000;"></div>
+            </div>
+            <div class="box-embaralhado">
+                <div class="silabas-confusas">TO - PA</div>
+                <div style="flex-grow:1; border-bottom: 1px solid #000;"></div>
+            </div>
+            <div class="box-embaralhado">
+                <div class="silabas-confusas">CA - PI - PO</div>
+                <div style="flex-grow:1; border-bottom: 1px solid #000;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Praticando a Leitura e Escrita</div>
+
+</body>
+</html>

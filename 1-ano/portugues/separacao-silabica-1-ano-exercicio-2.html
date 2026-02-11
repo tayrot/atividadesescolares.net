@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.2; padding: 10px; margin: 0; }
+        
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; font-size: 14px; }
+        .header-escola div { margin-bottom: 10px; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 18px; color: #0d9488; margin: 10px 0; }
+        
+        .secao { margin-bottom: 20px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f0fdfa; padding: 10px; border-left: 5px solid #0d9488; font-size: 14px; border-radius: 0 4px 4px 0; }
+        
+        /* Estilo da Separação */
+        .lista-separacao { display: flex; flex-direction: column; gap: 12px; }
+        .item-separacao { display: flex; align-items: center; gap: 15px; padding-bottom: 8px; border-bottom: 1px dashed #99f6e4; }
+        
+        .imagem-box { font-size: 32px; width: 50px; text-align: center; }
+        .palavra-texto { font-size: 18px; font-weight: bold; width: 110px; text-transform: uppercase; color: #111; }
+        .quadradinhos-container { display: flex; gap: 8px; flex-grow: 1; }
+        .quadrado { width: 42px; height: 42px; border: 2px solid #0d9488; display: flex; align-items: center; justify-content: center; background: #fff; }
+        
+        .contagem-box { width: 70px; text-align: center; font-size: 11px; font-weight: bold; color: #0d9488; }
+        .circulo-contagem { width: 35px; height: 35px; border: 2px solid #0d9488; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 5px auto 0; }
+
+        /* Exercício de Completar */
+        .grid-completar { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .box-completar { border: 1px solid #99f6e4; padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px; background: #f9fafb; }
+        .silaba-pista { background: #fff; border: 2px solid #0d9488; padding: 4px 8px; font-weight: bold; font-size: 18px; min-width: 40px; text-align: center; }
+
+        /* Botão Voltar */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #0d9488; text-decoration: none; border-radius: 8px; border: 1px solid #99f6e4; font-weight: bold; margin-bottom: 15px; }
+        
+        .footer { text-align: center; font-size: 10px; color: #666; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 1º ANO</span>
+        </div>
+    </div>
+
+    <h1>Atividades de Português 🍎</h1>
+
+    <div class="secao">
+        <span class="titulo-atv">1. SEPARE AS SÍLABAS E REGISTRE A QUANTIDADE:</span>
+        <div class="lista-separacao">
+            <div class="item-separacao">
+                <div class="imagem-box">🐝</div>
+                <div class="palavra-texto">ABELHA</div>
+                <div class="quadradinhos-container"><div class="quadrado"></div><div class="quadrado"></div><div class="quadrado"></div></div>
+                <div class="contagem-box">SÍLABAS<div class="circulo-contagem"></div></div>
+            </div>
+            <div class="item-separacao">
+                <div class="imagem-box">🐮</div>
+                <div class="palavra-texto">VACA</div>
+                <div class="quadradinhos-container"><div class="quadrado"></div><div class="quadrado"></div></div>
+                <div class="contagem-box">SÍLABAS<div class="circulo-contagem"></div></div>
+            </div>
+            <div class="item-separacao">
+                <div class="imagem-box">🍅</div>
+                <div class="palavra-texto">TOMATE</div>
+                <div class="quadradinhos-container"><div class="quadrado"></div><div class="quadrado"></div><div class="quadrado"></div></div>
+                <div class="contagem-box">SÍLABAS<div class="circulo-contagem"></div></div>
+            </div>
+            <div class="item-separacao">
+                <div class="imagem-box">🐕</div>
+                <div class="palavra-texto">CÃO</div>
+                <div class="quadradinhos-container"><div class="quadrado"></div></div>
+                <div class="contagem-box">SÍLABAS<div class="circulo-contagem"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. COMPLETE AS PALAVRAS COM A SÍLABA QUE FALTA:</span>
+        <div class="grid-completar">
+            <div class="box-completar">
+                <span style="font-size: 25px;">🐱</span>
+                <span class="silaba-pista">GA</span> + <span style="border-bottom: 2px solid #000; width: 40px; height: 20px; display: inline-block;"></span> = GATO
+            </div>
+            <div class="box-completar">
+                <span style="font-size: 25px;">🥛</span>
+                <span class="silaba-pista">LEI</span> + <span style="border-bottom: 2px solid #000; width: 40px; height: 20px; display: inline-block;"></span> = LEITE
+            </div>
+            <div class="box-completar">
+                <span style="font-size: 25px;">🥣</span>
+                <span class="silaba-pista">SO</span> + <span style="border-bottom: 2px solid #000; width: 40px; height: 20px; display: inline-block;"></span> = SOPA
+            </div>
+            <div class="box-completar">
+                <span style="font-size: 25px;">🌹</span>
+                <span class="silaba-pista">RO</span> + <span style="border-bottom: 2px solid #000; width: 40px; height: 20px; display: inline-block;"></span> = ROSA
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Praticando com Alegria</div>
+
+</body>
+</html>

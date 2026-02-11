@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; background-color: #fff; padding: 10px; }
+        .header-escola { border: 2px solid #000; padding: 10px; margin-bottom: 20px; font-size: 14px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; color: #ef4444; margin: 0; }
+        
+        .exercicio { border: 2px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px; background: #fff; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; color: #b91c1c; border-bottom: 2px solid #ef4444; padding-bottom: 5px; }
+        
+        .conteudo { display: flex; justify-content: space-around; align-items: center; }
+        
+        /* Estilo da Grade */
+        .grid-cruzada { display: grid; gap: 2px; }
+        .celula { 
+            width: 38px; height: 38px; border: 2px solid #333; background: #fff; 
+            display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px;
+        }
+        .vazio { width: 42px; height: 42px; }
+        
+        /* Legenda */
+        .dicas { display: flex; flex-direction: column; gap: 10px; }
+        .dica-item { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 16px; }
+        .emoji { font-size: 30px; border: 1px solid #ddd; padding: 5px; border-radius: 8px; }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: #fff; color: #ef4444; text-decoration: none; border-radius: 8px; border: 1px solid #ef4444; font-weight: bold; margin-bottom: 15px; }
+        .footer { text-align: center; font-size: 10px; color: #999; margin-top: 20px; }
+
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <strong>ALUNO(A):</strong> ________________________________________________ <strong>DATA:</strong> ___/___/___
+    </div>
+
+    <h1>Cruzadinha do 1º Ano ✏️</h1>
+
+    <div class="exercicio">
+        <span class="titulo-atv">1. COMPLETE COM AS LETRAS QUE FALTAM (ANIMAIS):</span>
+        <div class="conteudo">
+            <div class="dicas">
+                <div class="dica-item"><span class="emoji">🦆</span> PATO</div>
+                <div class="dica-item"><span class="emoji">🐱</span> GATO</div>
+            </div>
+
+            <div class="grid-cruzada" style="grid-template-columns: repeat(4, 40px);">
+                <div class="vazio"></div><div class="celula">G</div><div class="vazio"></div><div class="vazio"></div>
+                <div class="celula">P</div><div class="celula"></div><div class="celula"></div><div class="celula"></div>
+                <div class="vazio"></div><div class="celula"></div><div class="vazio"></div><div class="vazio"></div>
+                <div class="vazio"></div><div class="celula"></div><div class="vazio"></div><div class="vazio"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercicio">
+        <span class="titulo-atv">2. COMPLETE COM AS LETRAS QUE FALTAM (OBJETOS):</span>
+        <div class="conteudo">
+            <div class="grid-cruzada" style="grid-template-columns: repeat(4, 40px);">
+                <div class="celula">C</div><div class="vazio"></div><div class="vazio"></div><div class="vazio"></div>
+                <div class="celula"></div><div class="celula">B</div><div class="celula"></div><div class="celula"></div>
+                <div class="celula"></div><div class="vazio"></div><div class="vazio"></div><div class="vazio"></div>
+                <div class="celula"></div><div class="vazio"></div><div class="vazio"></div><div class="vazio"></div>
+            </div>
+
+            <div class="dicas">
+                <div class="dica-item"><span class="emoji">🏠</span> CASA</div>
+                <div class="dica-item"><span class="emoji">⚽</span> BOLA</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; color: #666; font-style: italic;">
+        Dica: Use as imagens para descobrir as palavras!
+    </div>
+
+    <div class="footer">atividadesescolares.net</div>
+
+</body>
+</html>
