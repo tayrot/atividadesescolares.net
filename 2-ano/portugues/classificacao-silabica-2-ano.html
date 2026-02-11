@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; padding: 10px; margin: 0; }
+        
+        /* Cabeçalho Escola conforme solicitado */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; font-size: 14px; }
+        .header-escola div { margin-bottom: 10px; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; color: #6d28d9; margin: 10px 0; }
+        
+        .secao { margin-bottom: 25px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f5f3ff; padding: 10px; border-left: 5px solid #6d28d9; font-size: 15px; border-radius: 0 4px 4px 0; }
+        
+        /* Quadro de Lembrete */
+        .lembrete { background-color: #f8fafc; border: 1px solid #cbd5e1; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; }
+        .lembrete strong { color: #6d28d9; }
+
+        /* Estilo dos Exercícios */
+        .grid-exercicio { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .item-palavra { border-bottom: 1px solid #e2e8f0; padding: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .espaco-resposta { border: 1px solid #6d28d9; width: 120px; height: 25px; border-radius: 4px; }
+
+        /* Tabela Organizadora */
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { background-color: #6d28d9; color: white; padding: 10px; border: 1px solid #4c1d95; font-size: 13px; }
+        td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+
+        /* Botão Voltar Inteligente */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #6d28d9; text-decoration: none; border-radius: 8px; border: 1px solid #ddd6fe; font-weight: bold; margin-bottom: 15px; cursor: pointer; }
+        
+        .footer { text-align: center; font-size: 10px; color: #64748b; margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        // Verifica se há histórico e se a página anterior pertence ao seu domínio
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            // Se vier do Google ou acesso direto, redireciona para a home
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 1º ANO</span>
+        </div>
+    </div>
+
+    <h1>Classificação das Palavras 📚</h1>
+
+    <div class="lembrete">
+        <strong>💡 RELEMBRANDO:</strong><br>
+        • 1 sílaba: <strong>Monossílaba</strong> | • 2 sílabas: <strong>Dissílaba</strong> | • 3 sílabas: <strong>Trissílaba</strong> | • 4 ou mais: <strong>Polissílaba</strong>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">1. ESCREVA A CLASSIFICAÇÃO DE CADA PALAVRA QUANTO AO NÚMERO DE SÍLABAS:</span>
+        <div class="grid-exercicio">
+            <div class="item-palavra"><span>MÃO:</span> <div class="espaco-resposta"></div></div>
+            <div class="item-palavra"><span>SAPATO:</span> <div class="espaco-resposta"></div></div>
+            <div class="item-palavra"><span>LIVRO:</span> <div class="espaco-resposta"></div></div>
+            <div class="item-palavra"><span>BORBOLETA:</span> <div class="espaco-resposta"></div></div>
+            <div class="item-palavra"><span>CÉU:</span> <div class="espaco-resposta"></div></div>
+            <div class="item-palavra"><span>GELADEIRA:</span> <div class="espaco-resposta"></div></div>
+            <div class="item-palavra"><span>JANELA:</span> <div class="espaco-resposta"></div></div>
+            <div class="item-palavra"><span>PÉ:</span> <div class="espaco-resposta"></div></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. COLOQUE AS PALAVRAS DO QUADRO NA COLUNA CERTA:</span>
+        <div style="border: 1px dashed #6d28d9; padding: 10px; text-align: center; margin-bottom: 15px; font-weight: bold;">
+            TREM - BONECA - PIPOCA - SOL - COMPUTADOR - MESA - JACA - TELEVISÃO
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>MONOSSÍLABA</th>
+                    <th>DISSÍLABA</th>
+                    <th>TRISSÍLABA</th>
+                    <th>POLISSÍLABA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><br></td><td></td><td></td><td></td></tr>
+                <tr><td><br></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">3. DESAFIO:</span>
+        <p>Escreva uma palavra <strong>POLISSÍLABA</strong> que você encontra na sua escola:</p>
+        <div style="border-bottom: 1px solid #333; width: 100%; height: 30px; margin-top: 10px;"></div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Gramática e Ortografia</div>
+
+</body>
+</html>

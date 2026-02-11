@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; padding: 10px; margin: 0; }
+        
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; font-size: 14px; }
+        .header-escola div { margin-bottom: 10px; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; color: #1d4ed8; margin: 10px 0; }
+        
+        .secao { margin-bottom: 30px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #eff6ff; padding: 10px; border-left: 5px solid #1d4ed8; font-size: 15px; border-radius: 0 4px 4px 0; }
+        
+        /* Estilo da Tabela de Separação Limpa */
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { background-color: #f8fafc; padding: 12px; border: 1px solid #cbd5e1; font-size: 14px; text-transform: uppercase; }
+        td { padding: 15px; border: 1px solid #cbd5e1; vertical-align: middle; }
+        
+        .palavra-alvo { font-weight: bold; font-size: 18px; text-transform: uppercase; color: #1e293b; width: 30%; }
+        
+        .linha-separacao { 
+            border-bottom: 1px solid #94a3b8; 
+            height: 30px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .campo-num {
+            width: 45px;
+            height: 45px;
+            border: 2px solid #1d4ed8;
+            border-radius: 8px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Botão Voltar */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #1d4ed8; text-decoration: none; border-radius: 8px; border: 1px solid #bfdbfe; font-weight: bold; margin-bottom: 15px; }
+        
+        .footer { text-align: center; font-size: 10px; color: #64748b; margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 2º ANO</span>
+        </div>
+    </div>
+
+    <h1>Desafio Silábico 📝</h1>
+
+    <div class="secao">
+        <span class="titulo-atv">1. SEPARE AS SÍLABAS DAS PALAVRAS ABAIXO (USE TRAÇOS):</span>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>PALAVRA</th>
+                    <th>COMO EU SEPARO</th>
+                    <th>TOTAL DE SÍLABAS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="palavra-alvo">PASSARINHO</td>
+                    <td><div class="linha-separacao"></div></td>
+                    <td><div class="campo-num"></div></td>
+                </tr>
+                <tr>
+                    <td class="palavra-alvo">CARROÇA</td>
+                    <td><div class="linha-separacao"></div></td>
+                    <td><div class="campo-num"></div></td>
+                </tr>
+                <tr>
+                    <td class="palavra-alvo">AMIZADE</td>
+                    <td><div class="linha-separacao"></div></td>
+                    <td><div class="campo-num"></div></td>
+                </tr>
+                <tr>
+                    <td class="palavra-alvo">CHOCOLATE</td>
+                    <td><div class="linha-separacao"></div></td>
+                    <td><div class="campo-num"></div></td>
+                </tr>
+                <tr>
+                    <td class="palavra-alvo">SOL</td>
+                    <td><div class="linha-separacao"></div></td>
+                    <td><div class="campo-num"></div></td>
+                </tr>
+                <tr>
+                    <td class="palavra-alvo">GUITARRA</td>
+                    <td><div class="linha-separacao"></div></td>
+                    <td><div class="campo-num"></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. AGORA, ESCOLHA UMA DAS PALAVRAS ACIMA E CRIE UMA FRASE BEM LEGAL:</span>
+        <div style="margin-top: 20px;">
+            <div style="border-bottom: 1px solid #333; margin-bottom: 15px; height: 30px;"></div>
+            <div style="border-bottom: 1px solid #333; height: 30px;"></div>
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Praticando a gramática de forma livre</div>
+
+</body>
+</html>

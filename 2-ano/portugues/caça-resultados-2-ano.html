@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Matemática 2º Ano</title>
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; background-color: #fff; padding: 20px; }
+        
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 5px; color: #1e293b; }
+        
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f0fdf4; padding: 10px; border-left: 5px solid #22c55e; border-radius: 0 4px 4px 0; }
+        
+        .container-principal { display: flex; gap: 20px; align-items: flex-start; }
+        
+        /* Coluna das Contas */
+        .coluna-contas { flex: 1; }
+        .operacao-item { 
+            background: #f8fafc; 
+            margin-bottom: 8px; 
+            padding: 12px; 
+            border-radius: 8px; 
+            border: 1px solid #e2e8f0;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .resultado-linha {
+            border-bottom: 2px solid #333;
+            width: 60px;
+            display: inline-block;
+            margin-left: 10px;
+            height: 25px;
+        }
+
+        /* Grade do Caça Palavras */
+        .coluna-caca { flex: 1.2; text-align: center; }
+        .grid-caca {
+            display: grid;
+            grid-template-columns: repeat(10, 35px);
+            gap: 4px;
+            justify-content: center;
+            background: #fff;
+            padding: 10px;
+            border: 2px solid #333;
+            border-radius: 8px;
+        }
+        .letra {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        /* Novo Desafio Matemático */
+        .desafio-matematico {
+            margin-top: 25px;
+            border: 2px dashed #22c55e;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f0fdf4;
+        }
+        .grid-desafio {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .card-desafio {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #bbf7d0;
+        }
+        .input-crescente {
+            border: 1px solid #333;
+            width: 70px;
+            height: 25px;
+            display: inline-block;
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+
+        /* Botão Voltar */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #22c55e; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #bbf7d0; font-weight: bold; transition: 0.2s; }
+        .btn-voltar:hover { background-color: #f0fdf4; }
+        
+        .footer-site { text-align: center; font-size: 10px; margin-top: 20px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+  
+    
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../../index.html"; // Ajustado para subir dois níveis (2-ano/portugues)
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - MATEMÁTICA</strong></div>
+    </div>
+
+    <h1>Caça-Resultados Matemático</h1>
+
+    <div class="atividade">
+        <span class="titulo-atv">1. RESOLVA AS CONTAS E PROCURE OS RESULTADOS (POR EXTENSO) NO CAÇA-PALAVRAS:</span>
+        
+        <div class="container-principal">
+            <div class="coluna-contas">
+                <div class="operacao-item">A) 15 + 5 = <span class="resultado-linha"></span></div>
+                <div class="operacao-item">B) 20 - 10 = <span class="resultado-linha"></span></div>
+                <div class="operacao-item">C) 12 + 2 = <span class="resultado-linha"></span></div>
+                <div class="operacao-item">D) 30 - 5 = <span class="resultado-linha"></span></div>
+                <div class="operacao-item">E) 8 + 4 = <span class="resultado-linha"></span></div>
+                <div class="operacao-item">F) 40 - 10 = <span class="resultado-linha"></span></div>
+                
+                <p style="font-size: 11px; margin-top: 15px; color: #64748b; font-style: italic;">
+                    Dicas: VINTE, DEZ, QUATORZE, VINTE E CINCO, DOZE, TRINTA.
+                </p>
+            </div>
+
+            <div class="coluna-caca">
+                <div class="grid-caca">
+                    <div class="letra">V</div><div class="letra">I</div><div class="letra">N</div><div class="letra">T</div><div class="letra">E</div><div class="letra">X</div><div class="letra">Z</div><div class="letra">L</div><div class="letra">O</div><div class="letra">P</div>
+                    <div class="letra">R</div><div class="letra">A</div><div class="letra">S</div><div class="letra">D</div><div class="letra">E</div><div class="letra">Z</div><div class="letra">F</div><div class="letra">G</div><div class="letra">H</div><div class="letra">J</div>
+                    <div class="letra">Q</div><div class="letra">U</div><div class="letra">A</div><div class="letra">T</div><div class="letra">O</div><div class="letra">R</div><div class="letra">Z</div><div class="letra">E</div><div class="letra">K</div><div class="letra">L</div>
+                    <div class="letra">M</div><div class="letra">N</div><div class="letra">B</div><div class="letra">V</div><div class="letra">C</div><div class="letra">X</div><div class="letra">Z</div><div class="letra">A</div><div class="letra">S</div><div class="letra">D</div>
+                    <div class="letra">V</div><div class="letra">I</div><div class="letra">N</div><div class="letra">T</div><div class="letra">E</div><div class="letra">E</div><div class="letra">C</div><div class="letra">I</div><div class="letra">N</div><div class="letra">C</div>
+                    <div class="letra">O</div><div class="letra">P</div><div class="letra">L</div><div class="letra">K</div><div class="letra">J</div><div class="letra">H</div><div class="letra">G</div><div class="letra">F</div><div class="letra">D</div><div class="letra">O</div>
+                    <div class="letra">D</div><div class="letra">O</div><div class="letra">Z</div><div class="letra">E</div><div class="letra">X</div><div class="letra">C</div><div class="letra">V</div><div class="letra">B</div><div class="letra">N</div><div class="letra">M</div>
+                    <div class="letra">T</div><div class="letra">R</div><div class="letra">I</div><div class="letra">N</div><div class="letra">T</div><div class="letra">A</div><div class="letra">Q</div><div class="letra">W</div><div class="letra">E</div><div class="letra">R</div>
+                    <div class="letra">A</div><div class="letra">S</div><div class="letra">D</div><div class="letra">F</div><div class="letra">G</div><div class="letra">H</div><div class="letra">J</div><div class="letra">K</div><div class="letra">L</div><div class="letra">P</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="desafio-matematico">
+            <strong style="font-size: 18px; color: #166534;">🔢 SUPER DESAFIO MATEMÁTICO:</strong>
+            <p style="margin: 5px 0;">Use os resultados das contas acima para responder:</p>
+            
+            <div class="grid-desafio">
+                <div class="card-desafio">
+                    <strong>A) SOMA DE RESULTADOS:</strong><br>
+                    Quanto dá o resultado da <b>Letra A</b> + o resultado da <b>Letra B</b>?<br>
+                    Cálculo: ____ + ____ = <b>[____]</b>
+                </div>
+                
+                <div class="card-desafio">
+                    <strong>B) MAIOR VALOR:</strong><br>
+                    Olhando todos os resultados, qual é o <b>MAIOR</b> número?<br>
+                    Resposta: _____________________
+                </div>
+            </div>
+
+            <div class="card-desafio" style="margin-top: 15px; text-align: center;">
+                <strong>C) ORDEM CRESCENTE:</strong> Organize os resultados das letras <b>A, B, C e E</b> do menor para o maior:<br><br>
+                <div class="input-crescente"></div> < <div class="input-crescente"></div> < <div class="input-crescente"></div> < <div class="input-crescente"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-site">atividadesescolares.net - Diversão com Números</div>
+
+</body>
+</html>
