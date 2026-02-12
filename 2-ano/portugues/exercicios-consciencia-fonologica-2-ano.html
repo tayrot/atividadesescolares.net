@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.3; padding: 10px; margin: 0; background-color: #fff; }
+        
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; font-size: 14px; }
+        .header-escola div { margin-bottom: 10px; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; color: #7e22ce; margin: 10px 0; }
+        
+        .secao { margin-bottom: 25px; border: 1px solid #f3e8ff; border-radius: 10px; padding: 15px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #faf5ff; padding: 10px; border-left: 5px solid #7e22ce; font-size: 15px; border-radius: 0 4px 4px 0; }
+        
+        /* Exercício de Aliteração */
+        .grid-aliteracao { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .caixa-aliteracao { border: 1px solid #d8b4fe; padding: 10px; border-radius: 8px; text-align: center; }
+        .palavra-destaque { font-size: 18px; font-weight: bold; color: #7e22ce; display: block; margin-bottom: 8px; }
+        .opcoes-texto { font-size: 14px; font-style: italic; }
+
+        /* Contagem de Sílabas com Batidas de Palma */
+        .item-palma { display: flex; align-items: center; justify-content: space-between; padding: 8px; border-bottom: 1px dashed #d8b4fe; }
+        .palmas-icons { display: flex; gap: 5px; }
+        .circulo-palma { width: 22px; height: 22px; border: 2px solid #7e22ce; border-radius: 50%; }
+
+        /* Substituição de Sons */
+        .linha-troca { background: #fdfaff; padding: 10px; margin-bottom: 10px; border-radius: 5px; font-size: 15px; }
+
+        /* Espaço para Colorir */
+        .container-desenho { display: flex; align-items: center; border: 2px dashed #7e22ce; border-radius: 15px; padding: 15px; background: #faf5ff; margin-top: 10px; }
+        .coruja { font-size: 70px; filter: grayscale(100%) brightness(1.2); flex: 1; text-align: center; }
+
+        /* Botão Voltar Inteligente */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #7e22ce; text-decoration: none; border-radius: 8px; border: 1px solid #d8b4fe; font-weight: bold; margin-bottom: 15px; cursor: pointer; }
+        
+        .footer { text-align: center; font-size: 10px; color: #6b7280; margin-top: 20px; border-top: 1px solid #e5e7eb; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 2º ANO</span>
+        </div>
+    </div>
+
+    <h1>Oficina das Palavras </h1>
+
+    <div class="secao">
+        <span class="titulo-atv">1. SONS IGUAIS: Circule a palavra que começa com o mesmo som da primeira:</span>
+        <div class="grid-aliteracao">
+            <div class="caixa-aliteracao">
+                <span class="palavra-destaque">SAPATO</span>
+                <span class="opcoes-texto">Sapo - Bala - Gato</span>
+            </div>
+            <div class="caixa-aliteracao">
+                <span class="palavra-destaque">BOCA</span>
+                <span class="opcoes-texto">Dedo - Bolo - Faca</span>
+            </div>
+            <div class="caixa-aliteracao">
+                <span class="palavra-destaque">LATA</span>
+                <span class="opcoes-texto">Luva - Mão - Zebra</span>
+            </div>
+            <div class="caixa-aliteracao">
+                <span class="palavra-destaque">PATO</span>
+                <span class="opcoes-texto">Cão - Rato - Pena</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. Fale a palavra e pinte uma bolinha para cada sílaba:</span>
+        <div class="item-palma">
+            <span>BORBOLETA</span>
+            <div class="palmas-icons"><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div></div>
+        </div>
+        <div class="item-palma">
+            <span>CASA</span>
+            <div class="palmas-icons"><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div></div>
+        </div>
+        <div class="item-palma">
+            <span>JACARÉ</span>
+            <div class="palmas-icons"><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div></div>
+        </div>
+        <div class="item-palma">
+            <span>PÃO</span>
+            <div class="palmas-icons"><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div><div class="circulo-palma"></div></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">3. BRINCADEIRA DO "TIRA-SÍLABA":</span>
+        <div class="linha-troca">
+            Se tirarmos o <b>CA</b> da palavra <b>ESCADA</b>, que palavra sobra? __________
+        </div>
+        <div class="linha-troca">
+            Se tirarmos o <b>TU</b> da palavra <b>TUCANO</b>, que palavra sobra? __________
+        </div>
+        <div class="linha-troca">
+            Se tirarmos o <b>MA</b> da palavra <b>MACACO</b>, que palavra sobra? __________
+        </div>
+    </div>
+
+    <div class="secao">
+        <div class="container-desenho">
+            <div style="flex: 2;">
+                <span class="titulo-atv">4. DESAFIO DA CORUJA:</span>
+                <p>Escreva uma palavra que rime com <b>SABEDORIA</b>:</p>
+                <p>Resposta: ___________________________</p>
+
+            </div>
+            <div class="coruja">🦉</div>
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Desenvolvendo a Consciência Fonológica</div>
+
+</body>
+</html>

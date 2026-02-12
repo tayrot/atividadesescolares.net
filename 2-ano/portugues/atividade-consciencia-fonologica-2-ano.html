@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.3; padding: 10px; margin: 0; background-color: #fff; }
+        
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; font-size: 14px; }
+        .header-escola div { margin-bottom: 10px; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; color: #be185d; margin: 10px 0; }
+        
+        .secao { margin-bottom: 25px; border: 1px solid #fce7f3; border-radius: 10px; padding: 15px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #fdf2f8; padding: 10px; border-left: 5px solid #be185d; font-size: 15px; border-radius: 0 4px 4px 0; }
+        
+        /* Exercício de Rimas */
+        .grid-rimas { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .item-rima { background: #fff; border: 1px solid #f9a8d4; padding: 10px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; }
+        .palavra-base { font-weight: bold; color: #be185d; font-size: 18px; }
+        .input-rima { border-bottom: 2px solid #333; width: 100px; height: 20px; }
+
+        /* Exercício de Troca de Letras */
+        .caixa-troca { background: #fdf2f8; padding: 15px; border-radius: 8px; margin-top: 10px; }
+        .palavra-exemplo { font-family: 'Courier New', monospace; font-size: 20px; background: #fff; padding: 5px 10px; border-radius: 4px; border: 1px dashed #be185d; }
+
+        /* Exercício de Sílabas */
+        .grid-silabas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .card-silaba { border: 2px solid #be185d; border-radius: 12px; padding: 10px; text-align: center; }
+        .emoji-silaba { font-size: 30px; display: block; margin-bottom: 5px; }
+        .linha-silaba { border-bottom: 1px solid #000; width: 100%; height: 25px; display: block; margin-top: 10px; }
+
+        /* Botão Voltar Inteligente */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #be185d; text-decoration: none; border-radius: 8px; border: 1px solid #f9a8d4; font-weight: bold; margin-bottom: 15px; cursor: pointer; }
+        
+        .footer { text-align: center; font-size: 10px; color: #64748b; margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 2º ANO</span>
+        </div>
+    </div>
+
+    <h1>Brincando com os Sons das Palavras</h1>
+
+    <div class="secao">
+        <span class="titulo-atv">1. Escreva uma palavra que rime com:</span>
+        <div class="grid-rimas">
+            <div class="item-rima"><span class="palavra-base">PANELA</span> rima com: <div class="input-rima"></div></div>
+            <div class="item-rima"><span class="palavra-base">CHULÉ</span> rima com: <div class="input-rima"></div></div>
+            <div class="item-rima"><span class="palavra-base">GATO</span> rima com: <div class="input-rima"></div></div>
+            <div class="item-rima"><span class="palavra-base">AVIÃO</span> rima com: <div class="input-rima"></div></div>
+            <div class="item-rima"><span class="palavra-base">ESCOLA</span> rima com: <div class="input-rima"></div></div>
+            <div class="item-rima"><span class="palavra-base">MELANCIA</span> rima com: <div class="input-rima"></div></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. Se trocarmos a primeira letra, que palavra vira?</span>
+
+            <p>Troque o <b>M</b> de <b>MOLA</b> pelo <b>B</b>: <span class="palavra-exemplo">__________</span></p>
+            <p>Troque o <b>P</b> de <b>PATO</b> pelo <b>G</b>: <span class="palavra-exemplo">__________</span></p>
+            <p>Troque o <b>L</b> de <b>LUVA</b> pelo <b>CH</b>: <span class="palavra-exemplo">__________</span></p>
+            <p>Troque o <b>F</b> de <b>FACA</b> pelo <b>J</b>: <span class="palavra-exemplo">__________</span></p>
+
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">3. Escreva o nome dos desenhos e circule a primeira sílaba:</span>
+        <div class="grid-silabas">
+            <div class="card-silaba">
+                <span class="emoji-silaba">🦒</span>
+                <span class="linha-silaba"></span>
+            </div>
+            <div class="card-silaba">
+                <span class="emoji-silaba">🍎</span>
+                <span class="linha-silaba"></span>
+            </div>
+            <div class="card-silaba">
+                <span class="emoji-silaba">🐢</span>
+                <span class="linha-silaba"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">4. DESAFIO FINAL:</span>
+        <p>Pense na palavra <b>SAPATO</b>. Se tirarmos o <b>SA</b>, qual palavra sobra?</p>
+        <div style="border: 2px solid #be185d; height: 50px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; background: #fff;">
+            RESPOSTA: ___________________
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Consciência Fonológica e Alfabetização</div>
+
+</body>
+</html>
