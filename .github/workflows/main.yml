@@ -19,22 +19,23 @@ jobs:
           base-url-path: https://atividadesescolares.net/
           path-to-root: .
           exclude-paths: 404.html
-          # Esta linha abaixo remove os PDFs do sitemap
           include-pdf: false
+          # ESTA LINHA É A CHAVE: Ela diz para a Action incluir arquivos .webp
+          additional-extensions: webp
 
       - name: Commit and push
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
           
-          # 1. Adiciona o sitemap.xml modificado
+          # Adiciona o sitemap.xml criado/atualizado
           git add sitemap.xml
           
-          # 2. Faz o commit local
-          git commit -m "Automated sitemap update (remover PDFs)" || echo "Sem mudanças"
+          # O comando || echo evita que o erro pare o processo se não houver mudanças
+          git commit -m "Automated sitemap update (incluindo imagens webp)" || echo "Sem mudanças para commitar"
           
-          # 3. Sincroniza com o servidor
+          # Puxa alterações remotas para evitar conflitos
           git pull --rebase origin main
           
-          # 4. Envia para o GitHub
+          # Envia para o repositório
           git push origin main
