@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 8mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.2; padding: 5px; margin: 0; background-color: #fff; }
+        
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 12px; margin-bottom: 15px; font-size: 14px; }
+        .header-escola div { margin-bottom: 8px; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; color: #e11d48; margin: 5px 0; }
+        
+        .secao { margin-bottom: 15px; border: 1px solid #fecdd3; border-radius: 8px; padding: 10px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 10px; display: block; background: #fff1f2; padding: 8px; border-left: 5px solid #e11d48; font-size: 14px; }
+        
+        /* Contas Armadas */
+        .grid-contas { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; text-align: right; }
+        .conta-box { font-family: 'Courier New', monospace; font-size: 20px; width: 60px; margin: 0 auto; border: 1px solid #eee; padding: 5px; border-radius: 4px; }
+        .linha { border-top: 2px solid #333; margin-top: 3px; height: 25px; }
+
+        /* Cálculo Mental */
+        .mental-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+        .item-mental { background: #f9fafb; padding: 6px; border-radius: 4px; font-size: 14px; border: 1px solid #e5e7eb; }
+        .res { border-bottom: 1px solid #333; width: 35px; display: inline-block; height: 15px; }
+
+        /* Espaço para Colorir */
+        .colorir-area { display: flex; align-items: center; justify-content: space-around; border: 2px dashed #fb7185; padding: 10px; border-radius: 10px; margin-top: 10px; }
+        .desenho-simples { width: 120px; height: 120px; border: 2px solid #333; display: flex; align-items: center; justify-content: center; position: relative; }
+        .robo { font-size: 60px; filter: grayscale(100%) brightness(1.5); }
+
+        /* Botão Voltar Inteligente */
+        .btn-voltar { display: inline-block; padding: 8px 12px; background: white; color: #e11d48; text-decoration: none; border-radius: 6px; border: 1px solid #fda4af; font-weight: bold; margin-bottom: 10px; cursor: pointer; font-size: 13px; }
+        
+        .footer { text-align: center; font-size: 9px; color: #94a3b8; margin-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 2º ANO</span>
+        </div>
+    </div>
+
+    <h1>Exercícios de Matemática</h1>
+
+    <div class="secao">
+        <span class="titulo-atv">1. RESOLVA AS ADIÇÕES ABAIXO:</span>
+        <div class="grid-contas">
+            <div class="conta-box"> 32<br>+14<div class="linha"></div></div>
+            <div class="conta-box"> 45<br>+23<div class="linha"></div></div>
+            <div class="conta-box"> 16<br>+52<div class="linha"></div></div>
+            <div class="conta-box"> 27<br>+31<div class="linha"></div></div>
+            <div class="conta-box"> 60<br>+18<div class="linha"></div></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. RESOLVA AS SUBTRAÇÕES ABAIXO:</span>
+        <div class="grid-contas">
+            <div class="conta-box"> 48<br>-12<div class="linha"></div></div>
+            <div class="conta-box"> 39<br>-15<div class="linha"></div></div>
+            <div class="conta-box"> 57<br>-24<div class="linha"></div></div>
+            <div class="conta-box"> 26<br>-10<div class="linha"></div></div>
+            <div class="conta-box"> 65<br>-33<div class="linha"></div></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">3. CÁLCULO RÁPIDO (MENTAL):</span>
+        <div class="mental-grid">
+            <div class="item-mental">10 + 10 = <span class="res"></span></div>
+            <div class="item-mental">20 - 5 = <span class="res"></span></div>
+            <div class="item-mental">15 + 5 = <span class="res"></span></div>
+            <div class="item-mental">30 - 10 = <span class="res"></span></div>
+            <div class="item-mental">12 + 12 = <span class="res"></span></div>
+            <div class="item-mental">25 - 10 = <span class="res"></span></div>
+            <div class="item-mental">40 + 2 = <span class="res"></span></div>
+            <div class="item-mental">18 - 8 = <span class="res"></span></div>
+            <div class="item-mental">50 + 7 = <span class="res"></span></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">4. RESOLVA O DESAFIO E PINTE O ROBÔ:</span>
+        <div class="colorir-area">
+            <div style="width: 60%;">
+                <p>O Robô carregava <b>18</b> parafusos. <br>Ele usou <b>6</b> para se consertar. <br>Quantos parafusos sobraram?</p>
+                <p>Resposta: <span style="border-bottom: 1px solid #000; width: 100px; display: inline-block;"></span></p>
+                <p style="font-size: 11px; color: #e11d48;"><b>Dica:</b> Pinte o robô bem colorido!</p>
+            </div>
+            <div class="desenho-simples">
+                <span class="robo">🤖</span>
+                <span style="position:absolute; top:5px; left:5px;">⚙️</span>
+                <span style="position:absolute; bottom:5px; right:5px;">⚡</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Aprendendo Matemática com Alegria</div>
+
+</body>
+</html>

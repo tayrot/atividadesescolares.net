@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.3; padding: 10px; margin: 0; background-color: #fff; }
+        
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; font-size: 14px; }
+        .header-escola div { margin-bottom: 10px; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; color: #0284c7; margin: 10px 0; }
+        
+        .secao { margin-bottom: 25px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f0f9ff; padding: 10px; border-left: 5px solid #0284c7; font-size: 15px; border-radius: 0 4px 4px 0; }
+        
+        /* Estilo das Contas Armadas (Vertical) */
+        .grid-contas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: right; padding: 0 10px; }
+        .conta-vertical { font-family: 'Courier New', monospace; font-size: 22px; width: 80px; margin: 0 auto; }
+        .linha-resultado { border-top: 2px solid #333; margin-top: 5px; height: 35px; width: 100%; }
+
+        /* Operações Horizontais */
+        .operacao-horizontal { font-size: 18px; font-weight: bold; margin-bottom: 10px; padding: 8px; background: #fff7ed; border-radius: 6px; display: flex; align-items: center; }
+        .resultado-box { border-bottom: 2px solid #f97316; width: 60px; height: 25px; display: inline-block; margin-left: 10px; }
+
+        /* Desafio Final */
+        .desafio-box { border: 2px dashed #0284c7; padding: 15px; border-radius: 10px; background: #f0f9ff; }
+
+        /* Botão Voltar Inteligente */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #0284c7; text-decoration: none; border-radius: 8px; border: 1px solid #bae6fd; font-weight: bold; margin-bottom: 15px; cursor: pointer; }
+        
+        .footer { text-align: center; font-size: 10px; color: #64748b; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 2º ANO</span>
+        </div>
+    </div>
+
+    <h1>Matemática Divertida 🔢</h1>
+
+    <div class="secao">
+        <span class="titulo-atv">1. ARME E EFETUE AS ADIÇÕES (SOMA):</span>
+        <div class="grid-contas">
+            <div class="conta-vertical"> 24<br>+13<div class="linha-resultado"></div></div>
+            <div class="conta-vertical"> 35<br>+22<div class="linha-resultado"></div></div>
+            <div class="conta-vertical"> 17<br>+41<div class="linha-resultado"></div></div>
+            <div class="conta-vertical"> 50<br>+38<div class="linha-resultado"></div></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. RESOLVA AS SUBTRAÇÕES (MENOS):</span>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="operacao-horizontal"> 48 - 15 = <div class="resultado-box"></div></div>
+            <div class="operacao-horizontal"> 29 - 14 = <div class="resultado-box"></div></div>
+            <div class="operacao-horizontal"> 37 - 20 = <div class="resultado-box"></div></div>
+            <div class="operacao-horizontal"> 55 - 33 = <div class="resultado-box"></div></div>
+            <div class="operacao-horizontal"> 19 - 07 = <div class="resultado-box"></div></div>
+            <div class="operacao-horizontal"> 64 - 12 = <div class="resultado-box"></div></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">3. DESAFIO DO PENSAMENTO:</span>
+        <div class="desafio-box">
+            <p>A) Marina tinha <b>25</b> adesivos e ganhou mais <b>12</b>. Com quantos ela ficou? <br>
+            Cálculo: ______ + ______ = ________</p>
+            
+            <p>B) Pedro tinha <b>30</b> bolinhas de gude e perdeu <b>10</b> no jogo. Quantas sobraram? <br>
+            Cálculo: ______ - ______ = ________</p>
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Praticando com Números e Desafios</div>
+
+</body>
+</html>

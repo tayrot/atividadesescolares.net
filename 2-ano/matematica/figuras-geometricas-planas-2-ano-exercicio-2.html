@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade de Geometria: Formas e Desenhos - 2º Ano</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; background-color: #f5f5f5; padding: 20px; }
+        .folha-a4 { background: white; width: 210mm; margin: auto; padding: 15mm; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 5px; }
+        
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 25px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; color: #d84315; }
+        
+        .titulo-atv { font-weight: bold; margin: 25px 0 15px; display: block; background: #fff3e0; padding: 10px; border-left: 5px solid #ff9800; font-size: 18px; }
+
+        /* EXERCÍCIO 1: ESPAÇO AMPLIADO PARA LIGAR */
+        .area-ligar { display: flex; justify-content: space-between; align-items: center; margin: 40px 0; padding: 0 50px; min-height: 350px; }
+        .coluna-objetos { display: flex; flex-direction: column; gap: 60px; }
+        .coluna-nomes { display: flex; flex-direction: column; gap: 85px; }
+        .item-ligar { font-size: 50px; text-align: center; position: relative; }
+        .item-ligar span { display: block; font-size: 12px; font-weight: bold; color: #666; }
+        .nome-forma { border: 2px solid #ff9800; padding: 10px 20px; border-radius: 10px; font-weight: bold; background: #fff; width: 150px; text-align: center; }
+
+        /* EXERCÍCIO 2: NOVO - COMPLETAR FORMAS */
+        .grid-completar { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0; }
+/* Aumenta a área de desenho para o aluno */
+.box-completar { 
+    border: 2px dashed #ccc; 
+    padding: 15px 10px; /* Aumentado o padding vertical */
+    text-align: center; 
+    border-radius: 10px; 
+    min-height: 100px; /* Aumentado de 120px para 200px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o nome fique sempre embaixo */
+    align-items: center;
+}
+        .meia-forma { border-left: 3px solid #333; border-top: 3px solid #333; width: 50px; height: 50px; margin: 0 auto 10px; }
+        .meio-circulo { width: 50px; height: 25px; border: 3px solid #333; border-bottom: 0; border-radius: 50px 50px 0 0; margin: 0 auto 10px; }
+
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: #fff; color: #d84315; text-decoration: none; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ffccbc; font-weight: bold; }
+        .footer-site { text-align: center; font-size: 11px; margin-top: 40px; color: #777; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="folha-a4">
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="header-escola">
+        <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+        <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - MATEMÁTICA</strong></div>
+    </div>
+
+    <h1>Desafios Geométricos: Formas Planas</h1>
+
+    <span class="titulo-atv">1. LIGUE CADA OBJETO AO NOME DA SUA FORMA CORRESPONDENTE:</span>
+    
+    <div class="area-ligar">
+        <div class="coluna-objetos">
+            <div class="item-ligar">🍕 <span>PIZZA</span></div>
+            <div class="item-ligar">📺 <span>TELEVISÃO</span></div>
+            <div class="item-ligar">📦 <span>CAIXA</span></div>
+	    <div class="item-ligar">⚽ <span>BOLA</span></div>
+        </div>
+        
+        <div class="coluna-nomes">
+            <div class="nome-forma">RETÂNGULO</div>
+            <div class="nome-forma">CÍRCULO</div>
+            <div class="nome-forma">TRIÂNGULO</div>
+            <div class="nome-forma">QUADRADO</div>
+        </div>
+    </div>
+
+    <span class="titulo-atv">2. DESENHO SIMÉTRICO: COMPLETE O DESENHO DA OUTRA METADE DA FORMA:</span>
+    
+    <div class="grid-completar">
+        <div class="box-completar">
+            <div class="meia-forma"></div>
+            <strong>QUADRADO</strong>
+        </div>
+        <div class="box-completar">
+            <div class="meio-circulo"></div>
+            <strong>CÍRCULO</strong>
+        </div>
+        
+    </div>
+
+    <span class="titulo-atv">3. PINTE APENAS OS TRIÂNGULOS NO CONJUNTO ABAIXO:</span>
+    <p style="font-size: 45px; text-align: center; letter-spacing: 20px; margin: 20px 0;">
+        △  ○  □ ○ △
+    </p>
+
+    <div class="footer-site">atividadesescolares.net - Material pedagógico para impressão</div>
+</div>
+
+<script>
+function voltarInteligente(event) {
+    event.preventDefault();
+    if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+        window.history.back();
+    } else {
+        window.location.href = "../../index.html"; 
+    }
+}
+</script>
+
+</body>
+</html>

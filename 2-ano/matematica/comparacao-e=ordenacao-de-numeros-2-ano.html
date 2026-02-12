@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.3; padding: 10px; margin: 0; background-color: #fff; }
+        
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; font-size: 14px; }
+        .header-escola div { margin-bottom: 10px; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; color: #7c2d12; margin: 10px 0; }
+        
+        .secao { margin-bottom: 25px; border: 1px solid #ffedd5; border-radius: 10px; padding: 15px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #fff7ed; padding: 10px; border-left: 5px solid #ea580c; font-size: 15px; border-radius: 0 4px 4px 0; }
+        
+        /* Exercício de Comparação */
+        .grid-comparacao { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; }
+        .item-comparar { font-size: 20px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .circulo-sinal { width: 40px; height: 40px; border: 2px solid #ea580c; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #fff; }
+
+        /* Exercício de Ordenação */
+        .caixa-numeros { background: #fefce8; border: 2px dashed #ca8a04; padding: 15px; text-align: center; font-size: 22px; font-weight: bold; letter-spacing: 10px; border-radius: 8px; margin-bottom: 15px; }
+        .linha-ordem { display: flex; gap: 10px; justify-content: center; margin-top: 10px; }
+        .quadradinho-ordem { width: 45px; height: 45px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; background: #fff; font-size: 18px; }
+
+        /* Reta Numérica (Novo Exercício 4) */
+        .reta-container { position: relative; height: 80px; margin: 30px 0; padding: 0 20px; }
+        .reta-linha { height: 2px; background: #333; width: 100%; position: relative; }
+        .ponto { position: absolute; top: -5px; width: 2px; height: 12px; background: #333; }
+        .quadrado-reta { position: absolute; top: 15px; width: 35px; height: 35px; border: 1px solid #ea580c; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; font-size: 14px; background: #fff; }
+        .numero-pista { position: absolute; top: -30px; transform: translateX(-50%); font-weight: bold; }
+
+        /* Botão Voltar Inteligente */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #ea580c; text-decoration: none; border-radius: 8px; border: 1px solid #fdba74; font-weight: bold; margin-bottom: 15px; cursor: pointer; }
+        
+        .footer { text-align: center; font-size: 10px; color: #64748b; margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 2º ANO</span>
+        </div>
+    </div>
+
+    <h1>Comparação e Ordenação de Números</h1>
+
+    <div class="secao">
+        <span class="titulo-atv">1. USE OS SINAIS > (MAIOR), < (MENOR) OU = (IGUAL):</span>
+        <div class="grid-comparacao">
+            <div class="item-comparar">45 <div class="circulo-sinal"></div> 54</div>
+            <div class="item-comparar">88 <div class="circulo-sinal"></div> 88</div>
+            <div class="item-comparar">12 <div class="circulo-sinal"></div> 21</div>
+            <div class="item-comparar">99 <div class="circulo-sinal"></div> 100</div>
+            <div class="item-comparar">67 <div class="circulo-sinal"></div> 67</div>
+            <div class="item-comparar">30 <div class="circulo-sinal"></div> 13</div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. COLOQUE OS NÚMEROS DO QUADRO EM ORDEM CRESCENTE (MENOR PARA O MAIOR):</span>
+        <div class="caixa-numeros">
+            23 - 9 - 47 - 15 - 31 - 2
+        </div>
+        <div class="linha-ordem">
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">3. ORDENE EM ORDEM DECRESCENTE (MAIOR PARA O MENOR):</span>
+        <div style="text-align: center; font-weight: bold; margin-bottom: 10px; font-size: 20px;">50 - 10 - 80 - 30 - 90 - 20</div>
+        <div class="linha-ordem">
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div> <span>→</span>
+            <div class="quadradinho-ordem"></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">4. RETA NUMÉRICA: COMPLETE COM OS NÚMEROS QUE FALTAM:</span>
+        <p style="font-size: 13px;">Observe a sequência de 10 em 10 e preencha os espaços vazios:</p>
+        
+        <div class="reta-container">
+            <div class="reta-linha">
+                <div class="ponto" style="left: 0%;"></div>
+                <div class="numero-pista" style="left: 0%;">0</div>
+                
+                <div class="ponto" style="left: 20%;"></div>
+                <div class="quadrado-reta" style="left: 20%;"></div>
+                
+                <div class="ponto" style="left: 40%;"></div>
+                <div class="numero-pista" style="left: 40%;">20</div>
+                
+                <div class="ponto" style="left: 60%;"></div>
+                <div class="quadrado-reta" style="left: 60%;"></div>
+                
+                <div class="ponto" style="left: 80%;"></div>
+                <div class="quadrado-reta" style="left: 80%;"></div>
+                
+                <div class="ponto" style="left: 100%;"></div>
+                <div class="numero-pista" style="left: 100%;">50</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Organização Numérica e Raciocínio Logico</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.2; padding: 10px; margin: 0; background-color: #fff; }
+        
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 20px; font-size: 14px; }
+        .header-escola div { margin-bottom: 10px; }
+        
+        h1 { text-align: center; text-transform: uppercase; font-size: 20px; color: #0891b2; margin: 10px 0; }
+        
+        .secao { margin-bottom: 20px; border: 1px solid #cffafe; border-radius: 10px; padding: 12px; }
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #ecfeff; padding: 10px; border-left: 5px solid #0891b2; font-size: 14px; border-radius: 0 4px 4px 0; }
+        
+        /* Contas Armadas Vertical */
+        .grid-contas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: right; }
+        .conta-box { font-family: 'Courier New', monospace; font-size: 22px; width: 70px; margin: 0 auto; border: 1px dashed #0891b2; padding: 10px; border-radius: 5px; }
+        .linha-soma { border-top: 2px solid #333; margin-top: 5px; height: 30px; }
+
+        /* Operações de Linha */
+        .grid-mental { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .item-mental { background: #f8fafc; padding: 10px; border-radius: 6px; font-size: 16px; border: 1px solid #e2e8f0; font-weight: bold; }
+        .box-res { border: 1px solid #0891b2; width: 50px; height: 25px; display: inline-block; vertical-align: middle; background: #fff; }
+
+        /* Área do Desenho */
+        .area-interativa { display: flex; gap: 20px; align-items: center; margin-top: 10px; }
+        .desenho-container { flex: 1; border: 2px dashed #0891b2; border-radius: 15px; height: 180px; display: flex; align-items: center; justify-content: center; position: relative; background: #f0f9ff; }
+        .peixinho { font-size: 80px; filter: grayscale(100%) brightness(1.2); cursor: default; }
+        .bolhas { position: absolute; font-size: 20px; color: #0891b2; opacity: 0.5; }
+
+        /* Botão Voltar Inteligente */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background: white; color: #0891b2; text-decoration: none; border-radius: 8px; border: 1px solid #0891b2; font-weight: bold; margin-bottom: 15px; cursor: pointer; }
+        
+        .footer { text-align: center; font-size: 10px; color: #64748b; margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+        
+        @media print { .btn-voltar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        // Verifica se há histórico e se a página anterior pertence ao seu domínio
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            // Se vier do Google ou acesso direto, redireciona para a home
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESCOLA:</strong> _________________________________________________</div>
+        <div><strong>NOME:</strong> ___________________________________________________</div>
+        <div style="display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ___/___/_____</span>
+            <span><strong>TURMA:</strong> 2º ANO</span>
+        </div>
+    </div>
+
+    <h1>Mergulho na Matemática 🌊</h1>
+
+    <div class="secao">
+        <span class="titulo-atv">1. ARME E RESOLVA AS ADIÇÕES ABAIXO:</span>
+        <div class="grid-contas">
+            <div class="conta-box"> 43<br>+25<div class="linha-soma"></div></div>
+            <div class="conta-box"> 51<br>+18<div class="linha-soma"></div></div>
+            <div class="conta-box"> 62<br>+36<div class="linha-soma"></div></div>
+            <div class="conta-box"> 20<br>+79<div class="linha-soma"></div></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">2. RESOLVA AS SUBTRAÇÕES (CÁLCULO RÁPIDO):</span>
+        <div class="grid-mental">
+            <div class="item-mental">98 - 44 = <div class="box-res"></div></div>
+            <div class="item-mental">76 - 23 = <div class="box-res"></div></div>
+            <div class="item-mental">55 - 11 = <div class="box-res"></div></div>
+            <div class="item-mental">89 - 30 = <div class="box-res"></div></div>
+            <div class="item-mental">47 - 15 = <div class="box-res"></div></div>
+            <div class="item-mental">63 - 22 = <div class="box-res"></div></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <span class="titulo-atv">3. DESAFIO E DIVERSÃO:</span>
+        <div class="area-interativa">
+            <div style="flex: 1.2;">
+                <p>No aquário da escola havia <b>45</b> peixinhos. <br>O professor colocou mais <b>14</b> peixinhos novos. <br>Quantos peixinhos há no total?</p>
+                <p>Cálculo: <span style="border-bottom: 1px solid #000; width: 150px; display: inline-block;"></span></p>
+              
+            </div>
+            <div class="desenho-container">
+                <span class="peixinho">🐟</span>
+                <span class="bolhas" style="top: 20px; right: 40px;">o</span>
+                <span class="bolhas" style="top: 50px; right: 30px;">O</span>
+                <span class="bolhas" style="top: 80px; right: 45px;">o</span>
+                <span style="position: absolute; bottom: 10px; left: 20px; font-size: 30px;">🌿</span>
+                <span style="position: absolute; bottom: 10px; right: 20px; font-size: 30px;">🌿</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">atividadesescolares.net - Aprendendo Matemática debaixo de água</div>
+
+</body>
+</html>
