@@ -20,22 +20,22 @@ jobs:
           path-to-root: .
           exclude-paths: 404.html
           include-pdf: false
-          # ESTA LINHA É A CHAVE: Ela diz para a Action incluir arquivos .webp
-          additional-extensions: webp
+          # ATUALIZADO: Agora inclui webp, jpg, jpeg e png
+          additional-extensions: webp jpg jpeg png
 
       - name: Commit and push
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
           
-          # Adiciona o sitemap.xml criado/atualizado
+          # Garante que o git veja todas as mudanças
           git add sitemap.xml
           
-          # O comando || echo evita que o erro pare o processo se não houver mudanças
-          git commit -m "Automated sitemap update (incluindo imagens webp)" || echo "Sem mudanças para commitar"
+          # Commit das alterações
+          git commit -m "Automated sitemap update (WebP e JPG inclusos)" || echo "Sem mudanças para commitar"
           
-          # Puxa alterações remotas para evitar conflitos
+          # Sincroniza com o servidor para evitar erros de push
           git pull --rebase origin main
           
-          # Envia para o repositório
+          # Envia a atualização
           git push origin main
