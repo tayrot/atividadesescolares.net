@@ -11,6 +11,21 @@
         .btn-voltar { display: inline-block; padding: 10px 15px; background: #fff; color: #a16207; text-decoration: none; border-radius: 8px; border: 1px solid #fef08a; font-weight: bold; margin-bottom: 20px; }
         .titulo-atv { font-weight: bold; background: #fef9c3; padding: 10px; border-left: 5px solid #ca8a04; display: block; margin: 15px 0; }
         @media print { .btn-voltar { display: none; } }
+    
+        /* Estilos do Preview */
+        .preview-container { margin-top: 40px; text-align: center; border-top: 1px dashed #ccc; padding-top: 20px; }
+        .preview-titulo { font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase; font-weight: bold; }
+        .img-preview { 
+            max-width: 180px; /* Define o tamanho de "ícone" */
+            height: auto; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            border: 1px solid #eee;
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+        .img-preview:hover { transform: scale(1.05); }
+    
     </style>
 </head>
 <body>
@@ -44,5 +59,14 @@
         <p>B) O GATO -> _________ GATOS</p>
         <p>C) A FLOR -> _________ FLORES</p>
     </div>
+
+    <div class="preview-container">
+        <div class="preview-titulo">Visualização da Folha de Atividade</div>
+        <a href="img/artigos-2ano.jpg" target="_blank" title="Clique para ampliar a atividade">
+            <img src="img/artigos-2ano.jpg" alt="Atividade de Artigos 2ano para imprimir" class="img-preview">
+        </a>
+    </div>
+
+    <div class="footer">atividadesescolares.net</div>
 </body>
 </html>

@@ -11,6 +11,21 @@
         .btn-voltar { display: inline-block; padding: 10px 15px; background: #fff; color: #c2410c; text-decoration: none; border-radius: 8px; border: 1px solid #ffedd5; font-weight: bold; margin-bottom: 20px; }
         .titulo-atv { font-weight: bold; background: #ffedd5; padding: 10px; border-left: 5px solid #ea580c; display: block; margin: 15px 0; }
         .texto-escuta { font-style: italic; color: #444; border: 1px solid #fed7aa; padding: 15px; border-radius: 10px; }
+    
+        /* Estilos do Preview */
+        .preview-container { margin-top: 40px; text-align: center; border-top: 1px dashed #ccc; padding-top: 20px; }
+        .preview-titulo { font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase; font-weight: bold; }
+        .img-preview { 
+            max-width: 180px; /* Define o tamanho de "ícone" */
+            height: auto; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            border: 1px solid #eee;
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+        .img-preview:hover { transform: scale(1.05); }
+    
     </style>
 </head>
 <body>
@@ -47,5 +62,14 @@
         <span class="titulo-atv">DESENHE A PARTE FINAL DA HISTÓRIA:</span>
         <div style="border: 1px dashed #ea580c; height: 200px;"></div>
     </div>
+
+    <div class="preview-container">
+        <div class="preview-titulo">Visualização da Folha de Atividade</div>
+        <a href="img/responder-ouvir-2ano.jpg" target="_blank" title="Clique para ampliar a atividade">
+            <img src="img/responder-ouvir-2ano.jpg" alt="Atividade de Responder ouvir 2ano para imprimir" class="img-preview">
+        </a>
+    </div>
+
+    <div class="footer">atividadesescolares.net</div>
 </body>
 </html>

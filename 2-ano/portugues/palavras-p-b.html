@@ -16,6 +16,21 @@
         .caixa-letra { border: 1px solid #e11d48; width: 30px; height: 30px; display: inline-block; text-align: center; vertical-align: middle; border-radius: 4px; }
         .footer-site { text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; }
         @media print { .btn-voltar { display: none; } .folha-a4 { box-shadow: none; margin: 0; width: 100%; } body { background: white; padding: 0; } }
+    
+        /* Estilos do Preview */
+        .preview-container { margin-top: 40px; text-align: center; border-top: 1px dashed #ccc; padding-top: 20px; }
+        .preview-titulo { font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase; font-weight: bold; }
+        .img-preview { 
+            max-width: 180px; /* Define o tamanho de "ícone" */
+            height: auto; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            border: 1px solid #eee;
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+        .img-preview:hover { transform: scale(1.05); }
+    
     </style>
 </head>
 <body>
@@ -70,5 +85,14 @@
         </div>
         <div class="footer-site">atividadesescolares.net - Consciência Fonológica</div>
     </div>
+
+    <div class="preview-container">
+        <div class="preview-titulo">Visualização da Folha de Atividade</div>
+        <a href="img/palavras-p-b.jpg" target="_blank" title="Clique para ampliar a atividade">
+            <img src="img/palavras-p-b.jpg" alt="Atividade de Palavras p b para imprimir" class="img-preview">
+        </a>
+    </div>
+
+    <div class="footer">atividadesescolares.net</div>
 </body>
 </html>

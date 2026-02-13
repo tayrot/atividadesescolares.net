@@ -16,6 +16,21 @@
         .box-leitura { background: #f0fdfa; border: 1px dashed #0d9488; padding: 15px; border-radius: 10px; margin: 20px 0; }
         .titulo-atv { font-weight: bold; background: #ccfbf1; padding: 10px; border-left: 5px solid #0d9488; display: block; margin: 15px 0; }
         @media print { .btn-voltar { display: none; } }
+    
+        /* Estilos do Preview */
+        .preview-container { margin-top: 40px; text-align: center; border-top: 1px dashed #ccc; padding-top: 20px; }
+        .preview-titulo { font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase; font-weight: bold; }
+        .img-preview { 
+            max-width: 180px; /* Define o tamanho de "ícone" */
+            height: auto; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            border: 1px solid #eee;
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+        .img-preview:hover { transform: scale(1.05); }
+    
     </style>
 </head>
 <body>
@@ -55,5 +70,14 @@
         <p>De que cor é o robô? ( ) Verde &nbsp; ( ) Azul &nbsp; ( ) Amarelo</p>
         <p>Quais luzes ele acende? ( ) Brancas &nbsp; ( ) Azuis &nbsp; ( ) Vermelhas</p>
     </div>
+
+    <div class="preview-container">
+        <div class="preview-titulo">Visualização da Folha de Atividade</div>
+        <a href="img/escuta-instrucoes-2ano.jpg" target="_blank" title="Clique para ampliar a atividade">
+            <img src="img/escuta-instrucoes-2ano.jpg" alt="Atividade de Escuta instrucoes 2ano para imprimir" class="img-preview">
+        </a>
+    </div>
+
+    <div class="footer">atividadesescolares.net</div>
 </body>
 </html>
