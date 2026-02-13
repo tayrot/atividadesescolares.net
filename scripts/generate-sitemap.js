@@ -13,24 +13,36 @@ let urls = [];
 htmlFiles.forEach(file => {
   const html = fs.readFileSync(file, 'utf8');
 
-  const pageDir = path.dirname(file);
+  // pasta da página (ex: 1-ano/portugues)
+  const dir = path.dirname(file).replace(/\\/g, '/');
 
+  // pega todas imagens do HTML
   const images = [...html.matchAll(/<img[^>]+src="([^"]+)"/g)]
     .map(x => x[1]);
 
   const pageUrl = `${base}/${file.replace(/\\/g, '/')}`;
 
-  const imageTags = images.map(img => {
-    // resolve caminho relativo corretamente
-    const resolved = path.join(pageDir, img)
-      .replace(/\\/g, '/')
-      .replace(/^\.\//, '');
+  let imageTags = '';
 
-    return `
+  images.forEach(img => {
+
+    // se já for http, mantém
+    if (img.startsWith('http')) {
+      imageTags += `
       <image:image>
-        <image:loc>${base}/${resolved}</image:loc>
+        <image:loc>${img}</image:loc>
       </image:image>`;
-  }).join('');
+      return;
+    }
+
+    // junta pasta da página + caminho relativo
+    const finalPath = `${dir}/${img}`.replace(/\/+/g, '/');
+
+    imageTags += `
+      <image:image>
+        <image:loc>${base}/${finalPath}</image:loc>
+      </image:image>`;
+  });
 
   urls.push(`
   <url>
@@ -48,4 +60,4 @@ ${urls.join('\n')}
 
 fs.writeFileSync('sitemap.xml', sitemap);
 
-console.log('✅ Sitemap gerado com caminhos corretos!');
+console.log('✅ Sitemap gerado com caminhos locais corretos!');
