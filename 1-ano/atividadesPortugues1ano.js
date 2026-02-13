@@ -13,11 +13,14 @@ const atividadesPortugues1ano = [
     { nome: "Compreensão De Textos", slug: "compreensao-de-textos" },
     { nome: "Consoantes", slug: "consoantes" },
     { nome: "Construção De Frases", slug: "construcao-de-frases" },
+    { nome: "Exercicio Vogais 1 Ano", slug: "exercicio-vogais-1-ano" },
+    { nome: "Exercicio Vogais 1 Ano 2", slug: "exercicio-vogais-1-ano-2" },
+    { nome: "Exercicio Vogais 1 Ano 3", slug: "exercicio-vogais-1-ano-3" },
     { nome: "Formação De Palavras", slug: "formacao-de-palavras" },
     { nome: "Instruções Simples", slug: "instrucoes-simples" },
     { nome: "Letras Maiúsculas (Início/Próprios)", slug: "letras-maiusculas-uso" },
     { nome: "Maiúsculas e Minúsculas", slug: "maiusculas-e-minusculas" },
-    { nome: "Maiúsculas E Minúsculas 2", slug: "maiusculas-e-minusculas 2" },
+    { nome: "Maiúsculas E Minúsculas 2", slug: "maiusculas-e-minusculas-2" },
     { nome: "Nomear E Ligar", slug: "nomear-e-ligar" },
     { nome: "Palavras Cruzadas 1 Ano", slug: "palavras-cruzadas-1-ano" },
     { nome: "Palavras Do Cotidiano", slug: "palavras-do-cotidiano" },
@@ -48,8 +51,5 @@ const atividadesPortugues1ano = [
     { nome: "Sons Finais", slug: "sons-finais" },
     { nome: "Sons Iniciais", slug: "sons-iniciais" },
     { nome: "Substantivos E Verbos", slug: "substantivos-e-verbos" },
-    { nome: "Treino de Escrita", slug: "treino-escrita" },
-    { nome: "Alfabeto: Vogais", slug: "vogais" },
-    { nome: "Vogais 2", slug: "vogais 2" },
-    { nome: "Vogais2", slug: "vogais2" }
+    { nome: "Treino de Escrita", slug: "treino-escrita" }
 ];
