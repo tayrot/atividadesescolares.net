@@ -20,9 +20,9 @@ htmlFiles.forEach(file => {
   let imageTags = images.map(img => {
     const clean = img.replace(/^\.\.\//g, '');
     return `
-      <image:image>
-        <image:loc>${base}/${clean}</image:loc>
-      </image:loc>`;
+  <image:image>
+    <image:loc>${base}/${clean}</image:loc>
+  </image:image>`;
   }).join('');
 
   urls.push(`
