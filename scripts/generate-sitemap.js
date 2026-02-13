@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const glob = require('glob');
 
 const base = 'https://atividadesescolares.net';
@@ -12,17 +13,23 @@ let urls = [];
 htmlFiles.forEach(file => {
   const html = fs.readFileSync(file, 'utf8');
 
+  const pageDir = path.dirname(file);
+
   const images = [...html.matchAll(/<img[^>]+src="([^"]+)"/g)]
     .map(x => x[1]);
 
   const pageUrl = `${base}/${file.replace(/\\/g, '/')}`;
 
-  let imageTags = images.map(img => {
-    const clean = img.replace(/^\.\.\//g, '');
+  const imageTags = images.map(img => {
+    // resolve caminho relativo corretamente
+    const resolved = path.join(pageDir, img)
+      .replace(/\\/g, '/')
+      .replace(/^\.\//, '');
+
     return `
-  <image:image>
-    <image:loc>${base}/${clean}</image:loc>
-  </image:image>`;
+      <image:image>
+        <image:loc>${base}/${resolved}</image:loc>
+      </image:image>`;
   }).join('');
 
   urls.push(`
@@ -33,7 +40,7 @@ htmlFiles.forEach(file => {
 });
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset 
+<urlset
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls.join('\n')}
@@ -41,5 +48,4 @@ ${urls.join('\n')}
 
 fs.writeFileSync('sitemap.xml', sitemap);
 
-console.log('✅ Sitemap gerado com imagens associadas!');
-
+console.log('✅ Sitemap gerado com caminhos corretos!');
