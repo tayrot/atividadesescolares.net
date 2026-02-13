@@ -197,10 +197,26 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   </url>
 
   <url>
+    <loc>https://atividadesescolares.net/2-ano/portugues/palavras-s-z-2-ano.html</loc>
+    
+      <image:image>
+        <image:loc>https://atividadesescolares.net/2-ano/portugues/img/palavras-s-z-2-ano.jpg</image:loc>
+      </image:image>
+  </url>
+
+  <url>
     <loc>https://atividadesescolares.net/2-ano/portugues/palavras-p-b.html</loc>
     
       <image:image>
         <image:loc>https://atividadesescolares.net/2-ano/portugues/img/palavras-p-b.jpg</image:loc>
+      </image:image>
+  </url>
+
+  <url>
+    <loc>https://atividadesescolares.net/2-ano/portugues/palavras-l-u-2-ano.html</loc>
+    
+      <image:image>
+        <image:loc>https://atividadesescolares.net/2-ano/portugues/img/palavras-l-u-2-ano.jpg</image:loc>
       </image:image>
   </url>
 
