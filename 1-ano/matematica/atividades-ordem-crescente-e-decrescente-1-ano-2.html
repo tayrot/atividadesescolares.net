@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Atividade de Antecessor e Sucessor 1º Ano para Imprimir | Atividades Escolares</title>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow, imageindex">
+    <meta name="description" content="Atividade de matemática para 1º Ano sobre antecessor e sucessor (vizinhos). Exercícios para imprimir em PDF ou HTML com sequência numérica e lógica.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; margin: 0; padding: 20px; }
+        
+        /* Botão Voltar Inteligente */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #7c3aed; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #ddd6fe; transition: 0.3s; font-weight: bold; cursor: pointer; }
+        .btn-voltar:hover { background-color: #f5f3ff; }
+
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; color: #6d28d9; }
+        
+        /* Seções de Atividade */
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f5f3ff; padding: 10px; border-left: 5px solid #7c3aed; border-radius: 0 4px 4px 0; font-size: 14px; }
+        .exercicio { margin-bottom: 25px; }
+        
+        /* Estilos dos Vizinhos */
+        .vizinhos-row { display: flex; justify-content: center; gap: 40px; margin-bottom: 15px; }
+        .casa-vizinho { display: flex; align-items: center; gap: 8px; }
+        .box-num { width: 45px; height: 45px; border: 2px solid #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold; }
+        .num-fixo { background-color: #f3f4f6; border: 2px solid #7c3aed; }
+
+        /* Sequência de Flores */
+        .sequencia-flores { display: flex; justify-content: center; gap: 10px; margin: 15px 0; }
+        .flor { width: 50px; height: 50px; border: 2px dashed #6d28d9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; position: relative; }
+        .flor::after { content: '✿'; position: absolute; top: -15px; font-size: 12px; color: #6d28d9; }
+
+        /* Tabela de Antecessor/Sucessor */
+        table { width: 80%; margin: 0 auto; border-collapse: collapse; text-align: center; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background: #f5f3ff; font-size: 12px; }
+        .input-td { width: 60px; height: 30px; border: 1px solid #7c3aed; border-radius: 4px; display: inline-block; }
+
+        /* Preview Area */
+        .preview-container { margin-top: 40px; text-align: center; border-top: 1px dashed #ccc; padding-top: 25px; }
+        .preview-titulo { font-size: 11px; color: #666; margin-bottom: 15px; text-transform: uppercase; font-weight: bold; }
+        .img-preview { max-width: 320px; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 20px; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+
+        @media print { .btn-voltar, .preview-container { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+
+    <div class="header-escola">
+        <div><strong>ESTUDANTE:</strong> _______________________________________________</div>
+        <div style="margin-top:12px; display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ____/____/_______</span>
+            <span><strong>1º ANO - MATEMÁTICA</strong></span>
+        </div>
+    </div>
+
+    <h1>Vizinhos dos Números</h1>
+
+    <div class="atividade">
+        
+        <div class="exercicio">
+            <span class="titulo-atv">1. QUEM SÃO OS VIZINHOS? ESCREVA O ANTECESSOR E O SUCESSOR:</span>
+            <div class="vizinhos-row">
+                <div class="casa-vizinho"><div class="box-num"></div> <div class="box-num num-fixo">8</div> <div class="box-num"></div></div>
+                <div class="casa-vizinho"><div class="box-num"></div> <div class="box-num num-fixo">15</div> <div class="box-num"></div></div>
+            </div>
+            <div class="vizinhos-row">
+                <div class="casa-vizinho"><div class="box-num"></div> <div class="box-num num-fixo">21</div> <div class="box-num"></div></div>
+                <div class="casa-vizinho"><div class="box-num"></div> <div class="box-num num-fixo">30</div> <div class="box-num"></div></div>
+            </div>
+        </div>
+
+        <div class="exercicio">
+            <span class="titulo-atv">2. COMPLETE A SEQUÊNCIA DAS FLORES COM OS NÚMEROS QUE FALTAM:</span>
+            <div class="sequencia-flores">
+                <div class="flor">10</div><div class="flor"></div><div class="flor">12</div>
+                <div class="flor"></div><div class="flor">14</div><div class="flor"></div><div class="flor">16</div>
+            </div>
+        </div>
+
+        <div class="exercicio">
+            <span class="titulo-atv">3. ESCREVA O NÚMERO QUE VEM LOGO ANTES (ANTECESSOR):</span>
+            <div class="vizinhos-row" style="gap: 20px;">
+                <span>____ , 19</span> | <span>____ , 25</span> | <span>____ , 38</span> | <span>____ , 50</span>
+            </div>
+        </div>
+
+        <div class="exercicio">
+            <span class="titulo-atv">4. ESCREVA O NÚMERO QUE VEM LOGO DEPOIS (SUCESSOR):</span>
+            <div class="vizinhos-row" style="gap: 20px;">
+                <span>11 , ____</span> | <span>42 , ____</span> | <span>29 , ____</span> | <span>18 , ____</span>
+            </div>
+        </div>
+
+        <div class="exercicio">
+            <span class="titulo-atv">5. COMPLETE A TABELA DOS NÚMEROS VIZINHOS:</span>
+            <table>
+                <tr>
+                    <th>ANTECESSOR</th>
+                    <th>NÚMERO</th>
+                    <th>SUCESSOR</th>
+                </tr>
+                <tr><td><div class="input-td"></div></td><td><b>13</b></td><td><div class="input-td"></div></td></tr>
+                <tr><td><div class="input-td"></div></td><td><b>20</b></td><td><div class="input-td"></div></td></tr>
+                <tr><td><div class="input-td"></div></td><td><b>44</b></td><td><div class="input-td"></div></td></tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+    <div class="preview-container">
+        <div class="preview-titulo">Visualização da Folha de Atividade</div>
+        <a href="img/atividades-ordem-crescente-e-decrescente-1-ano-2.jpg" target="_blank">
+            <img src="img/atividades-ordem-crescente-e-decrescente-1-ano-2.jpg" alt="Preview Atividade Antecessor e Sucessor 1 Ano" class="img-preview">
+        </a>
+    </div>
+
+</body>
+</html>

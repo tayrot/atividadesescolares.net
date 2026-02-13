@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Atividade de Ordem Crescente e Decrescente 1º Ano para Imprimir | Atividades Escolares</title>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow, imageindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.4; margin: 0; padding: 20px; }
+        
+        /* Botão Voltar Inteligente */
+        .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #7c3aed; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #ddd6fe; transition: 0.3s; font-weight: bold; cursor: pointer; }
+        .btn-voltar:hover { background-color: #f5f3ff; }
+
+        /* Cabeçalho Escola */
+        .header-escola { border: 2px solid #000; padding: 15px; margin-bottom: 30px; }
+        h1 { text-align: center; text-transform: uppercase; font-size: 22px; margin-bottom: 10px; color: #6d28d9; }
+        
+        /* Seções de Atividade */
+        .titulo-atv { font-weight: bold; margin-bottom: 15px; display: block; background: #f5f3ff; padding: 10px; border-left: 5px solid #7c3aed; border-radius: 0 4px 4px 0; font-size: 14px; }
+        .exercicio { margin-bottom: 30px; }
+        
+        /* Escadas */
+        .escada-container { display: flex; align-items: flex-end; justify-content: center; gap: 8px; height: 100px; margin: 15px 0; }
+        .degrau { width: 40px; border: 2px solid #333; display: flex; align-items: center; justify-content: center; background: #fff; font-weight: bold; font-size: 16px; border-radius: 4px 4px 0 0; }
+
+        /* Caixas e Bolinhas */
+        .caixa-numeros { background: #fffbeb; border: 2px dashed #f59e0b; padding: 10px; text-align: center; font-size: 20px; font-weight: bold; letter-spacing: 10px; border-radius: 12px; margin-bottom: 10px; }
+        .linha-bolinhas { display: flex; justify-content: center; gap: 10px; }
+        .bolinha-vazia { width: 38px; height: 38px; border: 2px solid #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+        /* Exercício de Vizinhos */
+        .grid-vizinhos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; }
+        .bloco-vizinho { display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 18px; }
+        .box-vizinho { width: 35px; height: 35px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .num-central { font-weight: bold; background: #f3f4f6; padding: 5px 10px; border-radius: 4px; border: 1px solid #ddd; }
+
+        /* Preview Area */
+        .preview-container { margin-top: 40px; text-align: center; border-top: 1px dashed #ccc; padding-top: 25px; }
+        .preview-titulo { font-size: 11px; color: #666; margin-bottom: 15px; text-transform: uppercase; font-weight: bold; }
+        .img-preview { max-width: 320px; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+        .footer-site { text-align: center; font-size: 10px; margin-top: 20px; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+
+        @media print { .btn-voltar, .preview-container { display: none; } }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+
+    <div class="header-escola">
+        <div><strong>ESTUDANTE:</strong> _______________________________________________</div>
+        <div style="margin-top:12px; display: flex; justify-content: space-between;">
+            <span><strong>DATA:</strong> ____/____/_______</span>
+            <span><strong>1º ANO - MATEMÁTICA</strong></span>
+        </div>
+    </div>
+
+    <h1>Subindo e Descendo com os Números</h1>
+
+    <div class="atividade">
+        
+        <div class="exercicio">
+            <span class="titulo-atv">1. COMPLETE OS DEGRAUS DAS ESCADAS (CRESCENTE E DECRESCENTE):</span>
+            <div style="display: flex; justify-content: space-around;">
+                <div class="escada-container">
+                    <div class="degrau" style="height: 30px;">1</div>
+                    <div class="degrau" style="height: 50px;"></div>
+                    <div class="degrau" style="height: 70px;">3</div>
+                    <div class="degrau" style="height: 90px;"></div>
+                </div>
+                <div class="escada-container">
+                    <div class="degrau" style="height: 90px;">9</div>
+                    <div class="degrau" style="height: 70px;"></div>
+                    <div class="degrau" style="height: 50px;">7</div>
+                    <div class="degrau" style="height: 30px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercicio">
+            <span class="titulo-atv">2. COLOQUE OS NÚMEROS DO QUADRO NA ORDEM CRESCENTE (MENOR PARA O MAIOR):</span>
+            <div class="caixa-numeros">5 - 1 - 8 - 3 - 6</div>
+            <div class="linha-bolinhas">
+                <div class="bolinha-vazia"></div><div class="bolinha-vazia"></div>
+                <div class="bolinha-vazia"></div><div class="bolinha-vazia"></div>
+                <div class="bolinha-vazia"></div>
+            </div>
+        </div>
+
+        <div class="exercicio">
+            <span class="titulo-atv">3. COLOQUE OS NÚMEROS DO QUADRO NA ORDEM DECRESCENTE (MAIOR PARA O MENOR):</span>
+            <div class="caixa-numeros">2 - 7 - 4 - 10 - 0</div>
+            <div class="linha-bolinhas">
+                <div class="bolinha-vazia"></div><div class="bolinha-vazia"></div>
+                <div class="bolinha-vazia"></div><div class="bolinha-vazia"></div>
+                <div class="bolinha-vazia"></div>
+            </div>
+        </div>
+
+        <div class="exercicio">
+            <span class="titulo-atv">4. QUEM VEM ANTES E QUEM VEM DEPOIS? (VIZINHOS):</span>
+            <div class="grid-vizinhos">
+                <div class="bloco-vizinho"><div class="box-vizinho"></div> <span class="num-central">4</span> <div class="box-vizinho"></div></div>
+                <div class="bloco-vizinho"><div class="box-vizinho"></div> <span class="num-central">7</span> <div class="box-vizinho"></div></div>
+                <div class="bloco-vizinho"><div class="box-vizinho"></div> <span class="num-central">2</span> <div class="box-vizinho"></div></div>
+                <div class="bloco-vizinho"><div class="box-vizinho"></div> <span class="num-central">9</span> <div class="box-vizinho"></div></div>
+                <div class="bloco-vizinho"><div class="box-vizinho"></div> <span class="num-central">5</span> <div class="box-vizinho"></div></div>
+                <div class="bloco-vizinho"><div class="box-vizinho"></div> <span class="num-central">1</span> <div class="box-vizinho"></div></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-site">atividadesescolares.net</div>
+
+    <div class="preview-container">
+        <div class="preview-titulo">Visualização da Folha de Atividade</div>
+        <a href="img/atividades-ordem-crescente-e-decrescente-1-ano.jpg" target="_blank">
+            <img src="img/atividades-ordem-crescente-e-decrescente-1-ano.jpg" alt="Preview Atividade Ordem Crescente e Decrescente" class="img-preview">
+        </a>
+    </div>
+
+    <script>
+    function voltarInteligente(event) {
+        event.preventDefault();
+        if (window.history.length > 1 && document.referrer.includes(window.location.hostname)) {
+            window.history.back();
+        } else {
+            window.location.href = "../index.html"; 
+        }
+    }
+    </script>
+</body>
+</html>
