@@ -33,6 +33,21 @@
 
         .btn-voltar { display: inline-block; padding: 10px 15px; background-color: #ffffff; color: #4caf50; text-decoration: none; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border: 1px solid #c8e6c9; transition: 0.3s; font-weight: bold; }
         .btn-voltar:hover { background-color: #e8f5e9; }
+    
+        /* Estilos do Preview */
+        .preview-container { margin-top: 40px; text-align: center; border-top: 1px dashed #ccc; padding-top: 20px; }
+        .preview-titulo { font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase; font-weight: bold; }
+        .img-preview { 
+            max-width: 180px; /* Define o tamanho de "ícone" */
+            height: auto; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            border: 1px solid #eee;
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+        .img-preview:hover { transform: scale(1.05); }
+    
     </style>
 </head>
 <body>
@@ -112,5 +127,14 @@
     </div>
 
     <div class="footer-site">atividadesescolares.net</div>
+
+    <div class="preview-container">
+        <div class="preview-titulo">Visualização da Folha de Atividade</div>
+        <a href="img/subtracao-desenhos.jpg" target="_blank" title="Clique para ampliar a atividade">
+            <img src="img/subtracao-desenhos.jpg" alt="Atividade de Subtracao desenhos para imprimir" class="img-preview">
+        </a>
+    </div>
+
+    <div class="footer">atividadesescolares.net</div>
 </body>
 </html>
