@@ -4,6 +4,8 @@ const atividadesMatematica1ano = [
     { nome: "Adição Desenhos", slug: "adicao-desenhos" },
     { nome: "Adição Simples", slug: "adicao-simples" },
     { nome: "Atividade Ordem Numerica 1 Ano", slug: "atividade-ordem-numerica-1-ano" },
+    { nome: "Atividades Ordem Crescente E Decrescente 1 Ano", slug: "atividades-ordem-crescente-e-decrescente-1-ano" },
+    { nome: "Atividades Ordem Crescente E Decrescente 1 Ano 2", slug: "atividades-ordem-crescente-e-decrescente-1-ano-2" },
     { nome: "Calcular E Colorir 1 Ano Robo", slug: "calcular-e-colorir-1-ano-robo" },
     { nome: "Calcular E Colorir 1 Ano Trem", slug: "calcular-e-colorir-1-ano-trem" },
     { nome: "Comparação De Números", slug: "comparacao-de-numeros" },
