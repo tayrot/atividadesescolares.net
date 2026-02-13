@@ -2,35 +2,37 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Artigos: Definindo os Nomes | 2º Ano Português</title>
-    <meta name="description" content="Atividade prática sobre artigos definidos (o, a, os, as) para alunos do 2º ano do ensino fundamental.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de Artigos 2º Ano para Imprimir – PDF e HTML | Atividades Escolares</title>
+    <meta name="description" content="Atividade de artigos para 2º Ano do ensino fundamental. Exercício de português para imprimir em PDF ou HTML com figuras e banco de palavras.">
     <style>
         @page { size: A4; margin: 15mm; }
-        body { font-family: 'Arial', sans-serif; background: #fefce8; padding: 20px; }
-        .folha-a4 { background: white; width: 210mm; min-height: 297mm; padding: 20px; margin: auto; }
+        body { font-family: 'Arial', sans-serif; background: #fefce8; padding: 20px; color: #333; }
+        .folha-a4 { background: white; width: 210mm; min-height: 297mm; padding: 20px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+        
         .btn-voltar { display: inline-block; padding: 10px 15px; background: #fff; color: #a16207; text-decoration: none; border-radius: 8px; border: 1px solid #fef08a; font-weight: bold; margin-bottom: 20px; }
+        
+        /* Cabeçalho Padronizado */
+        .header-escola { border: 2px solid #ca8a04; padding: 15px; margin-bottom: 25px; border-radius: 8px; }
+        
         .titulo-atv { font-weight: bold; background: #fef9c3; padding: 10px; border-left: 5px solid #ca8a04; display: block; margin: 15px 0; }
-        @media print { .btn-voltar { display: none; } }
-    
+        
+        .grid-artigos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .item-exercicio { padding: 5px; font-weight: bold; }
+
+        .box-indefinidos { border: 1px dashed #ca8a04; padding: 15px; border-radius: 8px; background-color: #fffaf0; }
+
+        @media print { .btn-voltar { display: none; } .folha-a4 { box-shadow: none; border: none; } }
+
         /* Estilos do Preview */
         .preview-container { margin-top: 40px; text-align: center; border-top: 1px dashed #ccc; padding-top: 20px; }
         .preview-titulo { font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase; font-weight: bold; }
-        .img-preview { 
-            max-width: 180px; /* Define o tamanho de "ícone" */
-            height: auto; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-            border: 1px solid #eee;
-            cursor: zoom-in;
-            transition: transform 0.3s;
-        }
-        .img-preview:hover { transform: scale(1.05); }
-    
+        .img-preview { max-width: 520px; height: auto; border-radius: 8px; border: 1px solid #eee; }
     </style>
 </head>
 <body>
     
-    <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
+   <a href="#" onclick="voltarInteligente(event)" class="btn-voltar">← Voltar ao Portal</a>
 
     <script>
     function voltarInteligente(event) {
@@ -44,29 +46,42 @@
         }
     }
     </script>
-    <div class="folha-a4" style="padding:20px; border:1px solid #eee;">
-        <h1>Uso dos Artigos: O, A, OS, AS</h1>
-        
+
+    <div class="folha-a4">
+        <div class="header-escola">
+            <div><strong>ALUNO(A):</strong> ________________________________________________</div>
+            <div style="margin-top:10px;"><strong>DATA:</strong> ____/____/_______ <strong>2º ANO - PORTUGUÊS (ARTIGOS)</strong></div>
+        </div>
+
         <span class="titulo-atv">1. COLOQUE "O" OU "A" ANTES DAS PALAVRAS:</span>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <p>____ BOLA</p> <p>____ CADERNO</p>
-            <p>____ MOCHILA</p> <p>____ LÁPIS</p>
-            <p>____ MENINA</p> <p>____ MENINO</p>
+        <div class="grid-artigos">
+            <div class="item-exercicio">____ BOLA</div> <div class="item-exercicio">____ CADERNO</div>
+            <div class="item-exercicio">____ MOCHILA</div> <div class="item-exercicio">____ LÁPIS</div>
+            <div class="item-exercicio">____ MENINA</div> <div class="item-exercicio">____ MENINO</div>
         </div>
 
         <span class="titulo-atv">2. PASSE PARA O PLURAL (OS, AS):</span>
-        <p>A) A CHAVE -> _________ CHAVES</p>
-        <p>B) O GATO -> _________ GATOS</p>
-        <p>C) A FLOR -> _________ FLORES</p>
+        <p>A) A CHAVE -> ____________________ CHAVES</p>
+        <p>B) O GATO -> ____________________ GATOS</p>
+        <p>C) A FLOR -> ____________________ FLORES</p>
+
+        <span class="titulo-atv">3. USE "UM" OU "UMA" PARA COMPLETAR:</span>
+        <div class="box-indefinidos">
+            <p>A) COMPREI __________ SORVETE DE CHOCOLATE.</p>
+            <p>B) VI __________ ESTRELA CADENTE NO CÉU.</p>
+            <p>C) GANHEI __________ PRESENTE ESPECIAL.</p>
+            <p>D) QUERO __________ MAÇÃ BEM VERMELHA.</p>
+        </div>
+
+        <div style="text-align: center; font-size: 10px; margin-top: 40px; color: #777; border-top: 1px solid #ccc; padding-top: 10px;">
+            atividadesescolares.net - Atividade de Gramática: Artigos
+        </div>
     </div>
 
     <div class="preview-container">
         <div class="preview-titulo">Visualização da Folha de Atividade</div>
-        <a href="img/artigos-2ano.jpg" target="_blank" title="Clique para ampliar a atividade">
-            <img src="img/artigos-2ano.jpg" alt="Atividade de Artigos 2ano para imprimir" class="img-preview">
-        </a>
+        <img src="img/artigos-2ano.jpg" alt="Atividade de Artigos 2ano para imprimir" class="img-preview">
     </div>
 
-    <div class="footer">atividadesescolares.net</div>
 </body>
 </html>
